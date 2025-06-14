@@ -18,29 +18,43 @@ const PracticeQuestions = () => {
     // Lấy danh sách câu hỏi từ localStorage
     const loadQuestions = () => {
       setLoading(true);
-      const practiceQuestions = JSON.parse(localStorage.getItem('practiceQuestions')) || [];
-      
-      if (practiceQuestions.length === 0) {
+      // Ưu tiên lấy câu hỏi từ userQuestions (câu hỏi gốc người dùng tạo)
+      // nếu không có thì mới lấy từ practiceQuestions (câu hỏi được sao chép để luyện tập)
+      const userQuestions =
+        JSON.parse(localStorage.getItem("userQuestions")) || [];
+      const practiceQuestions =
+        JSON.parse(localStorage.getItem("practiceQuestions")) || [];
+
+      // Sử dụng userQuestions nếu có, ngược lại sử dụng practiceQuestions
+      const questionsToUse =
+        userQuestions.length > 0 ? userQuestions : practiceQuestions;
+
+      if (questionsToUse.length === 0) {
         setNoQuestions(true);
       } else {
-        setQuestions(practiceQuestions);
+        setQuestions(questionsToUse);
+        // Đảm bảo practiceQuestions luôn được cập nhật với dữ liệu mới nhất
+        localStorage.setItem(
+          "practiceQuestions",
+          JSON.stringify(questionsToUse)
+        );
       }
-      
+
       setLoading(false);
     };
-    
+
     loadQuestions();
   }, []);
 
   // Hàm xử lý khi người dùng chọn câu trả lời
   const handleAnswerSelect = (answerIndex) => {
     if (showAnswer || answeredQuestions.includes(currentQuestion)) return;
-    
+
     setSelectedAnswer(answerIndex);
     setShowAnswer(true);
-    
+
     setAnsweredQuestions([...answeredQuestions, currentQuestion]);
-    
+
     // Kiểm tra đáp án và cập nhật điểm số
     if (answerIndex === questions[currentQuestion].correctAnswer) {
       setScore(score + 1);
@@ -52,7 +66,7 @@ const PracticeQuestions = () => {
     if (currentQuestion < questions.length - 1) {
       const nextQuestion = currentQuestion + 1;
       setCurrentQuestion(nextQuestion);
-      
+
       if (answeredQuestions.includes(nextQuestion)) {
         const savedAnswer = selectedAnswer;
         if (savedAnswer !== undefined) {
@@ -64,6 +78,11 @@ const PracticeQuestions = () => {
         setShowAnswer(false);
       }
     } else {
+      // Khi kết thúc bài luyện tập, đảm bảo câu hỏi không bị mất
+      const userQuestions = JSON.parse(localStorage.getItem("userQuestions")) || [];
+      if (userQuestions.length > 0) {
+        localStorage.setItem("practiceQuestions", JSON.stringify(userQuestions));
+      }
       setShowResult(true);
     }
   };
@@ -73,7 +92,7 @@ const PracticeQuestions = () => {
     if (currentQuestion > 0) {
       const prevQuestion = currentQuestion - 1;
       setCurrentQuestion(prevQuestion);
-      
+
       if (answeredQuestions.includes(prevQuestion)) {
         const savedAnswer = selectedAnswer;
         if (savedAnswer !== undefined) {
@@ -89,6 +108,14 @@ const PracticeQuestions = () => {
 
   // Hàm bắt đầu bài kiểm tra
   const startQuiz = () => {
+    // Tải lại câu hỏi từ userQuestions để đảm bảo dữ liệu luôn mới nhất
+    const userQuestions =
+      JSON.parse(localStorage.getItem("userQuestions")) || [];
+    if (userQuestions.length > 0) {
+      setQuestions(userQuestions);
+      localStorage.setItem("practiceQuestions", JSON.stringify(userQuestions));
+    }
+
     setShowQuiz(true);
     setShowResult(false);
     setCurrentQuestion(0);
@@ -97,9 +124,17 @@ const PracticeQuestions = () => {
     setScore(0);
     setAnsweredQuestions([]);
   };
-  
+
   // Hàm reset bài kiểm tra
   const resetQuiz = () => {
+    // Tải lại câu hỏi từ userQuestions để đảm bảo dữ liệu luôn mới nhất
+    const userQuestions =
+      JSON.parse(localStorage.getItem("userQuestions")) || [];
+    if (userQuestions.length > 0) {
+      setQuestions(userQuestions);
+      localStorage.setItem("practiceQuestions", JSON.stringify(userQuestions));
+    }
+
     setCurrentQuestion(0);
     setScore(0);
     setSelectedAnswer(null);
@@ -110,6 +145,12 @@ const PracticeQuestions = () => {
 
   // Hàm quay lại trang tạo câu hỏi
   const goToCreateQuestion = () => {
+    // Đảm bảo câu hỏi không bị mất khi chuyển trang
+    const userQuestions =
+      JSON.parse(localStorage.getItem("userQuestions")) || [];
+    if (userQuestions.length > 0) {
+      localStorage.setItem("practiceQuestions", JSON.stringify(userQuestions));
+    }
     window.location.href = "/tu-luyen/tao-cau-hoi";
   };
 
@@ -159,9 +200,12 @@ const PracticeQuestions = () => {
         {noQuestions ? (
           <div className="bg-gray-400/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg min-h-[300px] flex flex-col items-center justify-center text-center border border-gray-300/30 p-8">
             <div className="text-6xl mb-6">📝</div>
-            <h2 className="text-3xl font-bold text-yellow-300 mb-4">Chưa có câu hỏi nào!</h2>
+            <h2 className="text-3xl font-bold text-yellow-300 mb-4">
+              Chưa có câu hỏi nào!
+            </h2>
             <p className="text-xl text-gray-200 mb-8">
-              Bạn chưa tạo câu hỏi nào để luyện tập. Hãy tạo câu hỏi trước khi bắt đầu luyện tập.
+              Bạn chưa tạo câu hỏi nào để luyện tập. Hãy tạo câu hỏi trước khi
+              bắt đầu luyện tập.
             </p>
             <button
               onClick={goToCreateQuestion}
@@ -189,7 +233,9 @@ const PracticeQuestions = () => {
                   <div
                     className="bg-gradient-to-r from-purple-500 to-indigo-500 h-2.5 rounded-full"
                     style={{
-                      width: `${((currentQuestion + 1) / questions.length) * 100}%`,
+                      width: `${
+                        ((currentQuestion + 1) / questions.length) * 100
+                      }%`,
                     }}
                   ></div>
                 </div>
@@ -205,7 +251,8 @@ const PracticeQuestions = () => {
                     Luyện tập với câu hỏi của bạn
                   </h2>
                   <p className="text-xl text-gray-200 mb-8">
-                    Bạn đã tạo {questions.length} câu hỏi. Hãy kiểm tra kiến thức của mình!
+                    Bạn đã tạo {questions.length} câu hỏi. Hãy kiểm tra kiến
+                    thức của mình!
                   </p>
                   <button
                     onClick={startQuiz}
@@ -232,25 +279,40 @@ const PracticeQuestions = () => {
                   {/* Hiển thị thanh tiến trình */}
                   <div className="w-full max-w-md mx-auto bg-gray-700 rounded-full h-4 mb-8">
                     <div
-                      className={`h-4 rounded-full ${score / questions.length >= 0.7
-                        ? "bg-green-500"
-                        : score / questions.length >= 0.4
+                      className={`h-4 rounded-full ${
+                        score / questions.length >= 0.7
+                          ? "bg-green-500"
+                          : score / questions.length >= 0.4
                           ? "bg-yellow-500"
                           : "bg-red-500"
-                        }`}
+                      }`}
                       style={{ width: `${(score / questions.length) * 100}%` }}
                     ></div>
                   </div>
 
                   <div className="flex flex-wrap justify-center gap-4">
                     <button
-                      onClick={resetQuiz}
+                      onClick={() => {
+                        // Đảm bảo câu hỏi không bị mất khi làm lại
+                        const userQuestions = JSON.parse(localStorage.getItem("userQuestions")) || [];
+                        if (userQuestions.length > 0) {
+                          localStorage.setItem("practiceQuestions", JSON.stringify(userQuestions));
+                        }
+                        resetQuiz();
+                      }}
                       className="bg-gradient-to-r from-purple-600 to-indigo-500 text-white px-6 py-3 rounded-lg hover:from-purple-500 hover:to-indigo-400 transition-all duration-300 shadow-md hover:shadow-purple-500/50"
                     >
                       Luyện tập lại
                     </button>
                     <Link
                       to="/tu-luyen/tao-cau-hoi"
+                      onClick={() => {
+                        // Đảm bảo câu hỏi không bị mất khi chuyển trang
+                        const userQuestions = JSON.parse(localStorage.getItem("userQuestions")) || [];
+                        if (userQuestions.length > 0) {
+                          localStorage.setItem("practiceQuestions", JSON.stringify(userQuestions));
+                        }
+                      }}
                       className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-3 rounded-lg hover:from-blue-500 hover:to-cyan-400 transition-all duration-300 shadow-md hover:shadow-blue-500/50"
                     >
                       Tạo thêm câu hỏi
@@ -288,7 +350,8 @@ const PracticeQuestions = () => {
                         className={`p-4 rounded-lg border cursor-pointer transition-all duration-200 ${
                           selectedAnswer === index
                             ? showAnswer
-                              ? index === questions[currentQuestion].correctAnswer
+                              ? index ===
+                                questions[currentQuestion].correctAnswer
                                 ? "bg-green-800/50 border-green-500"
                                 : "bg-red-800/50 border-red-500"
                               : "bg-purple-800/50 border-purple-500"
@@ -300,7 +363,8 @@ const PracticeQuestions = () => {
                             className={`flex-shrink-0 h-6 w-6 rounded-full flex items-center justify-center mr-3 ${
                               selectedAnswer === index
                                 ? showAnswer
-                                  ? index === questions[currentQuestion].correctAnswer
+                                  ? index ===
+                                    questions[currentQuestion].correctAnswer
                                     ? "bg-green-500 text-white"
                                     : "bg-red-500 text-white"
                                   : "bg-purple-500 text-white"
@@ -318,7 +382,9 @@ const PracticeQuestions = () => {
                   {/* Giải thích */}
                   {showAnswer && (
                     <div className="bg-gray-700/50 border border-gray-600 rounded-lg p-4 mb-6">
-                      <h4 className="text-blue-300 font-medium mb-2">Giải thích:</h4>
+                      <h4 className="text-blue-300 font-medium mb-2">
+                        Giải thích:
+                      </h4>
                       <p className="text-gray-300">
                         {questions[currentQuestion].explanation}
                       </p>
@@ -329,13 +395,32 @@ const PracticeQuestions = () => {
                   <div className="flex justify-between">
                     <div>
                       <button
-                        onClick={() => window.location.href = "/tu-luyen"}
+                        onClick={() => {
+                          // Đảm bảo câu hỏi không bị mất khi quay lại
+                          const userQuestions =
+                            JSON.parse(localStorage.getItem("userQuestions")) ||
+                            [];
+                          if (userQuestions.length > 0) {
+                            localStorage.setItem(
+                              "practiceQuestions",
+                              JSON.stringify(userQuestions)
+                            );
+                          }
+                          window.location.href = "/tu-luyen";
+                        }}
                         className="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-500 transition-all duration-300 mr-2"
                       >
                         Quay lại
                       </button>
                       <button
-                        onClick={resetQuiz}
+                        onClick={() => {
+                          // Đảm bảo câu hỏi không bị mất khi làm lại
+                          const userQuestions = JSON.parse(localStorage.getItem("userQuestions")) || [];
+                          if (userQuestions.length > 0) {
+                            localStorage.setItem("practiceQuestions", JSON.stringify(userQuestions));
+                          }
+                          resetQuiz();
+                        }}
                         className="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300"
                       >
                         Làm lại
@@ -345,25 +430,30 @@ const PracticeQuestions = () => {
                       <button
                         onClick={handlePreviousQuestion}
                         disabled={currentQuestion === 0}
-                        className={`px-4 py-2 rounded-lg mr-2 ${currentQuestion === 0
-                          ? "bg-gray-700 text-gray-500 cursor-not-allowed"
-                          : "bg-blue-600 text-white hover:bg-blue-500 transition-all duration-300"
-                          }`}
+                        className={`px-4 py-2 rounded-lg mr-2 ${
+                          currentQuestion === 0
+                            ? "bg-gray-700 text-gray-500 cursor-not-allowed"
+                            : "bg-blue-600 text-white hover:bg-blue-500 transition-all duration-300"
+                        }`}
                       >
                         Trước
                       </button>
                       <button
                         onClick={handleNextQuestion}
                         className={`px-4 py-2 rounded-lg ${
-                          !showAnswer && !answeredQuestions.includes(currentQuestion)
+                          !showAnswer &&
+                          !answeredQuestions.includes(currentQuestion)
                             ? "bg-gray-700 text-gray-500 cursor-not-allowed"
                             : "bg-blue-600 text-white hover:bg-blue-500 transition-all duration-300"
                         }`}
                         disabled={
-                          !showAnswer && !answeredQuestions.includes(currentQuestion)
+                          !showAnswer &&
+                          !answeredQuestions.includes(currentQuestion)
                         }
                       >
-                        {currentQuestion === questions.length - 1 ? "Kết thúc" : "Tiếp theo"}
+                        {currentQuestion === questions.length - 1
+                          ? "Kết thúc"
+                          : "Tiếp theo"}
                       </button>
                     </div>
                   </div>
