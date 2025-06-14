@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../UI/Button";
 import logo from "../../assets/logo.png";
+import imageUri from "../../assets/background.jpg";
 
 const Hero = () => {
   return (
@@ -9,7 +10,7 @@ const Hero = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url(/src/assets/background.jpg)",
+          backgroundImage: `url(${imageUri})`,
           filter: "brightness(0.7)",
         }}
       />
