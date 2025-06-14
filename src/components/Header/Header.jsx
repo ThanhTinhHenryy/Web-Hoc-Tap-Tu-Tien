@@ -3,10 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 
 const navLinks = [
   { href: "/home", label: "Trang chủ" },
-  { href: "#", label: "Bắt đầu tu luyện" },
-  { href: "#", label: "Thư viện Linh Tự" },
-  { href: "#", label: "Thi luyện" },
-  { href: "#", label: "Lộ trình" },
+  // { href: "#", label: "Bắt đầu tu luyện" },
+  // { href: "#", label: "Thư viện Linh Tự" },
+  // { href: "#", label: "Thi luyện" },
+  // { href: "#", label: "Lộ trình" },
 ];
 
 const Header = () => {

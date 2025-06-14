@@ -56,7 +56,11 @@ const Hero = () => {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <Button variant="primary" size="lg">
+          <Button
+            variant="primary"
+            size="lg"
+            onClick={() => (window.location.href = "/home")}
+          >
             Bắt đầu Tu luyện
           </Button>
           <Button variant="secondary" size="lg">
