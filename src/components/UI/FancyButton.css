@@ -1,0 +1,23 @@
+.fancy-button {
+  clip-path: polygon(
+    10% 0%,
+    90% 0%,
+    100% 30%,
+    100% 70%,
+    90% 100%,
+    10% 100%,
+    0% 70%,
+    0% 30%
+  );
+  /* border: 2px solid #381d46; */
+  background-color: #e8d1a2;
+  transition: all 0.2s ease;
+  padding: 0.8rem 2rem;
+  position: relative;
+  font-family: "Serif", sans-serif;
+}
+
+.fancy-button:hover {
+  background-color: #f0dfb4;
+  transform: scale(1.05);
+}
