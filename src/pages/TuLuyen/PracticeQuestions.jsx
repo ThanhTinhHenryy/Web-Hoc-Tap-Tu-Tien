@@ -79,9 +79,13 @@ const PracticeQuestions = () => {
       }
     } else {
       // Khi kết thúc bài luyện tập, đảm bảo câu hỏi không bị mất
-      const userQuestions = JSON.parse(localStorage.getItem("userQuestions")) || [];
+      const userQuestions =
+        JSON.parse(localStorage.getItem("userQuestions")) || [];
       if (userQuestions.length > 0) {
-        localStorage.setItem("practiceQuestions", JSON.stringify(userQuestions));
+        localStorage.setItem(
+          "practiceQuestions",
+          JSON.stringify(userQuestions)
+        );
       }
       setShowResult(true);
     }
@@ -294,9 +298,14 @@ const PracticeQuestions = () => {
                     <button
                       onClick={() => {
                         // Đảm bảo câu hỏi không bị mất khi làm lại
-                        const userQuestions = JSON.parse(localStorage.getItem("userQuestions")) || [];
+                        const userQuestions =
+                          JSON.parse(localStorage.getItem("userQuestions")) ||
+                          [];
                         if (userQuestions.length > 0) {
-                          localStorage.setItem("practiceQuestions", JSON.stringify(userQuestions));
+                          localStorage.setItem(
+                            "practiceQuestions",
+                            JSON.stringify(userQuestions)
+                          );
                         }
                         resetQuiz();
                       }}
@@ -308,9 +317,14 @@ const PracticeQuestions = () => {
                       to="/tu-luyen/tao-cau-hoi"
                       onClick={() => {
                         // Đảm bảo câu hỏi không bị mất khi chuyển trang
-                        const userQuestions = JSON.parse(localStorage.getItem("userQuestions")) || [];
+                        const userQuestions =
+                          JSON.parse(localStorage.getItem("userQuestions")) ||
+                          [];
                         if (userQuestions.length > 0) {
-                          localStorage.setItem("practiceQuestions", JSON.stringify(userQuestions));
+                          localStorage.setItem(
+                            "practiceQuestions",
+                            JSON.stringify(userQuestions)
+                          );
                         }
                       }}
                       className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-3 rounded-lg hover:from-blue-500 hover:to-cyan-400 transition-all duration-300 shadow-md hover:shadow-blue-500/50"
@@ -415,9 +429,14 @@ const PracticeQuestions = () => {
                       <button
                         onClick={() => {
                           // Đảm bảo câu hỏi không bị mất khi làm lại
-                          const userQuestions = JSON.parse(localStorage.getItem("userQuestions")) || [];
+                          const userQuestions =
+                            JSON.parse(localStorage.getItem("userQuestions")) ||
+                            [];
                           if (userQuestions.length > 0) {
-                            localStorage.setItem("practiceQuestions", JSON.stringify(userQuestions));
+                            localStorage.setItem(
+                              "practiceQuestions",
+                              JSON.stringify(userQuestions)
+                            );
                           }
                           resetQuiz();
                         }}

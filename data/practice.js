@@ -33,7 +33,8 @@ const practiceQuestions = [
   },
   {
     id: 3,
-    question: "Phương pháp nào sau đây KHÔNG hiệu quả trong việc cải thiện kỹ năng viết?",
+    question:
+      "Phương pháp nào sau đây KHÔNG hiệu quả trong việc cải thiện kỹ năng viết?",
     answers: [
       "Đọc nhiều tài liệu đa dạng",
       "Thực hành viết hàng ngày",
@@ -63,7 +64,8 @@ const practiceQuestions = [
   },
   {
     id: 5,
-    question: "Đâu là chiến lược hiệu quả nhất để duy trì động lực học ngoại ngữ lâu dài?",
+    question:
+      "Đâu là chiến lược hiệu quả nhất để duy trì động lực học ngoại ngữ lâu dài?",
     answers: [
       "Đặt mục tiêu rõ ràng và thực tế",
       "Thưởng cho bản thân sau mỗi buổi học",

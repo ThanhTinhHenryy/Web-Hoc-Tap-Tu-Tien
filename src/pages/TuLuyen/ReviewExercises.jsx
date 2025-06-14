@@ -19,14 +19,17 @@ const ReviewExercises = () => {
     // Lấy danh sách câu hỏi đã làm sai từ localStorage
     const loadWrongQuestions = () => {
       setLoading(true);
-      const wrongQuestionsData = JSON.parse(localStorage.getItem('wrongQuestions')) || {};
-      
+      const wrongQuestionsData =
+        JSON.parse(localStorage.getItem("wrongQuestions")) || {};
+
       // Chuyển đổi từ object sang array
-      const wrongQuestionsArray = Object.keys(wrongQuestionsData).map(id => {
-        const questionId = parseInt(id);
-        return exerciseQuestions.find(q => q.id === questionId);
-      }).filter(q => q !== undefined); // Lọc bỏ các câu hỏi không tìm thấy
-      
+      const wrongQuestionsArray = Object.keys(wrongQuestionsData)
+        .map((id) => {
+          const questionId = parseInt(id);
+          return exerciseQuestions.find((q) => q.id === questionId);
+        })
+        .filter((q) => q !== undefined); // Lọc bỏ các câu hỏi không tìm thấy
+
       if (wrongQuestionsArray.length === 0) {
         setNoWrongAnswers(true);
       } else {
@@ -38,38 +41,39 @@ const ReviewExercises = () => {
             "Trúc Cơ": 2,
             "Kim Đan": 3,
             "Nguyên Anh": 4,
-            "Hóa Thần": 5
+            "Hóa Thần": 5,
           };
           return levelOrder[a.level] - levelOrder[b.level];
         });
-        
+
         setQuestions(wrongQuestionsArray);
       }
-      
+
       setLoading(false);
     };
-    
+
     loadWrongQuestions();
   }, []);
 
   // Hàm xử lý khi người dùng chọn câu trả lời
   const handleAnswerSelect = (answerIndex) => {
     if (showAnswer || answeredQuestions.includes(currentQuestion)) return;
-    
+
     setSelectedAnswer(answerIndex);
     setShowAnswer(true);
-    
+
     setAnsweredQuestions([...answeredQuestions, currentQuestion]);
-    
+
     // Kiểm tra đáp án và cập nhật điểm số
     if (answerIndex === questions[currentQuestion].correctAnswer) {
       setScore(score + 1);
-      
+
       // Nếu trả lời đúng, xóa câu hỏi khỏi danh sách câu hỏi sai
-      const wrongQuestions = JSON.parse(localStorage.getItem('wrongQuestions')) || {};
+      const wrongQuestions =
+        JSON.parse(localStorage.getItem("wrongQuestions")) || {};
       const questionId = questions[currentQuestion].id;
       delete wrongQuestions[questionId];
-      localStorage.setItem('wrongQuestions', JSON.stringify(wrongQuestions));
+      localStorage.setItem("wrongQuestions", JSON.stringify(wrongQuestions));
     }
   };
 
@@ -78,7 +82,7 @@ const ReviewExercises = () => {
     if (currentQuestion < questions.length - 1) {
       const nextQuestion = currentQuestion + 1;
       setCurrentQuestion(nextQuestion);
-      
+
       if (answeredQuestions.includes(nextQuestion)) {
         const savedAnswer = selectedAnswer;
         if (savedAnswer !== undefined) {
@@ -99,7 +103,7 @@ const ReviewExercises = () => {
     if (currentQuestion > 0) {
       const prevQuestion = currentQuestion - 1;
       setCurrentQuestion(prevQuestion);
-      
+
       if (answeredQuestions.includes(prevQuestion)) {
         const savedAnswer = selectedAnswer;
         if (savedAnswer !== undefined) {
@@ -123,7 +127,7 @@ const ReviewExercises = () => {
     setScore(0);
     setAnsweredQuestions([]);
   };
-  
+
   // Hàm reset bài kiểm tra
   const resetQuiz = () => {
     setCurrentQuestion(0);
@@ -135,7 +139,7 @@ const ReviewExercises = () => {
 
   // Hàm xóa tất cả câu hỏi sai
   const clearAllWrongQuestions = () => {
-    localStorage.removeItem('wrongQuestions');
+    localStorage.removeItem("wrongQuestions");
     setNoWrongAnswers(true);
     setQuestions([]);
     setShowQuiz(false);
@@ -177,9 +181,12 @@ const ReviewExercises = () => {
         {noWrongAnswers ? (
           <div className="bg-gray-400/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg min-h-[300px] flex flex-col items-center justify-center text-center border border-gray-300/30 p-8">
             <div className="text-6xl mb-6">🎉</div>
-            <h2 className="text-3xl font-bold text-yellow-300 mb-4">Chúc mừng!</h2>
+            <h2 className="text-3xl font-bold text-yellow-300 mb-4">
+              Chúc mừng!
+            </h2>
             <p className="text-xl text-gray-200 mb-8">
-              Bạn chưa có câu hỏi nào trả lời sai. Hãy tiếp tục tu luyện để nâng cao trình độ!
+              Bạn chưa có câu hỏi nào trả lời sai. Hãy tiếp tục tu luyện để nâng
+              cao trình độ!
             </p>
             <Link
               to="/tu-luyen"
@@ -209,7 +216,9 @@ const ReviewExercises = () => {
                   <div
                     className="bg-gradient-to-r from-purple-500 to-indigo-400 h-2.5 rounded-full"
                     style={{
-                      width: `${((currentQuestion + 1) / questions.length) * 100}%`,
+                      width: `${
+                        ((currentQuestion + 1) / questions.length) * 100
+                      }%`,
                     }}
                   ></div>
                 </div>
@@ -220,7 +229,8 @@ const ReviewExercises = () => {
               {!showQuiz && !showResult ? (
                 <div className="text-center py-8 flex flex-col items-center justify-center">
                   <p className="text-gray-200 mb-6">
-                    Bạn có {questions.length} câu hỏi đã trả lời sai trước đây. Hãy luyện tập lại để củng cố kiến thức!
+                    Bạn có {questions.length} câu hỏi đã trả lời sai trước đây.
+                    Hãy luyện tập lại để củng cố kiến thức!
                   </p>
                   <div className="flex flex-col md:flex-row gap-4 justify-center">
                     <button
@@ -259,13 +269,20 @@ const ReviewExercises = () => {
                           : "Hãy học lại 📚"}
                       </div>
                       <div className="text-gray-300">
-                        Bạn đã trả lời đúng {score} trên tổng số {questions.length} câu hỏi
+                        Bạn đã trả lời đúng {score} trên tổng số{" "}
+                        {questions.length} câu hỏi
                       </div>
                       <div className="text-amber-300 mt-4 font-semibold">
                         {score === questions.length ? (
-                          <span>Chúc mừng! Bạn đã trả lời đúng tất cả các câu hỏi! 🏆</span>
+                          <span>
+                            Chúc mừng! Bạn đã trả lời đúng tất cả các câu hỏi!
+                            🏆
+                          </span>
                         ) : (
-                          <span>Còn {questions.length - score} câu hỏi cần luyện tập thêm</span>
+                          <span>
+                            Còn {questions.length - score} câu hỏi cần luyện tập
+                            thêm
+                          </span>
                         )}
                       </div>
                     </div>
@@ -305,7 +322,9 @@ const ReviewExercises = () => {
                     {questions[currentQuestion] && (
                       <div>
                         <div className="bg-gray-800/70 px-4 py-2 rounded-lg inline-block mb-2">
-                          <span className="text-yellow-400 font-medium">Cấp độ: {questions[currentQuestion].level}</span>
+                          <span className="text-yellow-400 font-medium">
+                            Cấp độ: {questions[currentQuestion].level}
+                          </span>
                         </div>
                         <h3 className="text-2xl font-semibold text-yellow-200 mb-8 px-6 py-4 bg-gray-800/50 rounded-lg border border-yellow-500/30 w-full text-center shadow-md">
                           {questions[currentQuestion].question}
@@ -315,40 +334,48 @@ const ReviewExercises = () => {
                   </div>
 
                   {/* Phần lựa chọn - ở giữa */}
-                  <div className="flex-grow flex" style={{ justifyContent: "center" }}>
+                  <div
+                    className="flex-grow flex"
+                    style={{ justifyContent: "center" }}
+                  >
                     {questions[currentQuestion] && (
                       <div className="space-y-4 mb-8 w-[90%] mx-auto">
-                        {questions[currentQuestion].answers.map((answer, index) => (
-                          <div
-                            key={index}
-                            onClick={() => handleAnswerSelect(index)}
-                            className={`p-5 rounded-lg transition-all duration-200 ${
-                              selectedAnswer === index
-                                ? index === questions[currentQuestion].correctAnswer
-                                  ? "bg-green-700/70 border-2 border-green-400"
-                                  : "bg-red-700/70 border-2 border-red-400"
-                                : "bg-gray-800/70 hover:bg-gray-700/70 border border-gray-600"
-                            } 
+                        {questions[currentQuestion].answers.map(
+                          (answer, index) => (
+                            <div
+                              key={index}
+                              onClick={() => handleAnswerSelect(index)}
+                              className={`p-5 rounded-lg transition-all duration-200 ${
+                                selectedAnswer === index
+                                  ? index ===
+                                    questions[currentQuestion].correctAnswer
+                                    ? "bg-green-700/70 border-2 border-green-400"
+                                    : "bg-red-700/70 border-2 border-red-400"
+                                  : "bg-gray-800/70 hover:bg-gray-700/70 border border-gray-600"
+                              } 
                             ${
                               showAnswer &&
                               index === questions[currentQuestion].correctAnswer
                                 ? "bg-green-700/70 border-2 border-green-400"
                                 : ""
                             } ${
-                              answeredQuestions.includes(currentQuestion)
-                                ? "cursor-not-allowed"
-                                : "cursor-pointer"
-                            }`}
-                            style={{ marginBottom: 5 }}
-                          >
-                            <div className="flex items-center">
-                              <span className="bg-gray-700 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0 text-xl font-bold">
-                                {String.fromCharCode(65 + index)}
-                              </span>
-                              <span className="text-gray-200 text-lg">{answer}</span>
+                                answeredQuestions.includes(currentQuestion)
+                                  ? "cursor-not-allowed"
+                                  : "cursor-pointer"
+                              }`}
+                              style={{ marginBottom: 5 }}
+                            >
+                              <div className="flex items-center">
+                                <span className="bg-gray-700 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0 text-xl font-bold">
+                                  {String.fromCharCode(65 + index)}
+                                </span>
+                                <span className="text-gray-200 text-lg">
+                                  {answer}
+                                </span>
+                              </div>
                             </div>
-                          </div>
-                        ))}
+                          )
+                        )}
                       </div>
                     )}
                   </div>
@@ -410,7 +437,9 @@ const ReviewExercises = () => {
                   className="bg-gradient-to-r from-blue-600 to-indigo-500 text-white px-6 py-3 rounded-lg hover:from-blue-500 hover:to-indigo-400 transition-all duration-300 shadow-md hover:shadow-blue-500/50 flex items-center"
                 >
                   <span className="mr-2">
-                    {currentQuestion < questions.length - 1 ? "Câu tiếp theo" : "Kết thúc"}
+                    {currentQuestion < questions.length - 1
+                      ? "Câu tiếp theo"
+                      : "Kết thúc"}
                   </span>
                   <span>➡️</span>
                 </button>
@@ -420,7 +449,9 @@ const ReviewExercises = () => {
                   disabled
                 >
                   <span className="mr-2">
-                    {currentQuestion < questions.length - 1 ? "Câu tiếp theo" : "Kết thúc"}
+                    {currentQuestion < questions.length - 1
+                      ? "Câu tiếp theo"
+                      : "Kết thúc"}
                   </span>
                   <span>➡️</span>
                 </button>

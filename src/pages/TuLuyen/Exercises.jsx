@@ -19,7 +19,7 @@ const Exercises = () => {
   // Dữ liệu các tầng tu luyện và bài tập tương ứng
 
   useEffect(() => {
-    // Ánh xạ levelId sang tên tầng tu luyện                                  
+    // Ánh xạ levelId sang tên tầng tu luyện
     const levelNames = {
       1: "Luyện Khí",
       2: "Trúc Cơ",
@@ -40,7 +40,7 @@ const Exercises = () => {
     setSelectedAnswer(null);
     setScore(0);
     setAnsweredQuestions([]);
-    localStorage.removeItem('userAnswers');
+    localStorage.removeItem("userAnswers");
 
     // Tạo thông tin tầng tu luyện
     if (levelId && levelNames[levelId]) {
@@ -51,16 +51,16 @@ const Exercises = () => {
       });
     }
   }, [levelId]);
-  
+
   // Tải dữ liệu câu trả lời đã lưu khi component được tải
   useEffect(() => {
     if (showQuiz && !showResult) {
-      const userAnswers = JSON.parse(localStorage.getItem('userAnswers')) || {};
+      const userAnswers = JSON.parse(localStorage.getItem("userAnswers")) || {};
       const answeredQuestionsArray = Object.keys(userAnswers).map(Number);
-      
+
       if (answeredQuestionsArray.length > 0) {
         setAnsweredQuestions(answeredQuestionsArray);
-        
+
         // Nếu câu hỏi hiện tại đã được trả lời, hiển thị câu trả lời đã chọn
         if (answeredQuestionsArray.includes(currentQuestion)) {
           const savedAnswer = userAnswers[currentQuestion];
@@ -77,27 +77,28 @@ const Exercises = () => {
   const handleAnswerSelect = (answerIndex) => {
     // Kiểm tra xem câu hỏi đã được trả lời chưa
     if (showAnswer || answeredQuestions.includes(currentQuestion)) return; // Không cho phép chọn nếu đã hiển thị đáp án hoặc câu hỏi đã được trả lời
-    
+
     setSelectedAnswer(answerIndex);
     setShowAnswer(true);
-    
+
     // Thêm câu hỏi hiện tại vào mảng câu hỏi đã trả lời
     setAnsweredQuestions([...answeredQuestions, currentQuestion]);
-    
+
     // Lưu câu trả lời vào localStorage
-    const userAnswers = JSON.parse(localStorage.getItem('userAnswers')) || {};
+    const userAnswers = JSON.parse(localStorage.getItem("userAnswers")) || {};
     userAnswers[currentQuestion] = answerIndex;
-    localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
+    localStorage.setItem("userAnswers", JSON.stringify(userAnswers));
 
     // Kiểm tra đáp án và cập nhật điểm số
     if (answerIndex === questions[currentQuestion].correctAnswer) {
       setScore(score + 1);
     } else {
       // Nếu trả lời sai, lưu câu hỏi vào danh sách câu hỏi sai
-      const wrongQuestions = JSON.parse(localStorage.getItem('wrongQuestions')) || {};
+      const wrongQuestions =
+        JSON.parse(localStorage.getItem("wrongQuestions")) || {};
       const questionId = questions[currentQuestion].id;
       wrongQuestions[questionId] = true;
-      localStorage.setItem('wrongQuestions', JSON.stringify(wrongQuestions));
+      localStorage.setItem("wrongQuestions", JSON.stringify(wrongQuestions));
     }
   };
 
@@ -106,11 +107,12 @@ const Exercises = () => {
     if (currentQuestion < questions.length - 1) {
       const nextQuestion = currentQuestion + 1;
       setCurrentQuestion(nextQuestion);
-      
+
       // Kiểm tra xem câu hỏi tiếp theo đã được trả lời chưa
       if (answeredQuestions.includes(nextQuestion)) {
         // Nếu đã trả lời, hiển thị câu trả lời đã chọn
-        const userAnswers = JSON.parse(localStorage.getItem('userAnswers')) || {};
+        const userAnswers =
+          JSON.parse(localStorage.getItem("userAnswers")) || {};
         const savedAnswer = userAnswers[nextQuestion];
         if (savedAnswer !== undefined) {
           setSelectedAnswer(savedAnswer);
@@ -136,11 +138,12 @@ const Exercises = () => {
     if (currentQuestion > 0) {
       const prevQuestion = currentQuestion - 1;
       setCurrentQuestion(prevQuestion);
-      
+
       // Kiểm tra xem câu hỏi trước đó đã được trả lời chưa
       if (answeredQuestions.includes(prevQuestion)) {
         // Nếu đã trả lời, hiển thị câu trả lời đã chọn
-        const userAnswers = JSON.parse(localStorage.getItem('userAnswers')) || {};
+        const userAnswers =
+          JSON.parse(localStorage.getItem("userAnswers")) || {};
         const savedAnswer = userAnswers[prevQuestion];
         if (savedAnswer !== undefined) {
           setSelectedAnswer(savedAnswer);
@@ -163,9 +166,9 @@ const Exercises = () => {
     setShowAnswer(false);
     setScore(0);
     setAnsweredQuestions([]); // Xóa danh sách câu hỏi đã trả lời
-    localStorage.removeItem('userAnswers'); // Xóa dữ liệu câu trả lời đã lưu
+    localStorage.removeItem("userAnswers"); // Xóa dữ liệu câu trả lời đã lưu
   };
-  
+
   // Hàm reset bài kiểm tra
   const resetQuiz = () => {
     setCurrentQuestion(0);
@@ -173,7 +176,7 @@ const Exercises = () => {
     setSelectedAnswer(null);
     setShowAnswer(false);
     setAnsweredQuestions([]); // Xóa danh sách câu hỏi đã trả lời
-    localStorage.removeItem('userAnswers'); // Xóa dữ liệu câu trả lời đã lưu
+    localStorage.removeItem("userAnswers"); // Xóa dữ liệu câu trả lời đã lưu
   };
 
   if (!level) {

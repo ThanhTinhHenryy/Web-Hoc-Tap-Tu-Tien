@@ -21,7 +21,8 @@ const CreateQuestion = () => {
 
   // Lấy danh sách câu hỏi từ localStorage khi component được mount
   useEffect(() => {
-    const savedQuestions = JSON.parse(localStorage.getItem("userQuestions")) || [];
+    const savedQuestions =
+      JSON.parse(localStorage.getItem("userQuestions")) || [];
     setUserQuestions(savedQuestions);
   }, []);
 
@@ -60,18 +61,18 @@ const CreateQuestion = () => {
   // Xử lý submit form
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Kiểm tra dữ liệu
     if (!formData.question.trim()) {
       alert("Vui lòng nhập câu hỏi");
       return;
     }
-    
-    if (formData.answers.some(answer => !answer.trim())) {
+
+    if (formData.answers.some((answer) => !answer.trim())) {
       alert("Vui lòng nhập đầy đủ các đáp án");
       return;
     }
-    
+
     if (!formData.explanation.trim()) {
       alert("Vui lòng nhập giải thích cho đáp án");
       return;
@@ -146,7 +147,7 @@ const CreateQuestion = () => {
       alert("Bạn cần tạo ít nhất một câu hỏi để bắt đầu luyện tập");
       return;
     }
-    
+
     // Lưu câu hỏi vào localStorage để sử dụng trong trang luyện tập
     localStorage.setItem("practiceQuestions", JSON.stringify(userQuestions));
     navigate("/tu-luyen/luyen-tap-cau-hoi");
@@ -224,7 +225,9 @@ const CreateQuestion = () => {
                       <input
                         type="text"
                         value={answer}
-                        onChange={(e) => handleAnswerChange(index, e.target.value)}
+                        onChange={(e) =>
+                          handleAnswerChange(index, e.target.value)
+                        }
                         className="flex-1 p-2 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
                         placeholder={`Đáp án ${index + 1}`}
                         required
@@ -256,7 +259,9 @@ const CreateQuestion = () => {
 
                 {/* Thuộc tính */}
                 <div className="mb-4">
-                  <label className="block text-gray-200 mb-2">Thuộc tính:</label>
+                  <label className="block text-gray-200 mb-2">
+                    Thuộc tính:
+                  </label>
                   <select
                     name="attribute"
                     value={formData.attribute}
@@ -272,7 +277,9 @@ const CreateQuestion = () => {
 
                 {/* Giải thích */}
                 <div className="mb-4">
-                  <label className="block text-gray-200 mb-2">Giải thích:</label>
+                  <label className="block text-gray-200 mb-2">
+                    Giải thích:
+                  </label>
                   <textarea
                     name="explanation"
                     value={formData.explanation}
@@ -386,7 +393,9 @@ const CreateQuestion = () => {
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
           <div className="bg-gray-800 rounded-lg p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-2xl font-bold text-yellow-300">Xem trước câu hỏi</h2>
+              <h2 className="text-2xl font-bold text-yellow-300">
+                Xem trước câu hỏi
+              </h2>
               <button
                 onClick={handleClosePreview}
                 className="text-gray-400 hover:text-white text-2xl"
@@ -404,17 +413,19 @@ const CreateQuestion = () => {
                 {previewQuestion.answers.map((answer, index) => (
                   <div
                     key={index}
-                    className={`p-3 rounded-lg border ${index === previewQuestion.correctAnswer
-                      ? "bg-green-800/50 border-green-500"
-                      : "bg-gray-700 border-gray-600"
-                      }`}
+                    className={`p-3 rounded-lg border ${
+                      index === previewQuestion.correctAnswer
+                        ? "bg-green-800/50 border-green-500"
+                        : "bg-gray-700 border-gray-600"
+                    }`}
                   >
                     <div className="flex items-start">
                       <div
-                        className={`flex-shrink-0 h-6 w-6 rounded-full flex items-center justify-center mr-3 ${index === previewQuestion.correctAnswer
-                          ? "bg-green-500 text-white"
-                          : "bg-gray-600 text-gray-300"
-                          }`}
+                        className={`flex-shrink-0 h-6 w-6 rounded-full flex items-center justify-center mr-3 ${
+                          index === previewQuestion.correctAnswer
+                            ? "bg-green-500 text-white"
+                            : "bg-gray-600 text-gray-300"
+                        }`}
                       >
                         {String.fromCharCode(65 + index)}
                       </div>

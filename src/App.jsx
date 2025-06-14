@@ -42,12 +42,24 @@ function App() {
             element={<Exercises />}
           />
           <Route path="/tu-luyen/huan-luyen" element={<Training />} />
-          <Route path="/tu-luyen/huan-luyen/mental" element={<MentalTraining />} />
-          <Route path="/tu-luyen/huan-luyen/energy" element={<EnergyTraining />} />
-          <Route path="/tu-luyen/huan-luyen/physical" element={<PhysicalTraining />} />
+          <Route
+            path="/tu-luyen/huan-luyen/mental"
+            element={<MentalTraining />}
+          />
+          <Route
+            path="/tu-luyen/huan-luyen/energy"
+            element={<EnergyTraining />}
+          />
+          <Route
+            path="/tu-luyen/huan-luyen/physical"
+            element={<PhysicalTraining />}
+          />
           <Route path="/tu-luyen/luyen-tap-lai" element={<ReviewExercises />} />
           <Route path="/tu-luyen/tao-cau-hoi" element={<CreateQuestion />} />
-          <Route path="/tu-luyen/luyen-tap-cau-hoi" element={<PracticeQuestions />} />
+          <Route
+            path="/tu-luyen/luyen-tap-cau-hoi"
+            element={<PracticeQuestions />}
+          />
           <Route path="/thi-luyen" element={<MemoryGame />} />
           <Route path="/thu-vien-linh-tu" element={<LinhTuLibrary />} />
           <Route path="/" element={<Hero />} />
