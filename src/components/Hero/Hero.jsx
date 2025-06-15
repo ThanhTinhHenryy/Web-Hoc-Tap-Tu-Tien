@@ -2,8 +2,10 @@ import React from "react";
 import Button from "../UI/Button";
 import logo from "../../assets/logo.png";
 import imageUri from "../../assets/background.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -59,7 +61,7 @@ const Hero = () => {
           <Button
             variant="primary"
             size="lg"
-            onClick={() => (window.location.href = "/home")}
+            onClick={() => navigate("/home")}
           >
             Bắt đầu Tu luyện
           </Button>
