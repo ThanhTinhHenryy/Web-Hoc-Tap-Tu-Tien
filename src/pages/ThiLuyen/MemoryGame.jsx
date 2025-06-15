@@ -5,7 +5,6 @@ import backgroundCard from "../../assets/background-card.jpg";
 import memoryData from "../../../data/memory.js";
 import "./MemoryGame.css";
 
-
 // Component hiển thị một thẻ bài
 function SingleCard({ card, handleChoice, flipped, disabled }) {
   const handleClick = () => {
@@ -16,7 +15,9 @@ function SingleCard({ card, handleChoice, flipped, disabled }) {
 
   return (
     <div
-      className={`card ${flipped ? "flipped" : ""} ${card.matched ? "matched" : ""}`}
+      className={`card ${flipped ? "flipped" : ""} ${
+        card.matched ? "matched" : ""
+      }`}
     >
       <div className="inner">
         <div className="front">{card.content}</div>

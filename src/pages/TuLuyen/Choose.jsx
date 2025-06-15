@@ -59,8 +59,8 @@ const Choose = () => {
                 Huấn luyện
               </h2>
               <p className="text-xl text-gray-700 font-medium">
-                Tham gia bài tập đặc biệt không do Giáo viên của bạn giao. Nhiệm
-                vụ có thưởng!
+                Tham gia bài tập đặc biệt do Giáo viên của bạn giao. Nhiệm vụ có
+                thưởng!
               </p>
             </div>
           </Link>
