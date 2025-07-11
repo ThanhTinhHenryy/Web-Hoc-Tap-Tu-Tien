@@ -131,6 +131,10 @@ export const register = (userData) => {
         const newUser = {
           id: users.length + 1,
           ...userData,
+          // Nếu avatar rỗng, sử dụng avatar mặc định
+          avatar: userData.avatar && userData.avatar.length > 0 
+            ? userData.avatar 
+            : "https://randomuser.me/api/portraits/men/1.jpg",
           level: "Luyện Khí kỳ 1",
           progress: 0,
           achievements: [],
@@ -188,7 +192,9 @@ export const updateUserAvatar = (userId, newAvatarUrl) => {
 
       if (userIndex !== -1) {
         // Cập nhật avatar cho người dùng
-        users[userIndex].avatar = newAvatarUrl;
+        users[userIndex].avatar = newAvatarUrl && newAvatarUrl.length > 0
+          ? newAvatarUrl
+          : "https://randomuser.me/api/portraits/men/1.jpg";
         
         console.log("Avatar updated to:", newAvatarUrl);
 

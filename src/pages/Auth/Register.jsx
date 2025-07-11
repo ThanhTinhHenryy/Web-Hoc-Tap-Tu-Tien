@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import backgroundImage from "../../assets/background.jpg";
-import logo from "../../assets/logo.png";
-import { FaGoogle, FaFacebook, FaApple } from "react-icons/fa";
+import backgroundImage from "../../assets/background/login.png";
+
+// Import biểu tượng cho đăng nhập mạng xã hội
+import { FaGoogle, FaFacebook } from "react-icons/fa";
 // Import hàm register từ api.js
 import { register } from "../../../data/api";
 
@@ -16,6 +17,10 @@ const Register = () => {
   });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [socialLoading, setSocialLoading] = useState({
+    google: false,
+    facebook: false,
+  });
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -45,9 +50,7 @@ const Register = () => {
         email: formData.email,
         password: formData.password,
         fullName: formData.fullName || `Người dùng ${formData.username}`,
-        avatar: `https://randomuser.me/api/portraits/${
-          Math.random() > 0.5 ? "men" : "women"
-        }/${Math.floor(Math.random() * 100)}.jpg`,
+        avatar: "", // Khởi tạo với avatar rỗng
       };
 
       // Sử dụng hàm register từ api.js
@@ -68,47 +71,115 @@ const Register = () => {
     }
   };
 
+  // Xử lý đăng ký bằng Google
+  const handleGoogleRegister = async () => {
+    setSocialLoading({ ...socialLoading, google: true });
+    setError("");
+
+    try {
+      // Ở đây sẽ thêm logic đăng ký bằng Google
+      // Sử dụng Firebase hoặc OAuth2 để xác thực
+      console.log("Đăng ký bằng Google");
+
+      // Giả lập đăng ký thành công
+      setTimeout(() => {
+        // Sau khi đăng ký thành công, chuyển hướng đến trang HomePage
+        navigate("/home");
+      }, 1500);
+    } catch (error) {
+      console.error("Lỗi đăng ký Google:", error);
+      setError("Đăng ký bằng Google thất bại. Vui lòng thử lại.");
+      setSocialLoading({ ...socialLoading, google: false });
+    }
+  };
+
+  // Xử lý đăng ký bằng Facebook
+  const handleFacebookRegister = async () => {
+    setSocialLoading({ ...socialLoading, facebook: true });
+    setError("");
+
+    try {
+      // Ở đây sẽ thêm logic đăng ký bằng Facebook
+      // Sử dụng Firebase hoặc OAuth2 để xác thực
+      console.log("Đăng ký bằng Facebook");
+
+      // Giả lập đăng ký thành công
+      setTimeout(() => {
+        // Sau khi đăng ký thành công, chuyển hướng đến trang HomePage
+        navigate("/home");
+      }, 1500);
+    } catch (error) {
+      console.error("Lỗi đăng ký Facebook:", error);
+      setError("Đăng ký bằng Facebook thất bại. Vui lòng thử lại.");
+      setSocialLoading({ ...socialLoading, facebook: false });
+    }
+  };
+
   return (
     <div
-      className="min-h-screen flex items-center justify-center text-white px-6 md:px-20 py-10"
+      className="min-h-screen flex items-center justify-center"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundColor: "#2a1b3d",
       }}
     >
-      <div className="w-full max-w-2xl p-12 md:p-16 rounded-3xl shadow-2xl bg-[#2e2145bf] bg-opacity-95 backdrop-blur-sm mt-10 mb-10 border border-[#4a2d6d]">
-        {/* Logo và Tiêu đề */}
-        <div className="text-center mb-10">
-          <div className="flex justify-center items-center mb-4">
-            <img src={logo} alt="Logo" className="w-28 h-28" />
-          </div>
-          <h1 className="text-4xl font-extrabold tracking-wide leading-snug">
-            Đăng Ký <span className="text-yellow-300">EverLing</span>
+      <div className="w-full h-full flex items-center justify-center">
+        <div className="w-1/2 flex flex-col justify-center items-center text-white p-10 bg-gradient-to-br from-[#779341] via-[#5a7035] to-[#3d4c24] rounded-r-[60px]">
+          <h2 className="text-2xl font-semibold">Chào mừng đến</h2>
+          <h1 className="text-5xl font-extrabold mt-2 text-white drop-shadow-lg">
+            Học viện Everling
           </h1>
-          <p className="text-yellow-300 text-xl mt-2">
-            ✨ Bắt đầu hành trình tu luyện mới!
+          <p className="text-lg mt-6 max-w-md text-center">
+            Bắt đầu hành trình tu luyện mới cùng chúng tôi ✨
           </p>
         </div>
 
-        {/* Hiển thị thông báo lỗi nếu có */}
-        {error && (
-          <div className="mb-4 p-3 bg-red-500 bg-opacity-30 border border-red-500 rounded-md text-center">
-            {error}
-          </div>
-        )}
+        <div className="w-1/2 max-w-lg min-h-[600px] bg-white/60 backdrop-blur-md rounded-3xl shadow-xl p-10 mx-6 overflow-y-auto">
+          {/* Tiêu đề */}
+          <div className="mb-8">
+            <div className="flex items-center">
+              <h2 className="text-xl font-medium text-gray-700">
+                Chào mừng đến{" "}
+                <span className="text-[#779341] font-bold">
+                  Học viện Everling
+                </span>
+              </h2>
+            </div>
 
-        {/* Form đăng ký */}
-        <form onSubmit={handleSubmit} className="space-y-6 text-lg">
-          <div className="w-full flex flex-col items-center justify-center">
+            <div className="mt-4 flex justify-around">
+              <h1 className="text-4xl font-bold text-gray-900 drop-shadow-sm">
+                Đăng Ký
+              </h1>
+
+              <div className="flex flex-col items-end mt-2">
+                <div className="text-sm text-gray-500">Đã có tài khoản?</div>
+                <Link
+                  to="/login"
+                  className="text-sm text-[#779341] hover:underline font-medium mt-1"
+                >
+                  Đăng nhập
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Hiển thị thông báo lỗi nếu có */}
+          {error && (
+            <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-md text-center text-sm">
+              {error}
+            </div>
+          )}
+
+          {/* Form đăng ký */}
+          <form onSubmit={handleSubmit} className="space-y-4">
             {/* Họ tên đầy đủ */}
-            <div className="w-4/5 mb-4">
+            <div>
               <label
                 htmlFor="fullName"
-                className="block mb-2 text-lg font-semibold text-blue-300"
+                className="block text-sm font-medium text-gray-700 mb-2"
               >
-                👤 Họ và tên
+                Họ và tên của bạn
               </label>
               <input
                 type="text"
@@ -116,40 +187,18 @@ const Register = () => {
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
-                className="w-full px-4 py-3 text-gray-900 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
-                placeholder="Nhập họ và tên đầy đủ"
-                style={{ lineHeight: "50px" }}
-              />
-            </div>
-
-            {/* Username */}
-            <div className="w-4/5 mb-4">
-              <label
-                htmlFor="username"
-                className="block mb-2 text-lg font-semibold text-blue-300"
-              >
-                🧙‍♂️ Tên đăng nhập
-              </label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                value={formData.username}
-                onChange={handleChange}
-                className="w-full px-4 py-3 text-gray-900 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
-                placeholder="Nhập tên đăng nhập"
-                style={{ lineHeight: "50px" }}
-                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#779341] focus:border-[#779341] bg-white/80"
+                placeholder="Họ và tên"
               />
             </div>
 
             {/* Email */}
-            <div className="w-4/5 mb-4">
+            <div>
               <label
                 htmlFor="email"
-                className="block mb-2 text-lg font-semibold text-blue-300"
+                className="block text-sm font-medium text-gray-700 mb-2"
               >
-                📧 Email
+                Địa chỉ email của bạn
               </label>
               <input
                 type="email"
@@ -157,130 +206,139 @@ const Register = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 text-gray-900 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
-                placeholder="Nhập địa chỉ email"
-                style={{ lineHeight: "50px" }}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#779341] focus:border-[#779341] bg-white/80"
+                placeholder="Email address"
                 required
               />
             </div>
 
-            {/* Password */}
-            <div className="w-4/5 mb-4">
+            {/* Username */}
+            <div>
               <label
-                htmlFor="password"
-                className="block mb-2 text-lg font-semibold text-blue-300"
+                htmlFor="username"
+                className="block text-sm font-medium text-gray-700 mb-2"
               >
-                🔐 Mật khẩu
+                Tên đăng nhập của bạn
               </label>
               <input
-                type="password"
-                id="password"
-                name="password"
-                value={formData.password}
+                type="text"
+                id="username"
+                name="username"
+                value={formData.username}
                 onChange={handleChange}
-                className="w-full px-4 py-3 text-gray-900 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
-                placeholder="Nhập mật khẩu"
-                style={{ lineHeight: "50px" }}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#779341] focus:border-[#779341] bg-white/80"
+                placeholder="Username"
                 required
               />
             </div>
 
-            {/* Confirm Password */}
-            <div className="w-4/5 mb-4">
-              <label
-                htmlFor="confirmPassword"
-                className="block mb-2 text-lg font-semibold text-blue-300"
-              >
-                🔐 Xác nhận mật khẩu
-              </label>
-              <input
-                type="password"
-                id="confirmPassword"
-                name="confirmPassword"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                className="w-full px-4 py-3 text-gray-900 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
-                placeholder="Nhập lại mật khẩu"
-                style={{ lineHeight: "50px" }}
-                required
-              />
-            </div>
-
-            {/* Terms */}
-            <div className="w-4/5 flex items-center">
-              <input type="checkbox" id="terms" className="mr-2" required />
-              <label htmlFor="terms">
-                Tôi đồng ý với{" "}
-                <a
-                  href="#"
-                  className="text-blue-400 hover:text-blue-300 hover:underline"
+            {/* Mật khẩu và Xác nhận mật khẩu (trên cùng một hàng) */}
+            <div className="flex space-x-4">
+              {/* Mật khẩu */}
+              <div className="w-1/2">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-gray-700 mb-2"
                 >
+                  Mật khẩu của bạn
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#779341] focus:border-[#779341] bg-white/80"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+
+              {/* Xác nhận mật khẩu */}
+              <div className="w-1/2">
+                <label
+                  htmlFor="confirmPassword"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Xác nhận mật khẩu
+                </label>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#779341] focus:border-[#779341] bg-white/80"
+                  placeholder="Confirm password"
+                  required
+                />
+              </div>
+            </div>
+
+            {/* Điều khoản sử dụng */}
+            <div className="flex items-center mt-2">
+              <input
+                type="checkbox"
+                id="terms"
+                className="mr-2 h-4 w-4 accent-[#779341]"
+                required
+              />
+              <label htmlFor="terms" className="text-sm text-gray-700">
+                Tôi đồng ý với{" "}
+                <a href="#" className="text-[#779341] hover:underline">
                   Điều khoản sử dụng
                 </a>
               </label>
             </div>
-          </div>
 
-          {/* Nút hành động */}
-          <div className="flex justify-center gap-8 pt-2">
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-1/3 flex items-center justify-center bg-[#e8d1a2] hover:bg-[#f0dfb4] text-gray-900 font-bold text-lg transition-all duration-300 clip-path-polygon border-2 border-[#381d46]"
-              style={{ lineHeight: "40px", height: "50px" }}
-            >
-              {loading ? "Đang xử lý..." : "Đăng Ký"}
-            </button>
-          </div>
+            {/* Nút đăng ký */}
+            <div className="pt-2">
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-[#779341] hover:bg-[#5e7434] text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-300"
+              >
+                {loading ? "Đang xử lý..." : "Đăng ký"}
+              </button>
+            </div>
+          </form>
 
-          {/* Đăng nhập */}
-          <div className="text-center mt-4 text-base">
-            <span>Đã có tài khoản? </span>
-            <Link
-              to="/login"
-              className="text-blue-400 hover:text-blue-300 hover:underline transition-colors"
-            >
-              Đăng nhập
-            </Link>
-          </div>
+          {/* Phần đăng ký bằng mạng xã hội */}
+          <div className="mt-4">
+            <div className="relative flex items-center justify-center">
+              <div className="border-t border-gray-300 w-full"></div>
+              <div className="text-xs text-gray-500 bg-white/60 px-3 absolute">
+                Hoặc đăng ký với
+              </div>
+            </div>
 
-          <div className="border-t border-gray-600 my-8"></div>
+            <div className="flex justify-center space-x-3 mt-4">
+              {/* Nút đăng ký Google */}
+              <button
+                onClick={handleGoogleRegister}
+                disabled={socialLoading.google}
+                className="flex items-center justify-center px-3 py-2 border border-gray-300 rounded-lg shadow-sm bg-white hover:bg-gray-50 transition-colors duration-300 w-1/2"
+              >
+                <FaGoogle className="text-red-500 mr-1 text-sm" />
+                <span className="text-gray-700 text-xs">
+                  {socialLoading.google ? "Đang xử lý..." : "Google"}
+                </span>
+              </button>
 
-          {/* Đăng ký mạng xã hội */}
-          <div className="flex flex-col items-center space-y-10 w-full mb-8">
-            <button
-              type="button"
-              className="w-4/5 flex items-center justify-center gap-3 px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-md text-lg font-medium transition-all duration-300 text-zinc-950"
-              style={{ marginBottom: "10px", marginTop: "10px" }}
-            >
-              <FaGoogle className="text-red-400 text-xl" />
-              Đăng nhập bằng Google
-            </button>
-            <button
-              type="button"
-              className="w-4/5 flex items-center justify-center gap-3 px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-md text-lg font-medium transition-all duration-300 text-zinc-950"
-              style={{ marginBottom: "10px" }}
-            >
-              <FaFacebook className="text-blue-400 text-xl" />
-              Đăng nhập bằng Facebook
-            </button>
-            <button
-              type="button"
-              className="w-4/5 flex items-center justify-center gap-3 px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-md text-lg font-medium transition-all duration-300 text-zinc-950"
-            >
-              <FaApple className="text-gray-300 text-xl" />
-              Đăng nhập bằng Apple
-            </button>
+              {/* Nút đăng ký Facebook */}
+              <button
+                onClick={handleFacebookRegister}
+                disabled={socialLoading.facebook}
+                className="flex items-center justify-center px-3 py-2 border border-gray-300 rounded-lg shadow-sm bg-white hover:bg-gray-50 transition-colors duration-300 w-1/2"
+              >
+                <FaFacebook className="text-blue-600 mr-1 text-sm" />
+                <span className="text-gray-700 text-xs">
+                  {socialLoading.facebook ? "Đang xử lý..." : "Facebook"}
+                </span>
+              </button>
+            </div>
           </div>
-
-          {/* Ghi chú */}
-          <div
-            className="text-center mt-6 text-sm text-gray-400"
-            style={{ marginTop: "10px", marginBottom: "10px" }}
-          >
-            📜 Bí kíp học mỗi ngày sẽ giúp bạn tăng tu vi và nhận phần thưởng!
-          </div>
-        </form>
+        </div>
       </div>
     </div>
   );

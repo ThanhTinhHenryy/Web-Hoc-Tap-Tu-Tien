@@ -3,10 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 const navLinks = [
   { href: "/home", label: "Trang chủ" },
-  // { href: "#", label: "Bắt đầu tu luyện" },
-  // { href: "#", label: "Thư viện Linh Tự" },
-  // { href: "#", label: "Thi luyện" },
-  // { href: "#", label: "Lộ trình" },
+  { href: "/gioi-thieu", label: "Giới thiệu" },
+  { href: "/tai-lieu", label: "Tài liệu" },
 ];
 
 const Header = () => {
@@ -93,29 +91,31 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#2A0A4A] via-[#4B1B87] to-[#2A0A4A] shadow-[0_4px_15px_rgba(138,43,226,0.3)] text-white">
-      <div className="w-full px-4 sm:px-6 lg:px-8">
+    <header
+      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md text-gray-800"
+      style={{}}
+    >
+      <div className="w-full px-2 sm:px-4 lg:px-6">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link
             to="/"
-            className="text-lg md:text-2xl lg:text-3xl xl:text-4xl text-white font-medium drop-shadow-lg leading-relaxed tracking-wider font-serif italic"
-            style={{
-              textShadow:
-                "0 0 10px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.2)",
-            }}
+            className="text-lg md:text-xl font-bold text-[#2A0A4A] hover:text-[#779341] flex items-center pl-0 -ml-1 font-serif tracking-wider"
           >
-            EverLing
+            <span
+              className="border-l-4 border-red-500 h-6 inline-block"
+              style={{ marginRight: "8px" }}
+            ></span>
+            EVERLING
           </Link>
 
           {/* Desktop navigation menu */}
-          <nav className="hidden md:flex gap-6">
+          <nav className="hidden md:flex gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 to={link.href}
-                className="text-xl font-medium hover:text-amber-300 hover:glow-gold transition-all duration-300 text-amber-100 flex items-center"
-                style={{ lineHeight: "20px" }}
+                className="text-base font-medium hover:text-gray-600 transition-all duration-300 text-gray-800 flex items-center"
               >
                 {link.label}
               </Link>
@@ -124,19 +124,20 @@ const Header = () => {
             {user ? (
               <div className="relative">
                 <button
-                  className="bg-gradient-to-r from-purple-800 to-indigo-900 hover:from-purple-900 hover:to-indigo-950 text-amber-100 hover:text-amber-200 rounded-lg px-4 py-2 shadow-lg transition-all duration-300"
+                  className="flex items-center text-gray-800 hover:text-gray-600 focus:outline-none"
                   onClick={() => setDropdownOpen(!dropdownOpen)}
-                  // className="flex items-center focus:outline-none"
                 >
                   <img
                     src={
-                      user.avatar.startsWith("../../") ||
-                      user.avatar.startsWith("./")
-                        ? user.avatar
-                        : user.avatar
+                      user.avatar && user.avatar.length > 0
+                        ? (user.avatar.startsWith("../../") ||
+                          user.avatar.startsWith("./")
+                            ? user.avatar
+                            : user.avatar)
+                        : "https://randomuser.me/api/portraits/men/1.jpg"
                     }
                     alt="Avatar"
-                    className="w-8 h-8 rounded-full border-2 border-yellow-300"
+                    className="w-8 h-8 rounded-full border border-gray-300"
                     onError={(e) => {
                       console.error("Error loading avatar:", user.avatar);
                       e.target.onerror = null;
@@ -144,16 +145,16 @@ const Header = () => {
                         "https://randomuser.me/api/portraits/men/1.jpg";
                     }}
                   />
-                  <span className="ml-2 text-sm font-medium text-amber-200 mr-1">
+                  <span className="ml-2 text-sm font-medium text-gray-800 mr-1">
                     {user.fullName}
                   </span>
                 </button>
 
                 {dropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-[#2A0A4A] rounded-md shadow-lg py-1 z-50">
+                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border border-gray-200">
                     <Link
                       to="/home"
-                      className="block px-4 py-2 text-sm text-amber-100 hover:bg-[#3c1a60] hover:text-amber-300"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={() => setDropdownOpen(false)}
                     >
                       Hồ sơ
@@ -163,8 +164,7 @@ const Header = () => {
                         handleLogout();
                         setDropdownOpen(false);
                       }}
-                      className="block w-full text-left px-4 py-2 text-sm text-amber-100 hover:bg-[#3c1a60] hover:text-amber-300 bg-[#2A0A4A]"
-                      style={{ backgroundColor: "#2A0A4A" }}
+                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       Đăng xuất
                     </button>
@@ -175,13 +175,28 @@ const Header = () => {
               <div className="flex gap-4">
                 <Link
                   to="/login"
-                  className="text-sm font-medium hover:text-amber-300 hover:glow-gold transition-all duration-300 text-amber-100"
+                  className="text-sm font-medium text-gray-800 hover:text-gray-600 border-2 border-red-500 rounded-md px-6 py-2 w-28 text-center"
+                  style={{
+                    // padding: "10px",
+                    paddingTop: "5px",
+                    paddingBottom: "5px",
+                    paddingLeft: "10px",
+                    paddingRight: "10px",
+                  }}
                 >
                   Đăng nhập
                 </Link>
                 <Link
                   to="/register"
-                  className="text-sm font-medium hover:text-amber-300 hover:glow-gold transition-all duration-300 text-amber-100"
+                  // className="text-sm font-medium text-gray-800 hover:text-gray-600 bg-yellow-400 hover:bg-yellow-500 rounded-md px-6 py-2"
+                  className="text-sm font-medium text-gray-800 hover:text-gray-600 bg-yellow-400 border-2 border-yellow-500 rounded-md px-6 py-2 w-28 text-center"
+                  style={{
+                    // padding: "10px",
+                    paddingTop: "5px",
+                    paddingBottom: "5px",
+                    paddingLeft: "10px",
+                    paddingRight: "10px",
+                  }}
                 >
                   Đăng ký
                 </Link>
@@ -224,15 +239,19 @@ const Header = () => {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#1a0a2e] shadow-lg">
+        <div className="md:hidden bg-white shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {user ? (
               <>
                 <div className="flex flex-col items-center mb-4">
                   <img
-                    src={user.avatar}
+                    src={
+                      user.avatar && user.avatar.length > 0
+                        ? user.avatar
+                        : "https://randomuser.me/api/portraits/men/1.jpg"
+                    }
                     alt="Avatar"
-                    className="w-16 h-16 rounded-full border-2 border-yellow-300 mb-2"
+                    className="w-16 h-16 rounded-full border border-gray-300 mb-2"
                     onError={(e) => {
                       console.error(
                         "Error loading avatar (mobile):",
@@ -243,7 +262,7 @@ const Header = () => {
                         "https://randomuser.me/api/portraits/men/1.jpg";
                     }}
                   />
-                  <span className="text-lg font-medium text-amber-100">
+                  <span className="text-lg font-medium text-gray-800">
                     {user.fullName}
                   </span>
                 </div>
@@ -252,7 +271,7 @@ const Header = () => {
                   <Link
                     key={link.label}
                     to={link.href}
-                    className="block px-3 py-2 text-base font-medium text-amber-100 hover:text-amber-300 hover:bg-[#2d1654] rounded-md"
+                    className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600 hover:bg-gray-100 rounded-md"
                     onClick={() => setMenuOpen(false)}
                   >
                     {link.label}
@@ -261,7 +280,7 @@ const Header = () => {
 
                 <Link
                   to="/home"
-                  className="block px-3 py-2 text-base font-medium text-amber-100 hover:text-amber-300 hover:bg-[#2d1654] rounded-md"
+                  className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600 hover:bg-gray-100 rounded-md"
                   onClick={() => setMenuOpen(false)}
                 >
                   Hồ sơ
@@ -272,7 +291,7 @@ const Header = () => {
                     handleLogout();
                     setMenuOpen(false);
                   }}
-                  className="block w-full text-left px-3 py-2 text-base font-medium text-amber-100 hover:text-amber-300 hover:bg-[#2d1654] rounded-md"
+                  className="block w-full text-left px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600 hover:bg-gray-100 rounded-md"
                 >
                   Đăng xuất
                 </button>
@@ -283,7 +302,7 @@ const Header = () => {
                   <Link
                     key={link.label}
                     to={link.href}
-                    className="block px-3 py-2 text-base font-medium text-amber-100 hover:text-amber-300 hover:bg-[#2d1654] rounded-md"
+                    className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600 hover:bg-gray-100 rounded-md"
                     onClick={() => setMenuOpen(false)}
                   >
                     {link.label}
@@ -292,7 +311,7 @@ const Header = () => {
 
                 <Link
                   to="/login"
-                  className="block px-3 py-2 text-base font-medium text-amber-100 hover:text-amber-300 hover:bg-[#2d1654] rounded-md"
+                  className="block mx-3 my-2 text-base font-medium text-gray-800 hover:text-gray-600 border-2 border-red-500 rounded-md px-4 py-2 text-center w-28"
                   onClick={() => setMenuOpen(false)}
                 >
                   Đăng nhập
@@ -300,7 +319,7 @@ const Header = () => {
 
                 <Link
                   to="/register"
-                  className="block px-3 py-2 text-base font-medium text-amber-100 hover:text-amber-300 hover:bg-[#2d1654] rounded-md"
+                  className="block mx-3 my-2 text-base font-medium text-gray-800 hover:text-gray-600 bg-yellow-400 border-2 border-red-500 rounded-md px-4 py-2 text-center w-28"
                   onClick={() => setMenuOpen(false)}
                 >
                   Đăng ký

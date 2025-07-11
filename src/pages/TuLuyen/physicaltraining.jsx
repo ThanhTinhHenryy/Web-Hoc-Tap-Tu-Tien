@@ -5,9 +5,11 @@ import trainingData from "../../../data/baiTapCuaGiaoVien";
 
 const PhysicalTraining = () => {
   const [selectedExercise, setSelectedExercise] = useState(null);
-  
+
   // Filter physical exercises
-  const physicalExercises = trainingData.find(category => category.type === "physical");
+  const physicalExercises = trainingData.find(
+    (category) => category.type === "physical"
+  );
 
   const handleExerciseClick = (exercise) => {
     setSelectedExercise(exercise);
@@ -116,9 +118,11 @@ const PhysicalTraining = () => {
                 <span className="mr-3">💪</span>
                 {physicalExercises.title}
               </h2>
-              <p className="text-gray-300 mb-8 text-lg">{physicalExercises.description}</p>
+              <p className="text-gray-300 mb-8 text-lg">
+                {physicalExercises.description}
+              </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {physicalExercises.exercises.map((exercise, index) => (
                 <div

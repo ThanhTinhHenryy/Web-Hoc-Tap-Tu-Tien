@@ -5,9 +5,11 @@ import trainingData from "../../../data/baiTapCuaGiaoVien";
 
 const EnergyTraining = () => {
   const [selectedExercise, setSelectedExercise] = useState(null);
-  
+
   // Filter energy exercises
-  const energyExercises = trainingData.find(category => category.type === "energy");
+  const energyExercises = trainingData.find(
+    (category) => category.type === "energy"
+  );
 
   const handleExerciseClick = (exercise) => {
     setSelectedExercise(exercise);
@@ -116,9 +118,11 @@ const EnergyTraining = () => {
                 <span className="mr-3">⚡</span>
                 {energyExercises.title}
               </h2>
-              <p className="text-gray-300 mb-8 text-lg">{energyExercises.description}</p>
+              <p className="text-gray-300 mb-8 text-lg">
+                {energyExercises.description}
+              </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {energyExercises.exercises.map((exercise, index) => (
                 <div
