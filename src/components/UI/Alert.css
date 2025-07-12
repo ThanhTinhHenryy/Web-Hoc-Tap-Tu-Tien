@@ -1,0 +1,98 @@
+/* Alert.css */
+.alert-enter {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.alert-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.alert-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.alert-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.alert-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  max-width: 90%;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  animation: alert-slide-down 0.3s ease-out forwards;
+}
+
+@keyframes alert-slide-down {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.alert-icon {
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert-content {
+  flex: 1;
+  font-weight: 500;
+}
+
+.alert-close {
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: 12px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.alert-close:hover {
+  opacity: 1;
+}
+
+/* Alert types */
+.alert-success {
+  background-color: #10b981;
+  color: white;
+}
+
+.alert-error {
+  background-color: #ef4444;
+  color: white;
+}
+
+.alert-warning {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.alert-info {
+  background-color: #2B003F;
+  color: white;
+}

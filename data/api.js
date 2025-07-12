@@ -66,7 +66,7 @@ const users = [
     email: "nguyenthithu@gmail.com",
     password: "1",
     fullName: "Nguyễn Thị Thu",
-    avatar: "https://randomuser.me/api/portraits/women/2.jpg",
+    avatar: "https://randomuser.me/api/portraits/man/2.jpg",
     level: "Luyện Khí kỳ 4",
     progress: 60,
     achievements: [
@@ -87,6 +87,7 @@ export const login = (username, password) => {
   return new Promise((resolve, reject) => {
     // Giả lập độ trễ của mạng
     setTimeout(() => {
+      // Tìm người dùng theo username hoặc email
       const user = users.find(
         (u) =>
           (u.username === username || u.email === username) &&
@@ -102,6 +103,10 @@ export const login = (username, password) => {
           token: "fake-jwt-token-" + user.id,
         });
       } else {
+        // In ra thông tin để debug
+        console.log("Thông tin đăng nhập:", { username, password });
+        console.log("Danh sách người dùng:", users);
+
         reject({
           success: false,
           message: "Tên đăng nhập hoặc mật khẩu không đúng",
@@ -132,9 +137,10 @@ export const register = (userData) => {
           id: users.length + 1,
           ...userData,
           // Nếu avatar rỗng, sử dụng avatar mặc định
-          avatar: userData.avatar && userData.avatar.length > 0 
-            ? userData.avatar 
-            : "https://randomuser.me/api/portraits/men/1.jpg",
+          avatar:
+            userData.avatar && userData.avatar.length > 0
+              ? userData.avatar
+              : "https://randomuser.me/api/portraits/men/1.jpg",
           level: "Luyện Khí kỳ 1",
           progress: 0,
           achievements: [],
@@ -192,10 +198,11 @@ export const updateUserAvatar = (userId, newAvatarUrl) => {
 
       if (userIndex !== -1) {
         // Cập nhật avatar cho người dùng
-        users[userIndex].avatar = newAvatarUrl && newAvatarUrl.length > 0
-          ? newAvatarUrl
-          : "https://randomuser.me/api/portraits/men/1.jpg";
-        
+        users[userIndex].avatar =
+          newAvatarUrl && newAvatarUrl.length > 0
+            ? newAvatarUrl
+            : "https://randomuser.me/api/portraits/men/1.jpg";
+
         console.log("Avatar updated to:", newAvatarUrl);
 
         // Tạo bản sao của user nhưng không bao gồm password

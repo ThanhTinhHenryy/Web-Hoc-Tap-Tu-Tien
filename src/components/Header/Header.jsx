@@ -100,7 +100,7 @@ const Header = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="text-lg md:text-xl font-bold text-[#2A0A4A] hover:text-[#779341] flex items-center pl-0 -ml-1 font-serif tracking-wider"
+            className="text-lg md:text-xl font-bold text-[#2A0A4A] hover:text-[#779341] flex items-center pl-0 font-serif tracking-wider"
           >
             <span
               className="border-l-4 border-red-500 h-6 inline-block"
@@ -208,13 +208,15 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="text-white focus:outline-none"
+              className="text-gray-800 hover:text-gray-600 focus:outline-none p-2 rounded-md border border-gray-300 hover:bg-gray-100 transition-all duration-300 shadow-sm hover:shadow"
+              aria-label="Menu"
             >
               <svg
-                className="h-6 w-6"
+                className="h-6 w-6 transition-all duration-300"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                style={{ transform: menuOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}
               >
                 {menuOpen ? (
                   <path

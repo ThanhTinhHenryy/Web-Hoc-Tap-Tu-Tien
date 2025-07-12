@@ -7,6 +7,7 @@ import Welcome from "./pages/Welcome";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
 import HomePage from "./pages/HomePage";
+import Introduction from "./pages/Introduction";
 import Choose from "./pages/TuLuyen/Choose";
 import ChooseYourOrigin from "./pages/TuLuyen/ChooseYourOrigin";
 import CultivationLevels from "./pages/TuLuyen/CultivationLevels";
@@ -62,6 +63,8 @@ function App() {
           />
           <Route path="/thi-luyen" element={<MemoryGame />} />
           <Route path="/thu-vien-linh-tu" element={<LinhTuLibrary />} />
+          <Route path="/tai-lieu" element={<LinhTuLibrary />} />
+          <Route path="/gioi-thieu" element={<Introduction />} />
           <Route path="/" element={<Hero />} />
         </Routes>
       </Layout>

@@ -9,7 +9,8 @@ const Welcome = () => {
     <div
       className="min-h-screen flex items-center justify-center text-white px-6 md:px-20 py-10"
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        // backgroundImage: `url(${backgroundImage})`,
+        background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundColor: "#2a1b3d", // Deep mystical purple, fitting for cultivation theme

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import backgroundImage from "../../assets/background/login.png";
+import backgroundImage from "../../assets/background/auth.png";
 
 // Import hàm login từ api.js
 import { login } from "../../../data/api";
@@ -8,9 +8,13 @@ import { login } from "../../../data/api";
 // Import biểu tượng cho đăng nhập mạng xã hội
 import { FaGoogle, FaFacebook } from "react-icons/fa";
 
+// Import component Alert
+import { showAlert } from "../../components/UI/Alert";
+import "../../components/UI/Alert.css";
+
 const Login = () => {
   const [formData, setFormData] = useState({
-    email: "",
+    username: "",
     password: "",
   });
   const [error, setError] = useState("");
@@ -36,7 +40,7 @@ const Login = () => {
 
     try {
       // Sử dụng hàm login từ api.js
-      const response = await login(formData.email, formData.password);
+      const response = await login(formData.username, formData.password);
       console.log("Đăng nhập thành công:", response.user);
 
       // Lưu thông tin người dùng và token vào localStorage
@@ -47,7 +51,7 @@ const Login = () => {
       navigate("/home");
     } catch (error) {
       console.error("Lỗi đăng nhập:", error);
-      setError(error.message || "Email hoặc mật khẩu không đúng");
+      setError(error.message || "Tên đăng nhập hoặc mật khẩu không đúng");
     } finally {
       setLoading(false);
     }
@@ -59,15 +63,14 @@ const Login = () => {
     setError("");
 
     try {
-      // Ở đây sẽ thêm logic đăng nhập bằng Google
-      // Sử dụng Firebase hoặc OAuth2 để xác thực
+      // Hiển thị thông báo đang phát triển với component Alert tùy chỉnh
+      showAlert("Tính năng đăng nhập bằng Google đang được phát triển!", "info", 3000);
       console.log("Đăng nhập bằng Google");
 
-      // Giả lập đăng nhập thành công
+      // Đặt lại trạng thái loading sau khi hiển thị thông báo
       setTimeout(() => {
-        // Sau khi đăng nhập thành công, chuyển hướng đến trang HomePage
-        navigate("/home");
-      }, 1500);
+        setSocialLoading({ ...socialLoading, google: false });
+      }, 500);
     } catch (error) {
       console.error("Lỗi đăng nhập Google:", error);
       setError("Đăng nhập bằng Google thất bại. Vui lòng thử lại.");
@@ -81,15 +84,14 @@ const Login = () => {
     setError("");
 
     try {
-      // Ở đây sẽ thêm logic đăng nhập bằng Facebook
-      // Sử dụng Firebase hoặc OAuth2 để xác thực
+      // Hiển thị thông báo đang phát triển với component Alert tùy chỉnh
+      showAlert("Tính năng đăng nhập bằng Facebook đang được phát triển!", "info", 3000);
       console.log("Đăng nhập bằng Facebook");
 
-      // Giả lập đăng nhập thành công
+      // Đặt lại trạng thái loading sau khi hiển thị thông báo
       setTimeout(() => {
-        // Sau khi đăng nhập thành công, chuyển hướng đến trang HomePage
-        navigate("/home");
-      }, 1500);
+        setSocialLoading({ ...socialLoading, facebook: false });
+      }, 500);
     } catch (error) {
       console.error("Lỗi đăng nhập Facebook:", error);
       setError("Đăng nhập bằng Facebook thất bại. Vui lòng thử lại.");
@@ -99,36 +101,24 @@ const Login = () => {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center"
+      className="min-h-screen flex flex-col items-center justify-center px-4 py-8 sm:px-6 sm:py-12"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
+        backgroundAttachment: "fixed",
       }}
     >
-      <div className="w-full h-full flex items-center justify-center">
-        <div className="w-1/2 flex flex-col justify-center items-center text-white p-10 bg-gradient-to-br from-green-400 via-blue-400 to-blue-600 rounded-r-[60px]">
-          <h2 className="text-2xl font-semibold">Chào mừng đến</h2>
-          <h1 className="text-5xl font-extrabold mt-2 text-white drop-shadow-lg">
-            Học viện Everling
-          </h1>
-          <p className="text-lg mt-6 max-w-md text-center">
-            Khám phá thế giới tri thức kỳ diệu cùng chúng tôi ✨
-          </p>
-        </div>
-
-        <div className="w-1/2 max-w-lg min-h-[600px] bg-white/60 backdrop-blur-md rounded-3xl shadow-xl p-10 mx-6 ">
+      <h2 className="text-4xl font-bold mb-8 text-center">
+        <span className="text-white drop-shadow-lg">Chào mừng đến với </span>
+        <span className="text-yellow-400 drop-shadow-lg">
+          HỌC VIỆN EVERLING
+        </span>
+      </h2>
+      <div className="w-full flex items-center justify-center">
+        <div className="w-full sm:w-4/5 md:w-3/5 lg:w-2/5 max-w-lg bg-white/70 backdrop-blur-md rounded-3xl shadow-xl p-6 sm:p-8 md:p-10 mx-auto transition-all duration-300 hover:shadow-2xl border border-white/20">
           {/* Tiêu đề */}
-          <div className="mb-8">
-            <div className="flex items-center">
-              <h2 className="text-xl font-medium text-gray-700">
-                Chào mừng đến{" "}
-                <span className="text-green-600 font-bold">
-                  Học viện Everling
-                </span>
-              </h2>
-            </div>
-
+          <div className="mb-8 text-center">
             <div className="mt-4 flex justify-around">
               <h1 className="text-4xl font-bold text-gray-900 drop-shadow-sm">
                 Đăng Nhập
@@ -138,7 +128,7 @@ const Login = () => {
                 <div className="text-sm text-gray-500">Chưa có tài khoản?</div>
                 <Link
                   to="/register"
-                  className="text-sm text-green-600 hover:underline font-medium mt-1"
+                  className="text-sm text-[#2B003F] hover:underline font-medium mt-1"
                 >
                   Đăng ký
                 </Link>
@@ -154,30 +144,26 @@ const Login = () => {
           )}
 
           {/* Form đăng nhập */}
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-5">
             {/* Email */}
             <div>
               <label
-                htmlFor="email"
+                htmlFor="username"
                 className="block text-sm font-medium text-gray-700 mb-2"
               >
-                Enter your email address
+                Nhập tên đăng nhập hoặc email của bạn
               </label>
               <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
+                type="text"
+                id="username"
+                name="username"
+                value={formData.username}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-white/80"
-                placeholder="Email address"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2B003F] focus:border-[#2B003F] bg-white/80 transition-all duration-300"
+                placeholder="Username hoặc email"
                 required
-                autoComplete="email"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               />
             </div>
-
-            {/* Phần tên người dùng và số điện thoại đã được xóa */}
 
             {/* Mật khẩu */}
             <div>
@@ -193,14 +179,14 @@ const Login = () => {
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-white/80"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2B003F] focus:border-[#2B003F] bg-white/80 transition-all duration-300"
                 placeholder="Password"
                 required
               />
               <div className="flex justify-end mt-2">
                 <Link
                   to="/forgot-password"
-                  className="text-sm text-green-600 hover:text-green-700 hover:underline"
+                  className="text-sm text-[#2B003F] hover:text-[#3D0059] hover:underline transition-colors duration-300"
                 >
                   Quên mật khẩu?
                 </Link>
@@ -208,11 +194,11 @@ const Login = () => {
             </div>
 
             {/* Nút đăng nhập */}
-            <div className="pt-6">
+            <div className="pt-4">
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-[#779341] hover:bg-[#5e7434] text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-colors duration-300 mt-2"
+                className="w-full bg-[#2B003F] hover:bg-[#3D0059] text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mt-2 transform hover:scale-[1.02]"
               >
                 {loading ? "Đang xử lý..." : "Đăng nhập"}
               </button>
@@ -220,20 +206,20 @@ const Login = () => {
           </form>
 
           {/* Phần đăng nhập bằng mạng xã hội */}
-          <div className="mt-6">
+          <div className="mt-8">
             <div className="relative flex items-center justify-center">
               <div className="border-t border-gray-300 w-full"></div>
-              <div className="text-sm text-gray-500 bg-white/60 px-3 absolute">
+              <div className="text-sm text-gray-600 bg-white/80 px-4 py-1 absolute rounded-full">
                 Hoặc đăng nhập với
               </div>
             </div>
 
-            <div className="flex justify-center space-x-4 mt-6">
+            <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4 mt-6">
               {/* Nút đăng nhập Google */}
               <button
                 onClick={handleGoogleLogin}
                 disabled={socialLoading.google}
-                className="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg shadow-sm bg-white hover:bg-gray-50 transition-colors duration-300 w-1/2"
+                className="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-white hover:bg-gray-50 transition-colors duration-300 w-full sm:w-1/2"
               >
                 <FaGoogle className="text-red-500 mr-2" />
                 <span className="text-gray-700">
@@ -245,7 +231,7 @@ const Login = () => {
               <button
                 onClick={handleFacebookLogin}
                 disabled={socialLoading.facebook}
-                className="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg shadow-sm bg-white hover:bg-gray-50 transition-colors duration-300 w-1/2"
+                className="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-white hover:bg-gray-50 transition-colors duration-300 w-full sm:w-1/2"
               >
                 <FaFacebook className="text-blue-600 mr-2" />
                 <span className="text-gray-700">
