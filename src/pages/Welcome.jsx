@@ -1,143 +1,116 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
-import backgroundImage from "../assets/background.jpg";
+import backgroundImage from "../assets/background/auth.png";
+
 import { FaGoogle, FaFacebook, FaApple } from "react-icons/fa";
 
 const Welcome = () => {
+  const navigate = useNavigate();
+
+  const handleStart = () => {
+    navigate("/home");
+  };
+
   return (
     <div
-      className="min-h-screen flex items-center justify-center text-white px-6 md:px-20 py-10"
+      className="min-h-screen flex flex-col items-center justify-center text-white relative overflow-hidden"
       style={{
-        // backgroundImage: `url(${backgroundImage})`,
-        background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))`,
+        backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundColor: "#2a1b3d", // Deep mystical purple, fitting for cultivation theme
+        backgroundColor: "#0a1744", // Fallback color
       }}
     >
-      <div className="w-full max-w-2xl p-12 md:p-16 rounded-3xl shadow-2xl bg-[#2e2145bf] bg-opacity-95 backdrop-blur-sm mt-10 mb-10 border border-[#4a2d6d]">
-        {/* Logo và Tiêu đề */}
-        <div className="text-center mb-10">
-          <div className="flex justify-center items-center mb-4">
-            <img src={logo} alt="Logo" className="w-28 h-28" />
+      {/* Overlay để làm tối hình nền một chút */}
+      <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+
+      {/* Hiệu ứng ngôi sao */}
+      <div className="absolute inset-0 z-0">
+        {Array.from({ length: 20 }).map((_, index) => (
+          <div
+            key={index}
+            className="absolute rounded-full"
+            style={{
+              width: `${Math.random() * 3 + 1}px`,
+              height: `${Math.random() * 3 + 1}px`,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              backgroundColor: "white",
+              boxShadow: "0 0 10px 2px rgba(255, 255, 255, 0.7)",
+              animation: `twinkle ${Math.random() * 5 + 3}s infinite ${
+                Math.random() * 5
+              }s`,
+              opacity: Math.random() * 0.5 + 0.5,
+            }}
+          />
+        ))}
+        {Array.from({ length: 5 }).map((_, index) => (
+          <div
+            key={`bright-${index}`}
+            className="absolute rounded-full"
+            style={{
+              width: `${Math.random() * 4 + 2}px`,
+              height: `${Math.random() * 4 + 2}px`,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              backgroundColor: "white",
+              boxShadow: "0 0 15px 5px rgba(255, 255, 255, 0.9)",
+              animation: `twinkle ${Math.random() * 7 + 4}s infinite ${
+                Math.random() * 5
+              }s`,
+              opacity: 0.9,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Nội dung chính */}
+      <div className="z-10 flex flex-col items-center justify-center text-center px-4 py-8">
+        {/* Logo và tiêu đề */}
+        <div className="mb-8 relative">
+          <div className="absolute inset-0 bg-blue-500 opacity-20 blur-xl rounded-full"></div>
+          <div className="border-4 border-blue-300 border-opacity-30 rounded-full p-4 bg-blue-900 bg-opacity-20 relative">
+            <img
+              src={logo}
+              alt="Logo"
+              className="w-32 h-32 md:w-40 md:h-40 object-contain"
+            />
           </div>
-          <h1 className="text-4xl font-extrabold tracking-wide leading-snug">
-            Học Viện <span className="text-yellow-300">EverLing</span>
+        </div>
+
+        {/* Tiêu đề */}
+        <div className="mb-12 relative">
+          <h1 className="text-4xl md:text-5xl font-bold text-amber-100 mb-4 tracking-wider">
+            Học viện EverLing
           </h1>
-          <p className="text-yellow-300 text-xl mt-2">
-            ✨ Tu luyện Anh ngữ để phi thăng!
+          <p className="text-xl md:text-2xl text-blue-200 italic">
+            Học gia nhập đạo, ngôn giả thành tiên
           </p>
         </div>
 
-        {/* Form đăng nhập */}
-        <div className="space-y-6 text-lg">
-          <div className="w-full flex flex-col items-center justify-center">
-            {/* Username */}
-            <div className="w-4/5 mb-4">
-              <label
-                htmlFor="username"
-                className="block mb-2 text-lg font-semibold text-blue-300"
-              >
-                🧙‍♂️ Tên đăng nhập
-              </label>
-              <input
-                type="text"
-                id="username"
-                className="w-full px-4 py-3 text-gray-900 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
-                placeholder="Nhập tên đăng nhập"
-                style={{ lineHeight: "50px" }}
-              />
-            </div>
-
-            {/* Password */}
-            <div className="w-4/5">
-              <label
-                htmlFor="password"
-                className="block mb-2 text-lg font-semibold text-blue-300"
-              >
-                🔐 Mật khẩu
-              </label>
-              <input
-                type="password"
-                id="password"
-                className="w-full px-4 py-3 text-gray-900 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
-                placeholder="Nhập mật khẩu"
-                style={{ lineHeight: "50px" }}
-              />
-            </div>
-          </div>
-
-          {/* Nút hành động */}
-          <div
-            className="flex justify-center gap-8 pt-2"
-            style={{
-              clipPath:
-                "polygon(10% 0%, 90% 0%, 100% 30%, 100% 70%, 90% 100%, 10% 100%, 0% 70%, 0% 30%)",
-              marginTop: "10px",
-              marginBottom: "10px",
-            }}
-          >
-            <Link
-              to="/login"
-              className="w-1/3 flex items-center justify-center bg-[#e8d1a2] hover:bg-[#f0dfb4] text-gray-900 font-bold text-lg transition-all duration-300 clip-path-polygon border-2 border-[#381d46]"
-              style={{ lineHeight: "40px", height: "50px" }}
-            >
-              Gia nhập phái
-            </Link>
-            <Link
-              to="/register"
-              className="w-1/3 flex items-center justify-center bg-[#e8d1a2] hover:bg-[#f0dfb4] text-gray-900 font-bold text-lg transition-all duration-300 clip-path-polygon border-2 border-[#381d46]"
-              style={{ lineHeight: "40px", height: "50px" }}
-            >
-              Ghi danh mới
-            </Link>
-          </div>
-
-          {/* Quên mật khẩu */}
-          <div className="text-center mt-4 text-base">
-            <Link
-              to="/forgot-password"
-              className="text-blue-400 hover:text-blue-300 hover:underline transition-colors"
-            >
-              🔄 Quên mật khẩu?
-            </Link>
-          </div>
-
-          {/* Kẻ ngang */}
-          <div className="border-t border-gray-600 my-8"></div>
-
-          {/* Đăng nhập mạng xã hội */}
-          <div className="flex flex-col items-center space-y-10 w-full mb-8">
-            <button
-              className="w-4/5 flex items-center justify-center gap-3 px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-md text-lg font-medium transition-all duration-300 text-zinc-950"
-              style={{ marginBottom: "10px", marginTop: "10px" }}
-            >
-              <FaGoogle className="text-red-400 text-xl" />
-              Đăng nhập bằng Google
-            </button>
-            <button
-              className="w-4/5 flex items-center justify-center gap-3 px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-md text-lg font-medium transition-all duration-300 text-zinc-950"
-              style={{ marginBottom: "10px" }}
-            >
-              <FaFacebook className="text-blue-400 text-xl" />
-              Đăng nhập bằng Facebook
-            </button>
-            <button className="w-4/5 flex items-center justify-center gap-3 px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-md text-lg font-medium transition-all duration-300 text-zinc-950">
-              <FaApple className="text-gray-300 text-xl" />
-              Đăng nhập bằng Apple
-            </button>
-          </div>
-
-          {/* Ghi chú */}
-          <div
-            className="text-center mt-6 text-sm text-gray-400"
-            style={{ marginTop: "10px", marginBottom: "10px" }}
-          >
-            📜 Bí kíp học mỗi ngày sẽ giúp bạn tăng tu vi và nhận phần thưởng!
-          </div>
-        </div>
+        {/* Nút bắt đầu */}
+        <button
+          onClick={handleStart}
+          className="px-12 py-3 bg-purple-900 hover:bg-purple-800 text-amber-100 text-xl font-semibold rounded-full transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50 focus:outline-none"
+        >
+          Bắt đầu
+        </button>
       </div>
+
+      <style jsx="true">{`
+        @keyframes twinkle {
+          0% {
+            opacity: 0.2;
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0.2;
+          }
+        }
+      `}</style>
     </div>
   );
 };

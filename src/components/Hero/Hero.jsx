@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../UI/Button";
 import logo from "../../assets/logo.png";
-import imageUri from "../../assets/background.jpg";
+import imageUri from "../../assets/background/auth.png";
 import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
@@ -56,77 +56,15 @@ const Hero = () => {
           Học gia nhập đạo, ngôn giả thành tiên
         </p>
 
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+        {/* Action Button */}
+        <div className="flex justify-center items-center">
           <Button
             variant="primary"
-            size="lg"
+            size="md"
+            className="bg-[#2B003F] hover:bg-[#3D0059] text-white font-semibold py-2.5 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02] w-40 text-base"
             onClick={() => navigate("/home")}
           >
-            Bắt đầu Tu luyện
-          </Button>
-          <Button variant="secondary" size="lg">
-            <div
-              onClick={() => {
-                // Show modal with title and content
-                const modal = document.createElement("div");
-                modal.className =
-                  "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 backdrop-blur-sm";
-
-                // Create modal content
-                const modalContent = document.createElement("div");
-                modalContent.className =
-                  "bg-white rounded-lg p-8 max-w-2xl w-full mx-4 relative";
-                modalContent.innerHTML = `
-                  <div class="bg-gradient-to-br from-indigo-900 to-purple-900 text-white p-8 rounded-lg shadow-2xl border-2 border-purple-400">
-                    <h2 class="text-3xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-300">EVERLING – NGỮ LINH TRƯỜNG SINH GIỚI</h2>
-                    <div class="prose prose-invert max-w-none">
-                      <div class="space-y-4">
-                        <div class="bg-black/30 p-4 rounded-lg backdrop-blur-sm">
-                          <p class="text-xl font-semibold text-purple-300">Khởi nguyên: Ngôn Linh Thạch và Cuộc Đại Phân Hóa</p>
-                          <p class="text-gray-200 leading-relaxed">Từ xa xưa, thế giới EverLing được nuôi dưỡng bởi một loại năng lượng gọi là Ngữ Linh Khí – sinh ra từ "Cổ Ngữ", thứ ngôn ngữ sơ khai làm gốc rễ cho mọi tri thức và pháp lực.</p>
-                        </div>
-                        <div class="bg-black/30 p-4 rounded-lg backdrop-blur-sm">
-                          <p class="text-gray-200 leading-relaxed">Tâm mạch của Ngữ Linh Khí chính là Ngôn Linh Thạch – viên đá kết tinh toàn bộ tri thức của thế giới.</p>
-                        </div>
-                        <div class="bg-black/30 p-4 rounded-lg backdrop-blur-sm">
-                          <p class="text-gray-200 leading-relaxed">Nhưng khi thiên mệnh thay đổi, Ngôn Linh Thạch vỡ thành 8 mảnh, bay khắp 8 vùng pháp vực, mỗi mảnh kết nối với một nhánh tu luyện đặc biệt – và là hiện thân của một lĩnh vực học thuật nhân loại.</p>
-                        </div>
-                        <div class="bg-black/30 p-4 rounded-lg backdrop-blur-sm">
-                          <p class="text-gray-200 leading-relaxed">Mỗi mảnh được một tông phái giữ gìn, do 8 chân nhân lĩnh hội – những bậc truyền thừa cuối cùng mang danh.</p>
-                        </div>
-                        <div class="bg-black/30 p-4 rounded-lg backdrop-blur-sm border border-purple-500/30">
-                          <p class="text-gray-200 leading-relaxed text-center italic">Hãy đăng nhập để biết thêm các vị đó là ai</p>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="mt-8 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-purple-500/50 w-full font-semibold">Đóng</button>
-                  </div>
-                  
-                  
-                `;
-
-                // Add modal content to modal
-                modal.appendChild(modalContent);
-
-                // Add close button functionality
-                const closeButton = modalContent.querySelector("button");
-                closeButton.addEventListener("click", () => {
-                  document.body.removeChild(modal);
-                });
-
-                // Close modal when clicking outside
-                modal.addEventListener("click", (event) => {
-                  if (event.target === modal) {
-                    document.body.removeChild(modal);
-                  }
-                });
-
-                document.body.appendChild(modal);
-              }}
-            >
-              Tìm Hiểu Thêm
-            </div>
+            Bắt đầu
           </Button>
         </div>
       </div>
