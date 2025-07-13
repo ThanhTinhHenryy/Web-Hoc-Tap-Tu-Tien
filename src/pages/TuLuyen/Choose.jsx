@@ -65,35 +65,18 @@ const Choose = () => {
             </div>
           </Link>
 
-          {/* Tạo câu hỏi luyện tập lại */}
+          {/* Practice Goal */}
           <Link
-            to="/tu-luyen/luyen-tap-lai"
+            to="/tu-luyen/practice-goal"
             className="bg-gradient-to-b from-[#f8f4e3] to-[#e8d1a2] rounded-xl p-10 shadow-xl border-4 border-amber-600 hover:shadow-amber-600/50 hover:scale-105 transition-all duration-300 flex flex-col items-center transform hover:-translate-y-2"
           >
             <div className="text-center">
-              <div className="text-6xl mb-6">🔄</div>
+              <div className="text-6xl mb-6">🎯</div>
               <h2 className="text-3xl font-bold text-gray-800 mb-5">
-                Luyện tập lại
+                Practice Goals
               </h2>
               <p className="text-xl text-gray-700 font-medium">
-                Ôn tập lại những câu hỏi bạn đã làm sai trước đây để củng cố
-                kiến thức.
-              </p>
-            </div>
-          </Link>
-
-          {/* Tạo câu hỏi mới */}
-          <Link
-            to="/tu-luyen/tao-cau-hoi"
-            className="bg-gradient-to-b from-[#f8f4e3] to-[#e8d1a2] rounded-xl p-10 shadow-xl border-4 border-amber-600 hover:shadow-amber-600/50 hover:scale-105 transition-all duration-300 flex flex-col items-center transform hover:-translate-y-2"
-          >
-            <div className="text-center">
-              <div className="text-6xl mb-6">✏️</div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-5">
-                Tạo câu hỏi
-              </h2>
-              <p className="text-xl text-gray-700 font-medium">
-                Tạo câu hỏi luyện tập của riêng bạn để học tập hiệu quả hơn.
+                Chọn mục tiêu luyện tập của bạn: tự luyện tập, ôn tập lại hoặc tạo bài tập mới.
               </p>
             </div>
           </Link>

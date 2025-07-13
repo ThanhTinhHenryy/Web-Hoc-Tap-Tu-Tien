@@ -23,6 +23,9 @@ import LinhTuLibrary from "./pages/ThuVienLinhTu/LinhTuLibrary";
 import ReviewExercises from "./pages/TuLuyen/ReviewExercises";
 import CreateQuestion from "./pages/TuLuyen/CreateQuestion";
 import PracticeQuestions from "./pages/TuLuyen/PracticeQuestions";
+import PracticeGoal from "./pages/TuLuyen/PracticeGoal";
+import ChooseYourPath from "./pages/TuLuyen/ChooseYourPath";
+import PathQuestions from "./pages/TuLuyen/PathQuestions";
 
 function App() {
   return (
@@ -45,6 +48,8 @@ function App() {
             element={<Exercises />}
           />
           <Route path="/tu-luyen/huan-luyen" element={<Training />} />
+          <Route path="/tu-luyen/practice-goal" element={<PracticeGoal />} />
+          <Route path="/tu-luyen/choose-your-path" element={<ChooseYourPath />} />
           <Route
             path="/tu-luyen/huan-luyen/mental"
             element={<MentalTraining />}
@@ -57,6 +62,7 @@ function App() {
             path="/tu-luyen/huan-luyen/physical"
             element={<PhysicalTraining />}
           />
+          <Route path="/tu-luyen/:pathId" element={<PathQuestions />} />
           <Route path="/tu-luyen/luyen-tap-lai" element={<ReviewExercises />} />
           <Route path="/tu-luyen/tao-cau-hoi" element={<CreateQuestion />} />
           <Route

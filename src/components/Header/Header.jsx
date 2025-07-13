@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const navLinks = [
-  { href: "/home", label: "Trang chủ" },
-  { href: "/gioi-thieu", label: "Giới thiệu" },
+  { href: "/gioi-thieu", label: "Trang chủ" },
   { href: "/tai-lieu", label: "Tài liệu" },
 ];
 
@@ -157,7 +156,21 @@ const Header = () => {
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={() => setDropdownOpen(false)}
                     >
-                      Hồ sơ
+                      Profile
+                    </Link>
+                    <Link
+                      to="/choose-avatar"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => setDropdownOpen(false)}
+                    >
+                      Change Avatar
+                    </Link>
+                    <Link
+                      to="/tu-luyen/practice-goal"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => setDropdownOpen(false)}
+                    >
+                      Practice
                     </Link>
                     <button
                       onClick={() => {
@@ -166,7 +179,7 @@ const Header = () => {
                       }}
                       className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
-                      Đăng xuất
+                      Logout
                     </button>
                   </div>
                 )}
@@ -285,7 +298,23 @@ const Header = () => {
                   className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600 hover:bg-gray-100 rounded-md"
                   onClick={() => setMenuOpen(false)}
                 >
-                  Hồ sơ
+                  Profile
+                </Link>
+                
+                <Link
+                  to="/choose-avatar"
+                  className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600 hover:bg-gray-100 rounded-md"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Change Avatar
+                </Link>
+                
+                <Link
+                  to="/tu-luyen/practice-goal"
+                  className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600 hover:bg-gray-100 rounded-md"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Practice
                 </Link>
 
                 <button
@@ -295,7 +324,7 @@ const Header = () => {
                   }}
                   className="block w-full text-left px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600 hover:bg-gray-100 rounded-md"
                 >
-                  Đăng xuất
+                  Logout
                 </button>
               </>
             ) : (
