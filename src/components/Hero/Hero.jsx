@@ -1,11 +1,9 @@
 import React from "react";
-import Button from "../UI/Button";
 import logo from "../../assets/logo.png";
 import imageUri from "../../assets/background/auth.png";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
-  const navigate = useNavigate();
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -58,14 +56,12 @@ const Hero = () => {
 
         {/* Action Button */}
         <div className="flex justify-center items-center">
-          <Button
-            variant="primary"
-            size="md"
-            className="bg-[#2B003F] hover:bg-[#3D0059] text-white font-semibold py-2.5 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02] w-40 text-base"
-            onClick={() => navigate("/home")}
+          <Link
+            to="/home"
+            className="bg-[#2B003F] hover:bg-[#3D0059] text-white font-semibold py-2.5 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02] w-40 text-base inline-block text-center"
           >
             Bắt đầu
-          </Button>
+          </Link>
         </div>
       </div>
     </section>

@@ -198,10 +198,13 @@ export const updateUserAvatar = (userId, newAvatarUrl) => {
 
       if (userIndex !== -1) {
         // Cập nhật avatar cho người dùng
-        users[userIndex].avatar =
-          newAvatarUrl && newAvatarUrl.length > 0
-            ? newAvatarUrl
-            : "https://randomuser.me/api/portraits/men/1.jpg";
+        // Xử lý cả trường hợp đường dẫn tệp cục bộ và URL
+        users[userIndex].avatar = newAvatarUrl || "https://randomuser.me/api/portraits/men/1.jpg";
+        
+        // Nếu là đường dẫn tệp cục bộ, chỉ lấy tên tệp
+        if (typeof newAvatarUrl === 'string' && newAvatarUrl.includes('/assets/avatar/')) {
+          console.log("Đường dẫn avatar cục bộ:", newAvatarUrl);
+        }
 
         console.log("Avatar updated to:", newAvatarUrl);
 

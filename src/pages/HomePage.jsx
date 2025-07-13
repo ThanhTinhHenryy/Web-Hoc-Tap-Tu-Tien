@@ -201,7 +201,6 @@ const HomePage = () => {
                   </div>
                 </div>
 
-                {/* Phần tiến trình tu luyện */}
                 <div className="mb-6">
                   <h3 className="text-lg font-semibold text-yellow-300 mb-4 text-center">
                     Tiến trình tu luyện
@@ -223,7 +222,6 @@ const HomePage = () => {
                   </p>
                 </div>
 
-                {/* Thành tựu và nhiệm vụ */}
                 <div
                   className="mb-6"
                   style={{

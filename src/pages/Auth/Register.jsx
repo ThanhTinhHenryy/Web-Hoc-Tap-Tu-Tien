@@ -65,8 +65,8 @@ const Register = () => {
       localStorage.setItem("user", JSON.stringify(response.user));
       localStorage.setItem("token", response.token);
 
-      // Chuyển hướng đến trang HomePage
-      navigate("/home");
+      // Chuyển hướng đến trang chọn avatar
+      navigate("/choose-avatar");
     } catch (error) {
       console.error("Lỗi đăng ký:", error);
       setError(error.message || "Đã xảy ra lỗi khi đăng ký. Vui lòng thử lại.");

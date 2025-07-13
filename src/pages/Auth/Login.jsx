@@ -47,8 +47,8 @@ const Login = () => {
       localStorage.setItem("user", JSON.stringify(response.user));
       localStorage.setItem("token", response.token);
 
-      // Chuyển hướng đến trang HomePage
-      navigate("/home");
+      // Chuyển hướng đến trang chọn avatar
+      navigate("/choose-avatar");
     } catch (error) {
       console.error("Lỗi đăng nhập:", error);
       setError(error.message || "Tên đăng nhập hoặc mật khẩu không đúng");

@@ -6,6 +6,7 @@ import Hero from "./components/Hero/Hero";
 import Welcome from "./pages/Welcome";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
+import ChooseAvatar from "./pages/Auth/ChooseAvatar";
 import HomePage from "./pages/HomePage";
 import Introduction from "./pages/Introduction";
 import Choose from "./pages/TuLuyen/Choose";
@@ -31,6 +32,7 @@ function App() {
           <Route path="/welcome" element={<Welcome />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/choose-avatar" element={<ChooseAvatar />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/tu-luyen" element={<Choose />} />
           <Route path="/tu-luyen/co-ban" element={<ChooseYourOrigin />} />
