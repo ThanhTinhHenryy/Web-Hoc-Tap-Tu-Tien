@@ -27,6 +27,10 @@ import PracticeGoal from "./pages/TuLuyen/PracticeGoal";
 import ChooseYourPath from "./pages/TuLuyen/ChooseYourPath";
 import PathQuestions from "./pages/TuLuyen/PathQuestions";
 import PathInstructions from "./pages/TuLuyen/PathInstructions";
+import AchievementPage from "./pages/TuLuyen/AchievementPage";
+import ProfilePage from "./pages/ProfilePage";
+import Game from "./pages/Game";
+import VocabularyGame from "./pages/VocabularyGame";
 
 function App() {
   return (
@@ -77,10 +81,18 @@ function App() {
             path="/tu-luyen/luyen-tap-cau-hoi"
             element={<PracticeQuestions />}
           />
+          <Route
+            path="/tu-luyen/thanh-tuu"
+            element={<AchievementPage />}
+          />
           <Route path="/thi-luyen" element={<MemoryGame />} />
           <Route path="/thu-vien-linh-tu" element={<LinhTuLibrary />} />
           <Route path="/tai-lieu" element={<LinhTuLibrary />} />
           <Route path="/gioi-thieu" element={<Introduction />} />
+          <Route path="/ho-so" element={<ProfilePage />} />
+          <Route path="/game" element={<Game />} />
+          <Route path="/game/vocabulary" element={<VocabularyGame />} />
+          <Route path="/game/vocabulary/:levelId" element={<VocabularyGame />} />
           <Route path="/" element={<Hero />} />
         </Routes>
       </Layout>

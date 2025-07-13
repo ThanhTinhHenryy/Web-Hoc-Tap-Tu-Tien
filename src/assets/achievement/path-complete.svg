@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="90" fill="#8B5CF6" stroke="#6D28D9" stroke-width="5"/>
+  <text x="100" y="80" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Chinh Phục</text>
+  <text x="100" y="110" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Chủ Đề</text>
+  <g transform="translate(70, 120)">
+    <path d="M30,0 L60,30 L30,60 L0,30 Z" fill="#FBBF24" stroke="#F59E0B" stroke-width="2"/>
+    <path d="M30,10 L50,30 L30,50 L10,30 Z" fill="#8B5CF6" stroke="#6D28D9" stroke-width="1"/>
+    <circle cx="30" cy="30" r="5" fill="white"/>
+  </g>
+</svg>

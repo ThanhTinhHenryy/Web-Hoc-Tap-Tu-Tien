@@ -90,9 +90,9 @@ const ChooseAvatar = () => {
       // Update local storage with new user data
       localStorage.setItem("user", JSON.stringify(response.user));
 
-      // Navigate to home page after successful update
+      // Navigate to practice goal page after successful update
       setTimeout(() => {
-        navigate("/home");
+        navigate("/tu-luyen/practice-goal");
       }, 500);
     } catch (error) {
       console.error("Error updating avatar:", error);

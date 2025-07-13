@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 200" width="100" height="200">
+  <!-- Tòa nhà cao tầng -->
+  <rect x="30" y="20" width="40" height="180" fill="#A9A9A9"/>
+  
+  <!-- Đỉnh tòa nhà -->
+  <polygon points="30,20 50,0 70,20" fill="#C0C0C0"/>
+  
+  <!-- Cửa sổ -->
+  <rect x="35" y="30" width="10" height="10" fill="#87CEEB"/>
+  <rect x="55" y="30" width="10" height="10" fill="#87CEEB"/>
+  <rect x="35" y="50" width="10" height="10" fill="#87CEEB"/>
+  <rect x="55" y="50" width="10" height="10" fill="#87CEEB"/>
+  <rect x="35" y="70" width="10" height="10" fill="#87CEEB"/>
+  <rect x="55" y="70" width="10" height="10" fill="#87CEEB"/>
+  <rect x="35" y="90" width="10" height="10" fill="#87CEEB"/>
+  <rect x="55" y="90" width="10" height="10" fill="#87CEEB"/>
+  <rect x="35" y="110" width="10" height="10" fill="#87CEEB"/>
+  <rect x="55" y="110" width="10" height="10" fill="#87CEEB"/>
+  <rect x="35" y="130" width="10" height="10" fill="#87CEEB"/>
+  <rect x="55" y="130" width="10" height="10" fill="#87CEEB"/>
+  <rect x="35" y="150" width="10" height="10" fill="#87CEEB"/>
+  <rect x="55" y="150" width="10" height="10" fill="#87CEEB"/>
+  <rect x="35" y="170" width="10" height="10" fill="#87CEEB"/>
+  <rect x="55" y="170" width="10" height="10" fill="#87CEEB"/>
+  
+  <!-- Cửa -->
+  <rect x="40" y="180" width="20" height="20" fill="#8B4513"/>
+</svg>

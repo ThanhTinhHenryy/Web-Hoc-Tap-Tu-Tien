@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="90" fill="#10B981" stroke="#065F46" stroke-width="5"/>
+  <text x="100" y="80" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Bậc Thầy</text>
+  <text x="100" y="110" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Tu Luyện</text>
+  <g transform="translate(70, 120)">
+    <circle cx="30" cy="30" r="25" fill="none" stroke="#FBBF24" stroke-width="5"/>
+    <path d="M30,5 L30,30 L45,45" stroke="#FBBF24" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

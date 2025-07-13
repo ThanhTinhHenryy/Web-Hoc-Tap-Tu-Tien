@@ -138,7 +138,7 @@ function MemoryGame() {
             Chơi mới
           </button>
           <p className="memory-game-turns">Lượt: {turns}</p>
-          <Link to="/home" className="memory-game-back-button">
+          <Link to="/game" className="memory-game-back-button">
             Quay lại
           </Link>
         </div>

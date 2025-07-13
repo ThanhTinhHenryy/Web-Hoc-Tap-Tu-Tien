@@ -129,10 +129,10 @@ const Header = () => {
                   <img
                     src={
                       user.avatar && user.avatar.length > 0
-                        ? (user.avatar.startsWith("../../") ||
+                        ? user.avatar.startsWith("../../") ||
                           user.avatar.startsWith("./")
-                            ? user.avatar
-                            : user.avatar)
+                          ? user.avatar
+                          : user.avatar
                         : "https://randomuser.me/api/portraits/men/1.jpg"
                     }
                     alt="Avatar"
@@ -151,26 +151,40 @@ const Header = () => {
 
                 {dropdownOpen && (
                   <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border border-gray-200">
-                    <Link
+                    {/* <Link
                       to="/home"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={() => setDropdownOpen(false)}
                     >
-                      Profile
+                      Trang chủ
+                    </Link> */}
+                    <Link
+                      to="/ho-so"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => setDropdownOpen(false)}
+                    >
+                      Hồ sơ & Thành tựu
                     </Link>
                     <Link
                       to="/choose-avatar"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={() => setDropdownOpen(false)}
                     >
-                      Change Avatar
+                      Đổi Avatar
                     </Link>
                     <Link
                       to="/tu-luyen/practice-goal"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={() => setDropdownOpen(false)}
                     >
-                      Practice
+                      Luyện tập
+                    </Link>
+                    <Link
+                      to="/game"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => setDropdownOpen(false)}
+                    >
+                      Game
                     </Link>
                     <button
                       onClick={() => {
@@ -179,7 +193,7 @@ const Header = () => {
                       }}
                       className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
-                      Logout
+                      Đăng xuất
                     </button>
                   </div>
                 )}
@@ -229,7 +243,9 @@ const Header = () => {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                style={{ transform: menuOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}
+                style={{
+                  transform: menuOpen ? "rotate(90deg)" : "rotate(0deg)",
+                }}
               >
                 {menuOpen ? (
                   <path
@@ -298,23 +314,31 @@ const Header = () => {
                   className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600 hover:bg-gray-100 rounded-md"
                   onClick={() => setMenuOpen(false)}
                 >
-                  Profile
+                  Trang chủ
                 </Link>
-                
+
+                <Link
+                  to="/ho-so"
+                  className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600 hover:bg-gray-100 rounded-md"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Hồ sơ & Thành tựu
+                </Link>
+
                 <Link
                   to="/choose-avatar"
                   className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600 hover:bg-gray-100 rounded-md"
                   onClick={() => setMenuOpen(false)}
                 >
-                  Change Avatar
+                  Đổi Avatar
                 </Link>
-                
+
                 <Link
                   to="/tu-luyen/practice-goal"
                   className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600 hover:bg-gray-100 rounded-md"
                   onClick={() => setMenuOpen(false)}
                 >
-                  Practice
+                  Luyện tập
                 </Link>
 
                 <button
@@ -324,7 +348,7 @@ const Header = () => {
                   }}
                   className="block w-full text-left px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600 hover:bg-gray-100 rounded-md"
                 >
-                  Logout
+                  Đăng xuất
                 </button>
               </>
             ) : (

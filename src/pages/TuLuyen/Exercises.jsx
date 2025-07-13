@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import backgroundImage from "../../assets/background.jpg";
 import exerciseQuestions from "../../../data/exercises.js";
+import achievements from "../../../data/achievement.js";
 
 const Exercises = () => {
+  const navigate = useNavigate();
   const { levelId } = useParams();
   const [level, setLevel] = useState(null);
   const [questions, setQuestions] = useState([]);
@@ -15,6 +17,8 @@ const Exercises = () => {
   const [highestScore, setHighestScore] = useState(0); // Biến lưu điểm cao nhất
   const [showQuiz, setShowQuiz] = useState(false);
   const [showResult, setShowResult] = useState(false);
+  const [earnedAchievements, setEarnedAchievements] = useState([]);
+  const [showAchievementPopup, setShowAchievementPopup] = useState(false);
 
   // Dữ liệu các tầng tu luyện và bài tập tương ứng
 
@@ -102,6 +106,39 @@ const Exercises = () => {
     }
   };
 
+  // Kiểm tra và cập nhật thành tựu
+  const checkAndUpdateAchievements = (currentScore, totalQuestions) => {
+    const newAchievements = [];
+    const userAchievements = JSON.parse(localStorage.getItem("userAchievements")) || [];
+    
+    // Kiểm tra các điều kiện thành tựu
+    achievements.forEach(achievement => {
+      if (!userAchievements.includes(achievement.id)) {
+        let isEarned = false;
+        
+        switch (achievement.condition) {
+          case "perfect_score":
+            isEarned = currentScore === totalQuestions;
+            break;
+          default:
+            break;
+        }
+        
+        if (isEarned) {
+          newAchievements.push(achievement);
+          userAchievements.push(achievement.id);
+        }
+      }
+    });
+    
+    // Lưu thành tựu vào localStorage
+    if (newAchievements.length > 0) {
+      localStorage.setItem("userAchievements", JSON.stringify(userAchievements));
+      setEarnedAchievements(newAchievements);
+      setShowAchievementPopup(true);
+    }
+  };
+
   // Hàm chuyển sang câu hỏi tiếp theo
   const handleNextQuestion = () => {
     if (currentQuestion < questions.length - 1) {
@@ -130,6 +167,8 @@ const Exercises = () => {
       if (score > highestScore) {
         setHighestScore(score);
       }
+      // Kiểm tra và cập nhật thành tựu
+      checkAndUpdateAchievements(score, questions.length);
     }
   };
 
@@ -186,6 +225,17 @@ const Exercises = () => {
       </div>
     );
   }
+
+  // Đóng popup thành tựu
+  const handleCloseAchievementPopup = () => {
+    setShowAchievementPopup(false);
+  };
+
+  // Chuyển đến trang thành tựu
+  const goToAchievements = () => {
+    setShowAchievementPopup(false);
+    navigate("/tu-luyen/thanh-tuu");
+  };
 
   return (
     <div
@@ -368,13 +418,22 @@ const Exercises = () => {
                     </div>
 
                     <div className="flex justify-center space-x-4">
-                      <button
-                        onClick={startQuiz}
-                        className="bg-gradient-to-r from-purple-600 to-indigo-500 text-white px-8 py-3 rounded-lg hover:from-purple-500 hover:to-indigo-400 transition-all duration-300 shadow-md hover:shadow-purple-500/50 flex items-center"
-                      >
-                        <span className="mr-2">Làm lại bài kiểm tra</span>
-                        <span>🔄</span>
-                      </button>
+                      <div className="flex flex-wrap justify-center gap-4">
+                        <button
+                          onClick={startQuiz}
+                          className="bg-gradient-to-r from-purple-600 to-indigo-500 text-white px-8 py-3 rounded-lg hover:from-purple-500 hover:to-indigo-400 transition-all duration-300 shadow-md hover:shadow-purple-500/50 flex items-center"
+                        >
+                          <span className="mr-2">Làm lại bài kiểm tra</span>
+                          <span>🔄</span>
+                        </button>
+                        <Link
+                          to="/tu-luyen/thanh-tuu"
+                          className="bg-gradient-to-r from-yellow-600 to-amber-500 text-white px-6 py-3 rounded-lg hover:from-yellow-500 hover:to-amber-400 transition-all duration-300 shadow-md hover:shadow-yellow-500/50 flex items-center"
+                        >
+                          <span className="mr-2">Xem thành tựu</span>
+                          <span>🏆</span>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -517,6 +576,44 @@ const Exercises = () => {
           )}
         </div>
       </div>
+
+      {/* Popup hiển thị thành tựu mới đạt được */}
+      {showAchievementPopup && earnedAchievements.length > 0 && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-gradient-to-br from-purple-900 to-indigo-800 p-6 rounded-xl shadow-2xl max-w-md w-full border border-purple-500">
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-yellow-300 mb-4">🎉 Thành Tựu Mới! 🎉</h3>
+              <div className="space-y-4 max-h-60 overflow-y-auto my-4">
+                {earnedAchievements.map((achievement) => (
+                  <div key={achievement.id} className="bg-indigo-700 bg-opacity-50 p-4 rounded-lg border border-indigo-500">
+                    <div className="flex items-center">
+                      <div className="text-4xl mr-3">{achievement.icon}</div>
+                      <div className="text-left">
+                        <h4 className="text-xl font-semibold text-yellow-200">{achievement.name}</h4>
+                        <p className="text-indigo-200">{achievement.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="flex justify-center space-x-4 mt-4">
+                <button
+                  onClick={handleCloseAchievementPopup}
+                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-colors duration-200"
+                >
+                  Đóng
+                </button>
+                <button
+                  onClick={goToAchievements}
+                  className="bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded-lg transition-colors duration-200"
+                >
+                  Xem Tất Cả Thành Tựu
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <!-- Nền trời -->
+  <rect width="300" height="150" fill="#87CEEB"/>
+  
+  <!-- Mặt trời -->
+  <circle cx="250" cy="50" r="30" fill="#FFD700"/>
+  
+  <!-- Đám mây -->
+  <ellipse cx="100" cy="50" rx="30" ry="15" fill="#FFFFFF" opacity="0.8"/>
+  <ellipse cx="85" cy="45" rx="20" ry="12" fill="#FFFFFF" opacity="0.9"/>
+  <ellipse cx="115" cy="45" rx="20" ry="12" fill="#FFFFFF" opacity="0.9"/>
+  
+  <!-- Đồi -->
+  <ellipse cx="150" cy="170" rx="200" ry="70" fill="#228B22"/>
+  
+  <!-- Cây -->
+  <rect x="80" y="120" width="10" height="50" fill="#8B4513"/>
+  <circle cx="85" cy="100" r="25" fill="#006400"/>
+  
+  <rect x="200" y="130" width="10" height="40" fill="#8B4513"/>
+  <circle cx="205" cy="110" r="20" fill="#006400"/>
+  
+  <!-- Đất -->
+  <rect x="0" y="150" width="300" height="50" fill="#8B4513"/>
+  
+  <!-- Cỏ -->
+  <rect x="0" y="150" width="300" height="10" fill="#32CD32"/>
+  
+  <!-- Số cấp độ -->
+  <circle cx="40" cy="40" r="25" fill="#FFFFFF" opacity="0.9"/>
+  <text x="40" y="48" font-family="Arial" font-size="30" fill="#000000" text-anchor="middle">1</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Nền trời -->
+  <rect width="800" height="600" fill="#B0E0E6"/>
+  
+  <!-- Mặt trời -->
+  <circle cx="100" cy="100" r="60" fill="#FFA500"/>
+  
+  <!-- Đám mây -->
+  <ellipse cx="300" cy="120" rx="60" ry="30" fill="#FFFFFF" opacity="0.8"/>
+  <ellipse cx="270" cy="110" rx="40" ry="25" fill="#FFFFFF" opacity="0.9"/>
+  <ellipse cx="330" cy="110" rx="40" ry="25" fill="#FFFFFF" opacity="0.9"/>
+  
+  <ellipse cx="600" cy="80" rx="70" ry="30" fill="#FFFFFF" opacity="0.8"/>
+  <ellipse cx="570" cy="70" rx="40" ry="25" fill="#FFFFFF" opacity="0.9"/>
+  <ellipse cx="630" cy="70" rx="40" ry="25" fill="#FFFFFF" opacity="0.9"/>
+  
+  <!-- Núi xa -->
+  <polygon points="-100,600 200,300 500,600" fill="#9370DB"/>
+  <polygon points="400,600 600,250 800,600" fill="#9370DB"/>
+  
+  <!-- Núi gần -->
+  <polygon points="-200,600 100,200 400,600" fill="#8B4513"/>
+  <polygon points="300,600 500,150 700,600" fill="#8B4513"/>
+  <polygon points="600,600 800,250 1000,600" fill="#8B4513"/>
+  
+  <!-- Tuyết trên đỉnh núi -->
+  <polygon points="100,200 70,240 130,240" fill="#FFFFFF"/>
+  <polygon points="500,150 470,190 530,190" fill="#FFFFFF"/>
+  <polygon points="800,250 770,290 830,290" fill="#FFFFFF"/>
+</svg>

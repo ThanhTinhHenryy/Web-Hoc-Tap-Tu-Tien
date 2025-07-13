@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Nền vũ trụ -->
+  <rect width="800" height="600" fill="#000033"/>
+  
+  <!-- Các ngôi sao -->
+  <circle cx="50" cy="50" r="2" fill="#FFFFFF"/>
+  <circle cx="100" cy="80" r="1" fill="#FFFFFF"/>
+  <circle cx="150" cy="30" r="1.5" fill="#FFFFFF"/>
+  <circle cx="200" cy="70" r="1" fill="#FFFFFF"/>
+  <circle cx="250" cy="40" r="2" fill="#FFFFFF"/>
+  <circle cx="300" cy="90" r="1.5" fill="#FFFFFF"/>
+  <circle cx="350" cy="20" r="1" fill="#FFFFFF"/>
+  <circle cx="400" cy="60" r="2" fill="#FFFFFF"/>
+  <circle cx="450" cy="30" r="1" fill="#FFFFFF"/>
+  <circle cx="500" cy="80" r="1.5" fill="#FFFFFF"/>
+  <circle cx="550" cy="50" r="1" fill="#FFFFFF"/>
+  <circle cx="600" cy="70" r="2" fill="#FFFFFF"/>
+  <circle cx="650" cy="40" r="1.5" fill="#FFFFFF"/>
+  <circle cx="700" cy="90" r="1" fill="#FFFFFF"/>
+  <circle cx="750" cy="30" r="2" fill="#FFFFFF"/>
+  
+  <circle cx="70" cy="120" r="1.5" fill="#FFFFFF"/>
+  <circle cx="120" cy="150" r="1" fill="#FFFFFF"/>
+  <circle cx="170" cy="100" r="2" fill="#FFFFFF"/>
+  <circle cx="220" cy="140" r="1" fill="#FFFFFF"/>
+  <circle cx="270" cy="110" r="1.5" fill="#FFFFFF"/>
+  <circle cx="320" cy="160" r="1" fill="#FFFFFF"/>
+  <circle cx="370" cy="90" r="2" fill="#FFFFFF"/>
+  <circle cx="420" cy="130" r="1.5" fill="#FFFFFF"/>
+  <circle cx="470" cy="100" r="1" fill="#FFFFFF"/>
+  <circle cx="520" cy="150" r="2" fill="#FFFFFF"/>
+  <circle cx="570" cy="120" r="1" fill="#FFFFFF"/>
+  <circle cx="620" cy="140" r="1.5" fill="#FFFFFF"/>
+  <circle cx="670" cy="110" r="1" fill="#FFFFFF"/>
+  <circle cx="720" cy="160" r="2" fill="#FFFFFF"/>
+  <circle cx="770" cy="100" r="1.5" fill="#FFFFFF"/>
+  
+  <!-- Thêm nhiều ngôi sao hơn -->
+  <circle cx="30" cy="200" r="1" fill="#FFFFFF"/>
+  <circle cx="80" cy="230" r="2" fill="#FFFFFF"/>
+  <circle cx="130" cy="180" r="1.5" fill="#FFFFFF"/>
+  <circle cx="180" cy="220" r="1" fill="#FFFFFF"/>
+  <circle cx="230" cy="190" r="2" fill="#FFFFFF"/>
+  <circle cx="280" cy="240" r="1" fill="#FFFFFF"/>
+  <circle cx="330" cy="170" r="1.5" fill="#FFFFFF"/>
+  <circle cx="380" cy="210" r="1" fill="#FFFFFF"/>
+  <circle cx="430" cy="180" r="2" fill="#FFFFFF"/>
+  <circle cx="480" cy="230" r="1.5" fill="#FFFFFF"/>
+  <circle cx="530" cy="200" r="1" fill="#FFFFFF"/>
+  <circle cx="580" cy="240" r="2" fill="#FFFFFF"/>
+  <circle cx="630" cy="190" r="1" fill="#FFFFFF"/>
+  <circle cx="680" cy="220" r="1.5" fill="#FFFFFF"/>
+  <circle cx="730" cy="170" r="1" fill="#FFFFFF"/>
+  <circle cx="780" cy="210" r="2" fill="#FFFFFF"/>
+  
+  <!-- Các ngôi sao lớn hơn (sáng hơn) -->
+  <circle cx="100" cy="300" r="3" fill="#FFFFFF"/>
+  <circle cx="300" cy="150" r="2.5" fill="#FFFFFF"/>
+  <circle cx="500" cy="400" r="3" fill="#FFFFFF"/>
+  <circle cx="700" cy="250" r="2.5" fill="#FFFFFF"/>
+  <circle cx="200" cy="500" r="3" fill="#FFFFFF"/>
+  <circle cx="600" cy="350" r="2.5" fill="#FFFFFF"/>
+  
+  <!-- Hành tinh lớn -->
+  <circle cx="600" cy="400" r="80" fill="#9370DB"/>
+  <ellipse cx="600" cy="400" rx="100" ry="20" fill="#BA55D3" opacity="0.7"/>
+  <circle cx="570" cy="370" r="10" fill="#800080"/>
+  <circle cx="630" cy="420" r="15" fill="#800080"/>
+  <circle cx="590" cy="430" r="12" fill="#800080"/>
+  
+  <!-- Hành tinh nhỏ -->
+  <circle cx="200" cy="300" r="40" fill="#FF6347"/>
+  <ellipse cx="200" cy="280" rx="30" ry="10" fill="#FF4500" opacity="0.7"/>
+  <ellipse cx="200" cy="300" rx="35" ry="8" fill="#FF4500" opacity="0.7"/>
+  <ellipse cx="200" cy="320" rx="25" ry="12" fill="#FF4500" opacity="0.7"/>
+  
+  <!-- Thiên thạch -->
+  <ellipse cx="400" cy="500" rx="20" ry="15" fill="#A0522D"/>
+  <ellipse cx="390" cy="495" rx="5" ry="5" fill="#8B4513"/>
+  <ellipse cx="410" cy="505" rx="7" ry="7" fill="#8B4513"/>
+</svg>

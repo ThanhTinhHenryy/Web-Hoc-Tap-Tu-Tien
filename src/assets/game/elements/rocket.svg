@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 120" width="60" height="120">
+  <!-- Thân tên lửa -->
+  <rect x="20" y="40" width="20" height="60" fill="#C0C0C0"/>
+  
+  <!-- Đầu tên lửa -->
+  <polygon points="20,40 30,10 40,40" fill="#FF0000"/>
+  
+  <!-- Cánh tên lửa -->
+  <polygon points="20,100 0,120 20,90" fill="#C0C0C0"/>
+  <polygon points="40,100 60,120 40,90" fill="#C0C0C0"/>
+  
+  <!-- Lửa phụt ra -->
+  <polygon points="20,100 30,120 40,100" fill="#FFA500"/>
+  <polygon points="25,100 30,130 35,100" fill="#FF4500"/>
+</svg>

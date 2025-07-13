@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 100" width="150" height="100">
+  <!-- Núi -->
+  <polygon points="20,100 60,30 100,100" fill="#A0522D"/>
+  <polygon points="50,100 110,40 170,100" fill="#8B4513"/>
+  
+  <!-- Tuyết trên đỉnh núi -->
+  <polygon points="60,30 50,45 70,45" fill="#FFFFFF"/>
+  <polygon points="110,40 100,55 120,55" fill="#FFFFFF"/>
+</svg>

@@ -4,6 +4,7 @@ import pathQuestions from "../../../data/pathQuestion.js";
 import backgroundImage from "../../assets/background/auth.png";
 import Confetti from "../../components/Confetti";
 import AchievementBadge from "../../components/AchievementBadge";
+import achievements from "../../../data/achievement.js";
 
 const PathQuestions = () => {
   const { pathId } = useParams();
@@ -17,6 +18,8 @@ const PathQuestions = () => {
   const [answeredQuestions, setAnsweredQuestions] = useState([]);
   // Track user answers for each question
   const [userAnswers, setUserAnswers] = useState([]);
+  const [earnedAchievements, setEarnedAchievements] = useState([]);
+  const [showAchievementPopup, setShowAchievementPopup] = useState(false);
 
   // Map route parameter to question set key
   const pathToQuestionSet = {
@@ -73,6 +76,51 @@ const PathQuestions = () => {
     setUserAnswers(newUserAnswers);
   };
 
+  // Kiểm tra và cập nhật thành tựu
+  const checkAndUpdateAchievements = (currentScore, totalQuestions) => {
+    const newAchievements = [];
+    const userAchievements = JSON.parse(localStorage.getItem("userAchievements")) || [];
+    
+    // Lấy số lần hoàn thành path với điểm số hoàn hảo
+    let perfectPathCount = parseInt(localStorage.getItem("perfectPathCount") || "0");
+    
+    // Kiểm tra nếu đạt điểm tuyệt đối
+    if (currentScore === totalQuestions) {
+      perfectPathCount += 1;
+      localStorage.setItem("perfectPathCount", perfectPathCount.toString());
+    }
+    
+    // Kiểm tra các điều kiện thành tựu
+    achievements.forEach(achievement => {
+      if (!userAchievements.includes(achievement.id)) {
+        let isEarned = false;
+        
+        switch (achievement.condition) {
+          case "path_complete":
+            isEarned = currentScore >= totalQuestions * 0.6;
+            break;
+          case "path_master":
+            isEarned = currentScore === totalQuestions;
+            break;
+          default:
+            break;
+        }
+        
+        if (isEarned) {
+          newAchievements.push(achievement);
+          userAchievements.push(achievement.id);
+        }
+      }
+    });
+    
+    // Lưu thành tựu vào localStorage
+    if (newAchievements.length > 0) {
+      localStorage.setItem("userAchievements", JSON.stringify(userAchievements));
+      setEarnedAchievements(newAchievements);
+      setShowAchievementPopup(true);
+    }
+  };
+
   const handleNextQuestion = () => {
     // Update score if answer is correct
     if (selectedAnswer === currentQuestion.correctAnswer) {
@@ -94,6 +142,8 @@ const PathQuestions = () => {
       setShowHint(false);
       setShowExplanation(false);
     } else {
+      // Kiểm tra và cập nhật thành tựu khi hoàn thành bài kiểm tra
+      checkAndUpdateAchievements(score + (selectedAnswer === currentQuestion.correctAnswer ? 1 : 0), questions.length);
       setQuizCompleted(true);
     }
   };
@@ -511,6 +561,40 @@ const PathQuestions = () => {
                   : "💪 Đừng nản lòng! Mỗi lần thử là một cơ hội học hỏi. Hãy xem lại các câu hỏi và thử lại. Sự kiên trì sẽ mang lại thành công!"}
               </p>
             </div>
+
+            {/* Achievement Popup */}
+            {showAchievementPopup && earnedAchievements.length > 0 && (
+              <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/70 animate-fade-in">
+                <div className="bg-white rounded-xl p-6 max-w-md w-full mx-4 shadow-2xl transform animate-scale-in">
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold text-[#2B003F] mb-4">🎉 Thành tựu mới! 🎉</h3>
+                    
+                    <div className="space-y-4 mb-6">
+                      {earnedAchievements.map((achievement) => (
+                        <div key={achievement.id} className="bg-gradient-to-r from-purple-50 to-indigo-50 p-4 rounded-lg border border-purple-200">
+                          <div className="flex items-center gap-3">
+                            <div className="w-12 h-12 rounded-full flex items-center justify-center bg-purple-100">
+                              <img src={achievement.image} alt={achievement.name} className="w-10 h-10" />
+                            </div>
+                            <div className="text-left">
+                              <h4 className="font-bold text-[#2B003F]">{achievement.name}</h4>
+                              <p className="text-sm text-gray-600">{achievement.description}</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <button 
+                      onClick={() => setShowAchievementPopup(false)}
+                      className="px-6 py-2 bg-[#2B003F] text-white rounded-full font-bold hover:bg-[#3D0059] transition-all duration-300 hover:scale-105"
+                    >
+                      Tuyệt vời!
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
 
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-4 sm:mt-6">
               <button

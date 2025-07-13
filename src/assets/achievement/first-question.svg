@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="90" fill="#4F46E5" stroke="#312E81" stroke-width="5"/>
+  <text x="100" y="80" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Câu Hỏi</text>
+  <text x="100" y="110" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Đầu Tiên</text>
+  <path d="M70,130 L90,150 L130,110" stroke="#10B981" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

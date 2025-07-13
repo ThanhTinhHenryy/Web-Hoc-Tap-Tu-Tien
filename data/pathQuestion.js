@@ -22,7 +22,8 @@ const pathQuestions = {
     },
     {
       id: 3,
-      question: "Who do you visit when you are sick and need medical treatment?",
+      question:
+        "Who do you visit when you are sick and need medical treatment?",
       options: ["Nurse", "Doctor", "Pharmacist", "Patient"],
       correctAnswer: 1,
       hint: "Người này đã học y khoa nhiều năm và có thể chẩn đoán bệnh.",
@@ -31,7 +32,8 @@ const pathQuestions = {
     },
     {
       id: 4,
-      question: "Where do people go for medical treatment when they are seriously ill?",
+      question:
+        "Where do people go for medical treatment when they are seriously ill?",
       options: ["School", "Hospital", "Restaurant", "Hotel"],
       correctAnswer: 1,
       hint: "Nơi này có nhiều phòng cho bệnh nhân, phòng mổ và các thiết bị y tế.",
@@ -40,7 +42,8 @@ const pathQuestions = {
     },
     {
       id: 5,
-      question: "What do you take when a doctor prescribes something to help you get better?",
+      question:
+        "What do you take when a doctor prescribes something to help you get better?",
       options: ["Disease", "Medicine", "Doctor", "Hospital"],
       correctAnswer: 1,
       hint: "Bạn thường uống hoặc tiêm cái này để điều trị bệnh.",
@@ -62,7 +65,8 @@ const pathQuestions = {
     },
     {
       id: 2,
-      question: "What is a business organization that sells products or services to make profit?",
+      question:
+        "What is a business organization that sells products or services to make profit?",
       options: ["School", "Company", "Hospital", "Restaurant"],
       correctAnswer: 1,
       hint: "Tổ chức này có nhiều nhân viên, văn phòng và thường có mục tiêu kiếm lợi nhuận.",
@@ -80,7 +84,8 @@ const pathQuestions = {
     },
     {
       id: 4,
-      question: "Who is responsible for supervising employees and making decisions in a department?",
+      question:
+        "Who is responsible for supervising employees and making decisions in a department?",
       options: ["Employee", "Manager", "Customer", "Partner"],
       correctAnswer: 1,
       hint: "Người này lãnh đạo một nhóm nhân viên và báo cáo cho cấp cao hơn.",
@@ -111,7 +116,8 @@ const pathQuestions = {
     },
     {
       id: 2,
-      question: "Where do people go to eat meals prepared by professional chefs?",
+      question:
+        "Where do people go to eat meals prepared by professional chefs?",
       options: ["Hotel", "Restaurant", "Store", "Hospital"],
       correctAnswer: 1,
       hint: "Nơi này có thực đơn, bàn ăn và phục vụ các món ăn được nấu bởi đầu bếp.",
@@ -120,7 +126,8 @@ const pathQuestions = {
     },
     {
       id: 3,
-      question: "What is a sandy shore next to the ocean where people swim and sunbathe?",
+      question:
+        "What is a sandy shore next to the ocean where people swim and sunbathe?",
       options: ["Mountain", "Beach", "River", "Lake"],
       correctAnswer: 1,
       hint: "Nơi này có cát, sóng biển và thường là điểm đến phổ biến trong kỳ nghỉ hè.",
@@ -151,7 +158,8 @@ const pathQuestions = {
     // Từ vựng tiếng Anh khoa học và công nghệ cơ bản
     {
       id: 1,
-      question: "Which electronic device do people use to browse the internet, write documents, and play games?",
+      question:
+        "Which electronic device do people use to browse the internet, write documents, and play games?",
       options: ["Smartphone", "Computer", "Television", "Camera"],
       correctAnswer: 1,
       hint: "Thiết bị này thường có bàn phím, chuột và màn hình lớn.",
@@ -160,7 +168,8 @@ const pathQuestions = {
     },
     {
       id: 2,
-      question: "What is the global network that connects millions of computers worldwide?",
+      question:
+        "What is the global network that connects millions of computers worldwide?",
       options: ["Smartphone", "Internet", "Television", "Book"],
       correctAnswer: 1,
       hint: "Bạn sử dụng cái này để truy cập websites, gửi email và xem video trực tuyến.",
@@ -169,7 +178,8 @@ const pathQuestions = {
     },
     {
       id: 3,
-      question: "What do we call a mobile phone with advanced features like internet access and apps?",
+      question:
+        "What do we call a mobile phone with advanced features like internet access and apps?",
       options: ["Computer", "Smartphone", "Camera", "Television"],
       correctAnswer: 1,
       hint: "Thiết bị này có thể gọi điện, nhắn tin, chụp ảnh và cài đặt nhiều ứng dụng khác nhau.",
@@ -178,7 +188,8 @@ const pathQuestions = {
     },
     {
       id: 4,
-      question: "What is a software program designed to run on smartphones and tablets called?",
+      question:
+        "What is a software program designed to run on smartphones and tablets called?",
       options: ["Computer", "App", "Internet", "Screen"],
       correctAnswer: 1,
       hint: "Bạn tải cái này từ App Store hoặc Google Play để sử dụng trên điện thoại.",
@@ -187,7 +198,8 @@ const pathQuestions = {
     },
     {
       id: 5,
-      question: "What are platforms like Facebook, Instagram, and Twitter collectively known as?",
+      question:
+        "What are platforms like Facebook, Instagram, and Twitter collectively known as?",
       options: ["Newspapers", "Social media", "Television", "Books"],
       correctAnswer: 1,
       hint: "Đây là nơi mọi người chia sẻ ảnh, video và kết nối với bạn bè trực tuyến.",
@@ -200,7 +212,8 @@ const pathQuestions = {
     // Từ vựng tiếng Anh giáo dục cơ bản
     {
       id: 1,
-      question: "Who stands in front of the class and explains lessons to students?",
+      question:
+        "Who stands in front of the class and explains lessons to students?",
       options: ["Student", "Teacher", "Principal", "Parent"],
       correctAnswer: 1,
       hint: "Người này có bằng cấp chuyên môn và dạy các môn học cho học sinh.",
@@ -218,7 +231,8 @@ const pathQuestions = {
     },
     {
       id: 3,
-      question: "Where do students and teachers gather for lessons in a school?",
+      question:
+        "Where do students and teachers gather for lessons in a school?",
       options: ["Cafeteria", "Classroom", "Library", "Playground"],
       correctAnswer: 1,
       hint: "Nơi này có bàn ghế cho học sinh và bảng để giáo viên viết bài.",
@@ -228,12 +242,7 @@ const pathQuestions = {
     {
       id: 4,
       question: "What assignments do students complete after school hours?",
-      options: [
-        "Textbook",
-        "Homework",
-        "Exam",
-        "Schedule",
-      ],
+      options: ["Textbook", "Homework", "Exam", "Schedule"],
       correctAnswer: 1,
       hint: "Học sinh làm việc này ở nhà sau giờ học để ôn tập và thực hành.",
       explanation:
@@ -241,13 +250,9 @@ const pathQuestions = {
     },
     {
       id: 5,
-      question: "What do students take to demonstrate their knowledge of a subject?",
-      options: [
-        "Textbook",
-        "Test",
-        "Schedule",
-        "Homework",
-      ],
+      question:
+        "What do students take to demonstrate their knowledge of a subject?",
+      options: ["Textbook", "Test", "Schedule", "Homework"],
       correctAnswer: 1,
       hint: "Học sinh làm cái này để giáo viên đánh giá kiến thức và kỹ năng của họ.",
       explanation:
@@ -259,7 +264,8 @@ const pathQuestions = {
     // Từ vựng tiếng Anh pháp lý cơ bản
     {
       id: 1,
-      question: "Who represents clients in legal matters and provides legal advice?",
+      question:
+        "Who represents clients in legal matters and provides legal advice?",
       options: ["Lawyer", "Judge", "Prosecutor", "Jury"],
       correctAnswer: 0,
       hint: "Người này có bằng luật, đại diện cho khách hàng trong các vụ kiện và đàm phán pháp lý.",
@@ -268,7 +274,8 @@ const pathQuestions = {
     },
     {
       id: 2,
-      question: "Who presides over court proceedings and makes rulings on legal matters?",
+      question:
+        "Who presides over court proceedings and makes rulings on legal matters?",
       options: ["Lawyer", "Judge", "Prosecutor", "Jury"],
       correctAnswer: 1,
       hint: "Người này mặc áo choàng đen, ngồi trên bục cao trong phòng xử án và đưa ra phán quyết.",
@@ -286,7 +293,8 @@ const pathQuestions = {
     },
     {
       id: 4,
-      question: "What material is presented in court to prove or disprove facts in a case?",
+      question:
+        "What material is presented in court to prove or disprove facts in a case?",
       options: ["Evidence", "Testimony", "Verdict", "Sentence"],
       correctAnswer: 0,
       hint: "Đây có thể là tài liệu, lời khai, video, vật dụng hoặc thông tin khác được sử dụng để chứng minh sự thật.",
@@ -295,7 +303,8 @@ const pathQuestions = {
     },
     {
       id: 5,
-      question: "What is the formal decision made by a jury or judge at the end of a trial?",
+      question:
+        "What is the formal decision made by a jury or judge at the end of a trial?",
       options: ["Evidence", "Testimony", "Verdict", "Sentence"],
       correctAnswer: 2,
       hint: "Đây là quyết định cuối cùng về việc bị cáo có tội hay vô tội sau khi xem xét tất cả bằng chứng.",

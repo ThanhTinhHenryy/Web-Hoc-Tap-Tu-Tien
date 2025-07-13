@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import backgroundImage from "../../assets/background.jpg";
+import achievements from "../../../data/achievement.js";
 
 const PracticeQuestions = () => {
+  const navigate = useNavigate();
   const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
@@ -13,6 +15,8 @@ const PracticeQuestions = () => {
   const [showResult, setShowResult] = useState(false);
   const [loading, setLoading] = useState(true);
   const [noQuestions, setNoQuestions] = useState(false);
+  const [earnedAchievements, setEarnedAchievements] = useState([]);
+  const [showAchievementPopup, setShowAchievementPopup] = useState(false);
 
   useEffect(() => {
     // Lấy danh sách câu hỏi từ localStorage
@@ -45,6 +49,60 @@ const PracticeQuestions = () => {
 
     loadQuestions();
   }, []);
+
+  // Kiểm tra và cập nhật thành tựu
+  const checkAndUpdateAchievements = (currentScore, totalQuestions) => {
+    const newAchievements = [];
+    const userAchievements = JSON.parse(localStorage.getItem("userAchievements")) || [];
+    
+    // Lấy số lần hoàn thành self practice với điểm số hoàn hảo
+    let perfectSelfPracticeCount = parseInt(localStorage.getItem("perfectSelfPracticeCount") || "0");
+    
+    // Kiểm tra nếu đạt điểm tuyệt đối
+    if (currentScore === totalQuestions) {
+      perfectSelfPracticeCount += 1;
+      localStorage.setItem("perfectSelfPracticeCount", perfectSelfPracticeCount.toString());
+    }
+    
+    // Kiểm tra các điều kiện thành tựu
+    achievements.forEach(achievement => {
+      if (!userAchievements.includes(achievement.id)) {
+        let isEarned = false;
+        
+        switch (achievement.condition) {
+          case "first_practice":
+            isEarned = true;
+            break;
+          case "perfect_score":
+            isEarned = currentScore === totalQuestions;
+            break;
+          case "practice_master":
+            isEarned = currentScore >= totalQuestions * 0.8 && totalQuestions >= 5;
+            break;
+          case "self_practice_complete":
+            isEarned = currentScore >= totalQuestions * 0.8;
+            break;
+          case "self_practice_master":
+            isEarned = perfectSelfPracticeCount >= 5;
+            break;
+          default:
+            break;
+        }
+        
+        if (isEarned) {
+          newAchievements.push(achievement);
+          userAchievements.push(achievement.id);
+        }
+      }
+    });
+    
+    // Lưu thành tựu vào localStorage
+    if (newAchievements.length > 0) {
+      localStorage.setItem("userAchievements", JSON.stringify(userAchievements));
+      setEarnedAchievements(newAchievements);
+      setShowAchievementPopup(true);
+    }
+  };
 
   // Hàm xử lý khi người dùng chọn câu trả lời
   const handleAnswerSelect = (answerIndex) => {
@@ -87,6 +145,10 @@ const PracticeQuestions = () => {
           JSON.stringify(userQuestions)
         );
       }
+      
+      // Kiểm tra và cập nhật thành tựu
+      checkAndUpdateAchievements(score, questions.length);
+      
       setShowResult(true);
     }
   };
@@ -331,6 +393,12 @@ const PracticeQuestions = () => {
                     >
                       Tạo thêm câu hỏi
                     </Link>
+                    <Link
+                      to="/tu-luyen/thanh-tuu"
+                      className="bg-gradient-to-r from-yellow-600 to-amber-500 text-white px-6 py-3 rounded-lg hover:from-yellow-500 hover:to-amber-400 transition-all duration-300 shadow-md hover:shadow-yellow-500/50"
+                    >
+                      Xem thành tựu
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -482,6 +550,50 @@ const PracticeQuestions = () => {
           </div>
         )}
       </div>
+
+      {/* Popup hiển thị thành tựu đạt được */}
+      {showAchievementPopup && earnedAchievements.length > 0 && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/70">
+          <div className="bg-gray-800 rounded-lg p-8 max-w-md w-full mx-4 border border-yellow-500 shadow-lg shadow-yellow-500/20 animate-fade-in">
+            <div className="text-center">
+              <div className="text-5xl mb-4">🏆</div>
+              <h2 className="text-2xl font-bold text-yellow-300 mb-6">Thành tựu mới!</h2>
+              
+              <div className="space-y-6 mb-8">
+                {earnedAchievements.map((achievement) => (
+                  <div key={achievement.id} className="flex items-center bg-gray-700/50 p-4 rounded-lg border border-yellow-600/30">
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center mr-4 bg-yellow-500/20">
+                      <img src={achievement.image} alt={achievement.name} className="w-12 h-12" />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="text-xl font-bold text-yellow-300">{achievement.name}</h3>
+                      <p className="text-gray-300">{achievement.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="flex justify-center space-x-4">
+                <button
+                  onClick={() => setShowAchievementPopup(false)}
+                  className="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-500 transition-all duration-300"
+                >
+                  Đóng
+                </button>
+                <button
+                  onClick={() => {
+                    setShowAchievementPopup(false);
+                    navigate("/tu-luyen/thanh-tuu");
+                  }}
+                  className="bg-gradient-to-r from-yellow-600 to-amber-500 text-white px-4 py-2 rounded-lg hover:from-yellow-500 hover:to-amber-400 transition-all duration-300"
+                >
+                  Xem tất cả thành tựu
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

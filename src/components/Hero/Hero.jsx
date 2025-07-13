@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../assets/logo.png";
 import imageUri from "../../assets/background/auth.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Kiểm tra xem người dùng đã đăng nhập chưa
+    const user = localStorage.getItem("user");
+    setIsAuthenticated(!!user);
+  }, []);
+
+  const handleStartClick = () => {
+    if (!isAuthenticated) {
+      navigate("/login");
+    } else {
+      navigate("/tu-luyen/practice-goal");
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -55,13 +72,24 @@ const Hero = () => {
         </p>
 
         {/* Action Button */}
-        <div className="flex justify-center items-center">
-          <Link
-            to="/home"
+        <div className="flex flex-col items-center">
+          <button
+            onClick={handleStartClick}
             className="bg-[#2B003F] hover:bg-[#3D0059] text-white font-semibold py-2.5 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02] w-40 text-base inline-block text-center"
           >
-            Bắt đầu
-          </Link>
+            {isAuthenticated ? "Bắt đầu" : "Đăng nhập"}
+          </button>
+          
+          <div className={`overflow-hidden transition-all duration-500 ${!isAuthenticated ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'}`}>
+            <p className="text-white text-sm mt-2 opacity-80">
+              Bạn cần đăng nhập để bắt đầu tu luyện
+            </p>
+            <div className="mt-1">
+              <Link to="/register" className="text-amber-300 text-sm hover:text-amber-200 hover:underline transition-colors">
+                Chưa có tài khoản? Đăng ký ngay
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>

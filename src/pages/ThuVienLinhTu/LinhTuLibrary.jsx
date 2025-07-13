@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import backgroundImage from "../../assets/background/auth.png";
 
 const LinhTuLibrary = () => {
   const [activeTab, setActiveTab] = useState("vocabulary");
@@ -147,7 +148,16 @@ The essence of cultivation—the systematic refinement of mind, body, and spirit
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-100 py-8 px-4 sm:px-6 lg:px-8">
+    <div
+      className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-100 py-8 px-4 sm:px-6 lg:px-8"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundColor: "rgba(0, 13, 12, 0.5)",
+        backgroundBlendMode: "overlay",
+      }}
+    >
       <div className="max-w-7xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
         {/* Header */}
         <div className="text-center py-8 px-4 bg-gradient-to-r from-indigo-500 to-purple-600">

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Nền trời -->
+  <rect width="800" height="400" fill="#87CEEB"/>
+  
+  <!-- Mặt trời -->
+  <circle cx="650" cy="100" r="60" fill="#FFA500"/>
+  
+  <!-- Đám mây -->
+  <ellipse cx="200" cy="100" rx="60" ry="30" fill="#FFFFFF" opacity="0.8"/>
+  <ellipse cx="170" cy="90" rx="40" ry="25" fill="#FFFFFF" opacity="0.9"/>
+  <ellipse cx="230" cy="90" rx="40" ry="25" fill="#FFFFFF" opacity="0.9"/>
+  
+  <!-- Biển -->
+  <rect x="0" y="400" width="800" height="200" fill="#1E90FF"/>
+  
+  <!-- Bãi cát -->
+  <path d="M0,400 C200,380 400,420 600,380 L800,400 L800,600 L0,600 Z" fill="#F5DEB3"/>
+  
+  <!-- Sóng biển -->
+  <path d="M0,400 C100,390 200,410 300,390 C400,370 500,390 600,370 C700,350 800,370 800,370 L800,400 L0,400 Z" fill="#87CEFA" opacity="0.6"/>
+  
+  <!-- Cây cọ 1 -->
+  <rect x="150" y="300" width="10" height="100" fill="#8B4513"/>
+  <path d="M155,300 C140,270 120,280 100,270" stroke="#228B22" stroke-width="5" fill="none"/>
+  <path d="M155,300 C170,270 190,280 210,270" stroke="#228B22" stroke-width="5" fill="none"/>
+  <path d="M155,300 C140,250 130,240 120,220" stroke="#228B22" stroke-width="5" fill="none"/>
+  <path d="M155,300 C170,250 180,240 190,220" stroke="#228B22" stroke-width="5" fill="none"/>
+  
+  <!-- Cây cọ 2 -->
+  <rect x="650" y="320" width="10" height="80" fill="#8B4513"/>
+  <path d="M655,320 C640,290 620,300 600,290" stroke="#228B22" stroke-width="5" fill="none"/>
+  <path d="M655,320 C670,290 690,300 710,290" stroke="#228B22" stroke-width="5" fill="none"/>
+  <path d="M655,320 C640,270 630,260 620,240" stroke="#228B22" stroke-width="5" fill="none"/>
+  <path d="M655,320 C670,270 680,260 690,240" stroke="#228B22" stroke-width="5" fill="none"/>
+</svg>
