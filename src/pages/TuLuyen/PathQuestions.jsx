@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import pathQuestions from "../../data/pathQuestion.js";
+import pathQuestions from "../../../data/pathQuestion.js";
 import backgroundImage from "../../assets/background/auth.png";
 import Confetti from "../../components/Confetti";
 import AchievementBadge from "../../components/AchievementBadge";
