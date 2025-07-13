@@ -1,409 +1,410 @@
 const pathQuestions = {
-  medicalEnglish: [
+  // Các câu hỏi từ vựng cơ bản cho người mới bắt đầu học tiếng Anh chuyên ngành
+  medicalEnglish: [ // Từ vựng tiếng Anh y khoa cơ bản
     {
       id: 1,
-      question: "What does 'tachycardia' refer to in medical terminology?",
+      question: "What is 'heart' in English?",
       options: [
-        "Slow heart rate",
-        "Fast heart rate",
-        "Irregular breathing",
-        "Low blood pressure"
+        "Đầu",
+        "Tim",
+        "Phổi",
+        "Dạ dày"
       ],
       correctAnswer: 1,
-      hint: "The prefix 'tachy-' relates to speed.",
-      explanation: "'Tachycardia' comes from the Greek words 'tachys' (fast) and 'kardia' (heart). It refers to a heart rate that exceeds the normal resting rate, typically over 100 beats per minute in adults."
+      hint: "Đây là cơ quan bơm máu trong cơ thể.",
+      explanation: "'Heart' trong tiếng Anh có nghĩa là 'tim' trong tiếng Việt. Tim là cơ quan cơ bắp có chức năng bơm máu đi khắp cơ thể thông qua hệ thống tuần hoàn."
     },
     {
       id: 2,
-      question: "Which of the following is NOT a common symptom of appendicitis?",
+      question: "What is 'blood' in English?",
       options: [
-        "Pain around the navel",
-        "Fever",
-        "Rash on extremities",
-        "Nausea and vomiting"
+        "Nước",
+        "Máu",
+        "Mồ hôi",
+        "Nước mắt"
       ],
-      correctAnswer: 2,
-      hint: "Think about the typical presentation of appendicitis in emergency rooms.",
-      explanation: "Appendicitis typically presents with pain that starts around the navel and shifts to the lower right abdomen, along with fever, nausea, and vomiting. A rash on extremities is not a common symptom of appendicitis but may indicate other conditions like meningitis or certain allergic reactions."
+      correctAnswer: 1,
+      hint: "Đây là chất lỏng màu đỏ chảy trong mạch máu.",
+      explanation: "'Blood' trong tiếng Anh có nghĩa là 'máu' trong tiếng Việt. Máu là chất lỏng màu đỏ chảy trong mạch máu, có chức năng vận chuyển oxy và chất dinh dưỡng đến các tế bào trong cơ thể."
     },
     {
       id: 3,
-      question: "What does the abbreviation 'NPO' stand for in hospital instructions?",
+      question: "What is 'doctor' in English?",
       options: [
-        "Normal Pressure Observed",
-        "Nothing Per Oral",
-        "Nurse Practitioner Order",
-        "Next Procedure Option"
+        "Y tá",
+        "Bác sĩ",
+        "Dược sĩ",
+        "Bệnh nhân"
       ],
       correctAnswer: 1,
-      hint: "This is commonly used before surgical procedures.",
-      explanation: "'NPO' stands for 'Nothing Per Oral' (or 'Nil Per Os' in Latin), which means the patient should not eat or drink anything. This instruction is often given before surgery or certain medical procedures to ensure the stomach is empty."
+      hint: "Đây là người khám và điều trị bệnh.",
+      explanation: "'Doctor' trong tiếng Anh có nghĩa là 'bác sĩ' trong tiếng Việt. Bác sĩ là người được đào tạo và có chuyên môn trong việc chẩn đoán, điều trị bệnh và chăm sóc sức khỏe cho bệnh nhân."
     },
     {
       id: 4,
-      question: "Which of the following is the correct term for the surgical removal of the gallbladder?",
+      question: "What is 'hospital' in English?",
       options: [
-        "Appendectomy",
-        "Cholecystectomy",
-        "Nephrectomy",
-        "Hysterectomy"
+        "Trường học",
+        "Bệnh viện",
+        "Nhà hàng",
+        "Khách sạn"
       ],
       correctAnswer: 1,
-      hint: "'Chole' refers to bile, and 'cyst' refers to a bladder or sac.",
-      explanation: "'Cholecystectomy' is the surgical removal of the gallbladder. 'Appendectomy' is removal of the appendix, 'Nephrectomy' is removal of a kidney, and 'Hysterectomy' is removal of the uterus."
+      hint: "Đây là nơi điều trị cho người bệnh.",
+      explanation: "'Hospital' trong tiếng Anh có nghĩa là 'bệnh viện' trong tiếng Việt. Bệnh viện là cơ sở y tế nơi bệnh nhân được chăm sóc, điều trị bởi các bác sĩ, y tá và nhân viên y tế khác."
     },
     {
       id: 5,
-      question: "What is the primary function of an ECG (Electrocardiogram)?",
+      question: "What is 'medicine' in English?",
       options: [
-        "To measure brain activity",
-        "To record electrical activity of the heart",
-        "To monitor blood oxygen levels",
-        "To assess lung function"
+        "Bệnh",
+        "Thuốc",
+        "Bác sĩ",
+        "Bệnh viện"
       ],
       correctAnswer: 1,
-      hint: "Think about what the 'cardio' part of the word suggests.",
-      explanation: "An ECG (Electrocardiogram) records the electrical activity of the heart over a period of time. It's used to detect cardiac abnormalities like arrhythmias and evidence of heart attacks. Brain activity is measured by an EEG (Electroencephalogram), blood oxygen by pulse oximetry, and lung function by spirometry."
+      hint: "Đây là chất dùng để điều trị bệnh.",
+      explanation: "'Medicine' trong tiếng Anh có nghĩa là 'thuốc' trong tiếng Việt. Thuốc là chất được sử dụng để điều trị, chẩn đoán, ngăn ngừa bệnh tật hoặc cải thiện sức khỏe."
     }
   ],
   
-  businessEnglish: [
+  businessEnglish: [ // Từ vựng tiếng Anh kinh doanh cơ bản
     {
       id: 1,
-      question: "In a business context, what does ROI stand for?",
+      question: "What is 'money' in English?",
       options: [
-        "Range Of Interest",
-        "Return On Investment",
-        "Risk Of Inflation",
-        "Record Of Inventory"
+        "Thời gian",
+        "Tiền",
+        "Sức khỏe",
+        "Hạnh phúc"
       ],
       correctAnswer: 1,
-      hint: "This term is commonly used when evaluating the profitability of an investment.",
-      explanation: "ROI stands for 'Return On Investment'. It's a performance measure used to evaluate the efficiency or profitability of an investment, calculated by dividing the benefit (return) of an investment by its cost."
+      hint: "Đây là thứ bạn dùng để mua hàng hóa và dịch vụ.",
+      explanation: "'Money' trong tiếng Anh có nghĩa là 'tiền' trong tiếng Việt. Tiền là phương tiện thanh toán được sử dụng để mua hàng hóa và dịch vụ, trả nợ, hoặc thực hiện các giao dịch kinh tế khác."
     },
     {
       id: 2,
-      question: "Which of the following is NOT typically included in a SWOT analysis?",
+      question: "What is 'company' in English?",
       options: [
-        "Strengths",
-        "Weaknesses",
-        "Timelines",
-        "Opportunities"
+        "Trường học",
+        "Công ty",
+        "Bệnh viện",
+        "Nhà hàng"
       ],
-      correctAnswer: 2,
-      hint: "SWOT is an acronym for four specific elements of business analysis.",
-      explanation: "A SWOT analysis examines Strengths, Weaknesses, Opportunities, and Threats. Timelines would not be part of a SWOT analysis but might be included in project management tools like Gantt charts or critical path methods."
+      correctAnswer: 1,
+      hint: "Đây là tổ chức kinh doanh có nhiều nhân viên.",
+      explanation: "'Company' trong tiếng Anh có nghĩa là 'công ty' trong tiếng Việt. Công ty là một tổ chức kinh doanh được thành lập để cung cấp hàng hóa hoặc dịch vụ nhằm mục đích tạo ra lợi nhuận."
     },
     {
       id: 3,
-      question: "What is the main purpose of a 'cold call' in business?",
+      question: "What is 'office' in English?",
       options: [
-        "To resolve customer complaints",
-        "To solicit business from potential customers who have not previously expressed interest",
-        "To follow up with existing clients",
-        "To conduct market research at low temperatures"
+        "Nhà",
+        "Văn phòng",
+        "Trường học",
+        "Bệnh viện"
       ],
       correctAnswer: 1,
-      hint: "Think about the metaphorical temperature of the lead.",
-      explanation: "A 'cold call' is an unsolicited call or visit to a potential customer who has not previously expressed interest in the product or service being offered. It's a direct sales technique used to generate new business leads."
+      hint: "Đây là nơi nhiều người làm việc với máy tính và giấy tờ.",
+      explanation: "'Office' trong tiếng Anh có nghĩa là 'văn phòng' trong tiếng Việt. Văn phòng là không gian làm việc nơi người ta thực hiện các công việc hành chính, kinh doanh hoặc chuyên môn."
     },
     {
       id: 4,
-      question: "In business email etiquette, what does 'CC' stand for?",
+      question: "What is 'manager' in English?",
       options: [
-        "Carbon Copy",
-        "Company Communication",
-        "Courtesy Call",
-        "Client Confirmation"
+        "Nhân viên",
+        "Quản lý",
+        "Khách hàng",
+        "Đối tác"
       ],
-      correctAnswer: 0,
-      hint: "This term originated from the days of typewriters and carbon paper.",
-      explanation: "CC stands for 'Carbon Copy'. In emails, it's used to send a copy of an email to recipients other than the primary recipient(s). The term comes from carbon paper used to make copies of documents before photocopiers and computers."
+      correctAnswer: 1,
+      hint: "Đây là người điều hành một nhóm nhân viên hoặc một bộ phận.",
+      explanation: "'Manager' trong tiếng Anh có nghĩa là 'quản lý' trong tiếng Việt. Quản lý là người chịu trách nhiệm điều hành một nhóm nhân viên, một bộ phận hoặc một tổ chức, đưa ra quyết định và đảm bảo công việc được hoàn thành."
     },
     {
       id: 5,
-      question: "What is a 'unicorn' in business terminology?",
+      question: "What is 'job' in English?",
       options: [
-        "A company with a perfect credit score",
-        "A startup valued at over $1 billion",
-        "A product that sells in all global markets",
-        "A CEO who has founded multiple successful companies"
+        "Gia đình",
+        "Công việc",
+        "Trường học",
+        "Sở thích"
       ],
       correctAnswer: 1,
-      hint: "This term refers to something rare and valuable in the startup ecosystem.",
-      explanation: "In business terminology, a 'unicorn' is a privately held startup company valued at over $1 billion. The term was coined because such successful startups were once considered as rare as the mythical creature."
+      hint: "Đây là hoạt động bạn làm để kiếm tiền.",
+      explanation: "'Job' trong tiếng Anh có nghĩa là 'công việc' trong tiếng Việt. Công việc là hoạt động thường xuyên được thực hiện để kiếm tiền, thường là trong một tổ chức hoặc cho một người sử dụng lao động."
     }
   ],
   
-  tourismHospitality: [
+  tourismHospitality: [ // Từ vựng tiếng Anh du lịch và khách sạn cơ bản
     {
       id: 1,
-      question: "What does 'all-inclusive' typically mean in resort terminology?",
+      question: "What is 'hotel' in English?",
       options: [
-        "The resort welcomes guests of all nationalities",
-        "The resort price includes accommodation, meals, and most activities",
-        "The resort has facilities for people with all types of disabilities",
-        "The resort is open all year round"
+        "Nhà hàng",
+        "Khách sạn",
+        "Sân bay",
+        "Bãi biển"
       ],
       correctAnswer: 1,
-      hint: "Think about what's included in the price of your stay.",
-      explanation: "An 'all-inclusive' resort package typically includes accommodation, meals, beverages (often including alcohol), and various activities in one price. This pricing model allows guests to pay one upfront fee for most or all services rather than paying separately for each."
+      hint: "Đây là nơi du khách ở khi đi du lịch.",
+      explanation: "'Hotel' trong tiếng Anh có nghĩa là 'khách sạn' trong tiếng Việt. Khách sạn là nơi cung cấp phòng nghỉ và các dịch vụ khác cho khách du lịch hoặc người đi công tác."
     },
     {
       id: 2,
-      question: "What is the term for the person who supervises the dining room in a restaurant?",
+      question: "What is 'restaurant' in English?",
       options: [
-        "Concierge",
-        "Sommelier",
-        "Maître d'",
-        "Executive Chef"
+        "Khách sạn",
+        "Nhà hàng",
+        "Cửa hàng",
+        "Bệnh viện"
       ],
-      correctAnswer: 2,
-      hint: "This French term is short for 'maître d'hôtel'.",
-      explanation: "A 'Maître d'' (short for Maître d'hôtel) is the person who supervises the dining room in a restaurant. They manage reservations, greet guests, and oversee the service staff. A concierge assists hotel guests with various services, a sommelier specializes in wines, and an executive chef runs the kitchen."
+      correctAnswer: 1,
+      hint: "Đây là nơi bạn đi ăn khi không muốn nấu ăn ở nhà.",
+      explanation: "'Restaurant' trong tiếng Anh có nghĩa là 'nhà hàng' trong tiếng Việt. Nhà hàng là nơi chuẩn bị và phục vụ thức ăn, đồ uống cho khách hàng."
     },
     {
       id: 3,
-      question: "What does 'B&B' stand for in accommodation terminology?",
+      question: "What is 'beach' in English?",
       options: [
-        "Bed and Breakfast",
-        "Board and Bathing",
-        "Business and Budget",
-        "Booking and Billing"
+        "Núi",
+        "Bãi biển",
+        "Sông",
+        "Hồ"
       ],
-      correctAnswer: 0,
-      hint: "This type of accommodation typically offers a place to sleep and a morning meal.",
-      explanation: "B&B stands for 'Bed and Breakfast'. It's a small lodging establishment that offers overnight accommodation and breakfast, but usually doesn't offer other meals. B&Bs are often private homes with fewer than 10 bedrooms available for commercial use."
+      correctAnswer: 1,
+      hint: "Đây là nơi có cát và biển, nơi mọi người đi tắm nắng và bơi lội.",
+      explanation: "'Beach' trong tiếng Anh có nghĩa là 'bãi biển' trong tiếng Việt. Bãi biển là khu vực cát hoặc sỏi dọc theo bờ biển, nơi mọi người thường đến để tắm nắng, bơi lội và thư giãn."
     },
     {
       id: 4,
-      question: "What is 'ecotourism'?",
+      question: "What is 'airport' in English?",
       options: [
-        "Tourism focused on visiting economic centers",
-        "Budget travel options for economically disadvantaged tourists",
-        "Responsible travel to natural areas that conserves the environment and improves local welfare",
-        "Tourism that uses only electronic payment methods"
+        "Bến xe",
+        "Sân bay",
+        "Ga tàu",
+        "Bến cảng"
       ],
-      correctAnswer: 2,
-      hint: "The 'eco' prefix relates to ecology and the environment.",
-      explanation: "Ecotourism is responsible travel to natural areas that conserves the environment, sustains the well-being of local people, and involves interpretation and education. It's aimed at minimizing impact on the environment while providing positive experiences for visitors and hosts."
+      correctAnswer: 1,
+      hint: "Đây là nơi máy bay cất cánh và hạ cánh.",
+      explanation: "'Airport' trong tiếng Anh có nghĩa là 'sân bay' trong tiếng Việt. Sân bay là nơi máy bay cất cánh, hạ cánh và nơi hành khách lên xuống máy bay."
     },
     {
       id: 5,
-      question: "What does 'half-board' mean in hotel accommodation?",
+      question: "What is 'passport' in English?",
       options: [
-        "Only half of the hotel facilities are available",
-        "The room is shared with another guest",
-        "Breakfast and one other meal (usually dinner) are included",
-        "The hotel is under partial renovation"
+        "Vé máy bay",
+        "Hộ chiếu",
+        "Tiền",
+        "Hành lý"
       ],
-      correctAnswer: 2,
-      hint: "This term refers to which meals are included in your stay.",
-      explanation: "'Half-board' (also known as 'demi-pension') is a type of hotel rate that includes accommodation, breakfast, and one other meal, usually dinner. It differs from 'full-board' (all meals included) and 'bed and breakfast' (only breakfast included)."
+      correctAnswer: 1,
+      hint: "Đây là giấy tờ bạn cần có khi đi du lịch nước ngoài.",
+      explanation: "'Passport' trong tiếng Anh có nghĩa là 'hộ chiếu' trong tiếng Việt. Hộ chiếu là giấy tờ chính thức do chính phủ cấp để xác nhận danh tính và quốc tịch của một người khi đi du lịch nước ngoài."
     }
   ],
   
-  scienceTech: [
+  scienceTech: [ // Từ vựng tiếng Anh khoa học và công nghệ cơ bản
     {
       id: 1,
-      question: "What does 'AI' stand for in technology?",
+      question: "What is 'computer' in English?",
       options: [
-        "Automated Interface",
-        "Artificial Intelligence",
-        "Advanced Integration",
-        "Alternate Input"
+        "Điện thoại",
+        "Máy tính",
+        "Tivi",
+        "Máy ảnh"
       ],
       correctAnswer: 1,
-      hint: "This technology aims to simulate human intelligence in machines.",
-      explanation: "AI stands for 'Artificial Intelligence'. It refers to the simulation of human intelligence in machines that are programmed to think and learn like humans. AI encompasses various technologies including machine learning, natural language processing, and computer vision."
+      hint: "Đây là thiết bị điện tử bạn dùng để lướt web, viết văn bản, chơi game.",
+      explanation: "'Computer' trong tiếng Anh có nghĩa là 'máy tính' trong tiếng Việt. Máy tính là thiết bị điện tử có khả năng lưu trữ, xử lý dữ liệu và thực hiện các tác vụ khác nhau."
     },
     {
       id: 2,
-      question: "What is the main function of DNS in internet technology?",
+      question: "What is 'internet' in English?",
       options: [
-        "To protect websites from cyber attacks",
-        "To translate domain names to IP addresses",
-        "To encrypt data transmitted over the internet",
-        "To compress digital files for faster transmission"
+        "Điện thoại",
+        "Internet",
+        "Tivi",
+        "Sách"
       ],
       correctAnswer: 1,
-      hint: "Think about how computers locate websites on the internet.",
-      explanation: "DNS (Domain Name System) translates human-readable domain names (like www.example.com) into machine-readable IP addresses (like 192.0.2.1). This allows users to access websites using easy-to-remember names instead of numerical IP addresses."
+      hint: "Đây là mạng toàn cầu kết nối hàng triệu máy tính.",
+      explanation: "'Internet' trong tiếng Anh cũng được gọi là 'internet' trong tiếng Việt. Internet là mạng lưới toàn cầu kết nối hàng tỷ thiết bị điện tử, cho phép mọi người chia sẻ thông tin và giao tiếp với nhau."
     },
     {
       id: 3,
-      question: "In chemistry, what does 'pH' measure?",
+      question: "What is 'smartphone' in English?",
       options: [
-        "Potential Hydrogen",
-        "Power of Hydrogen",
-        "Percentage of Hydrogen",
-        "Pressure of Hydrogen"
+        "Máy tính",
+        "Điện thoại thông minh",
+        "Máy ảnh",
+        "Tivi"
       ],
-      correctAnswer: 0,
-      hint: "This scale measures how acidic or basic a solution is.",
-      explanation: "pH stands for 'Potential of Hydrogen' and measures the acidity or alkalinity of a solution on a scale of 0 to 14. A pH of 7 is neutral, below 7 is acidic, and above 7 is alkaline (basic). The scale is logarithmic, meaning each step represents a tenfold change."
+      correctAnswer: 1,
+      hint: "Đây là loại điện thoại có nhiều tính năng như máy tính.",
+      explanation: "'Smartphone' trong tiếng Anh có nghĩa là 'điện thoại thông minh' trong tiếng Việt. Điện thoại thông minh là loại điện thoại di động có nhiều tính năng như máy tính, thường có màn hình cảm ứng, kết nối internet và có thể cài đặt các ứng dụng."
     },
     {
       id: 4,
-      question: "What is 'quantum computing'?",
+      question: "What is 'app' in English?",
       options: [
-        "Computing using very small, miniaturized components",
-        "Computing that uses quantum mechanical phenomena such as superposition and entanglement",
-        "Computing that processes data in discrete quantities rather than continuously",
-        "Computing that focuses on quality over quantity of calculations"
+        "Máy tính",
+        "Ứng dụng",
+        "Internet",
+        "Màn hình"
       ],
       correctAnswer: 1,
-      hint: "This type of computing leverages principles from quantum physics.",
-      explanation: "Quantum computing uses quantum mechanical phenomena like superposition and entanglement to perform operations on data. Unlike classical computers that use bits (0 or 1), quantum computers use quantum bits or 'qubits' that can exist in multiple states simultaneously, potentially solving certain problems much faster."
+      hint: "Đây là phần mềm bạn tải về và sử dụng trên điện thoại thông minh hoặc máy tính bảng.",
+      explanation: "'App' (viết tắt của application) trong tiếng Anh có nghĩa là 'ứng dụng' trong tiếng Việt. Ứng dụng là phần mềm được thiết kế để thực hiện các tác vụ cụ thể và có thể được cài đặt trên điện thoại thông minh, máy tính bảng và máy tính."
     },
     {
       id: 5,
-      question: "What is 'CRISPR' used for in science?",
+      question: "What is 'social media' in English?",
       options: [
-        "Measuring cosmic radiation",
-        "Analyzing crystal structures",
-        "Gene editing",
-        "Climate prediction modeling"
+        "Báo chí",
+        "Mạng xã hội",
+        "Tivi",
+        "Sách"
       ],
-      correctAnswer: 2,
-      hint: "This technology has revolutionary applications in genetics and medicine.",
-      explanation: "CRISPR (Clustered Regularly Interspaced Short Palindromic Repeats) is a revolutionary gene-editing technology that allows scientists to modify DNA sequences and alter gene function. It has potential applications in treating genetic diseases, agriculture, and biological research."
+      correctAnswer: 1,
+      hint: "Đây là nơi mọi người chia sẻ ảnh, suy nghĩ và kết nối với bạn bè trực tuyến.",
+      explanation: "'Social media' trong tiếng Anh có nghĩa là 'mạng xã hội' trong tiếng Việt. Mạng xã hội là các trang web và ứng dụng cho phép người dùng tạo và chia sẻ nội dung hoặc tham gia vào mạng lưới xã hội, ví dụ như Facebook, Instagram, Twitter."
     }
   ],
   
-  education: [
+  education: [ // Từ vựng tiếng Anh giáo dục cơ bản
     {
       id: 1,
-      question: "What teaching approach emphasizes student-centered learning and active participation?",
+      question: "What is 'teacher' in English?",
       options: [
-        "Lecture-based instruction",
-        "Constructivist approach",
-        "Rote memorization",
-        "Standardized testing"
+        "Học sinh",
+        "Giáo viên",
+        "Hiệu trưởng",
+        "Phụ huynh"
       ],
       correctAnswer: 1,
-      hint: "This approach views learning as an active process of creating meaning from experiences.",
-      explanation: "The constructivist approach emphasizes student-centered learning where students actively participate in the learning process. It's based on the idea that learners construct knowledge through experiences and reflection, rather than passively receiving information from the teacher."
+      hint: "Đây là người đứng trước lớp học và giảng bài.",
+      explanation: "'Teacher' trong tiếng Anh có nghĩa là 'giáo viên' trong tiếng Việt. Giáo viên là người giúp học sinh tiếp thu kiến thức, kỹ năng và phẩm chất. Họ hướng dẫn học sinh trong quá trình học tập, giải thích khái niệm và đánh giá sự tiến bộ của học sinh."
     },
     {
       id: 2,
-      question: "What does 'ESL' stand for in education?",
+      question: "What is 'student' in English?",
       options: [
-        "European Standard Learning",
-        "English as a Second Language",
-        "Enhanced Student Learning",
-        "Educational Standards Laboratory"
+        "Giáo viên",
+        "Học sinh",
+        "Hiệu trưởng",
+        "Phụ huynh"
       ],
       correctAnswer: 1,
-      hint: "This term refers to teaching English to non-native speakers.",
-      explanation: "ESL stands for 'English as a Second Language'. It refers to the teaching of English to students whose first language is not English, typically in an English-speaking country. Similar terms include EFL (English as a Foreign Language) and TESOL (Teaching English to Speakers of Other Languages)."
+      hint: "Đây là người ngồi trong lớp học để học từ giáo viên.",
+      explanation: "'Student' trong tiếng Anh có nghĩa là 'học sinh' hoặc 'sinh viên' trong tiếng Việt. Học sinh/sinh viên là người theo học tại trường học, cao đẳng, đại học hoặc cơ sở giáo dục khác để học tập. Họ tham gia các lớp học, hoàn thành bài tập và làm bài kiểm tra."
     },
     {
       id: 3,
-      question: "What is 'formative assessment' in education?",
+      question: "What is 'classroom' in English?",
       options: [
-        "Final exams that determine a student's grade",
-        "Standardized tests used for college admissions",
-        "Ongoing evaluation used to monitor student learning and provide feedback",
-        "Assessment of a teacher's performance by school administrators"
+        "Nhà ăn",
+        "Lớp học",
+        "Thư viện",
+        "Sân chơi"
       ],
-      correctAnswer: 2,
-      hint: "This type of assessment happens during the learning process, not just at the end.",
-      explanation: "Formative assessment is ongoing evaluation used to monitor student learning and provide feedback during the instructional process. Unlike summative assessment (which evaluates learning at the end of a unit), formative assessment helps teachers identify areas where students are struggling so they can adjust their teaching accordingly."
+      correctAnswer: 1,
+      hint: "Đây là nơi học sinh và giáo viên tụ họp để học bài.",
+      explanation: "'Classroom' trong tiếng Anh có nghĩa là 'lớp học' trong tiếng Việt. Lớp học là phòng trong trường học hoặc cơ sở giáo dục nơi diễn ra việc dạy và học. Lớp học thường có bàn ghế cho học sinh, bảng để giáo viên viết và các tài liệu giáo dục khác nhau."
     },
     {
       id: 4,
-      question: "What is 'differentiated instruction' in teaching?",
+      question: "What is 'homework' in English?",
       options: [
-        "Teaching different subjects in different classrooms",
-        "Separating students based on ability levels",
-        "Tailoring teaching approaches to meet individual student needs",
-        "Using different textbooks for different grades"
+        "Sách giáo khoa",
+        "Bài tập về nhà",
+        "Bài kiểm tra",
+        "Thời khóa biểu"
       ],
-      correctAnswer: 2,
-      hint: "This approach recognizes that students have different learning styles and abilities.",
-      explanation: "Differentiated instruction is an approach where teachers tailor their teaching methods to meet the diverse needs of individual students. It recognizes that students differ in readiness, interests, and learning profiles, and adjusts content, process, products, or the learning environment accordingly."
+      correctAnswer: 1,
+      hint: "Đây là công việc mà giáo viên giao cho học sinh làm sau giờ học.",
+      explanation: "'Homework' trong tiếng Anh có nghĩa là 'bài tập về nhà' trong tiếng Việt. Bài tập về nhà là các nhiệm vụ được giáo viên giao cho học sinh để hoàn thành ngoài giờ học, thường là ở nhà. Bài tập về nhà giúp củng cố kiến thức đã học và phát triển kỹ năng tự học."
     },
     {
       id: 5,
-      question: "What does 'IEP' stand for in special education?",
+      question: "What is 'test' in English?",
       options: [
-        "International Education Program",
-        "Intensive English Practice",
-        "Individualized Education Program",
-        "Integrated Evaluation Process"
+        "Sách giáo khoa",
+        "Bài kiểm tra",
+        "Thời khóa biểu",
+        "Bài tập về nhà"
       ],
-      correctAnswer: 2,
-      hint: "This document outlines specialized educational services for students with disabilities.",
-      explanation: "IEP stands for 'Individualized Education Program'. It's a written document developed for each public school child who is eligible for special education. The IEP outlines the special educational services the student will receive, including specific learning goals and how progress will be measured."
+      correctAnswer: 1,
+      hint: "Đây là khi học sinh phải trả lời câu hỏi để thể hiện những gì họ đã học.",
+      explanation: "'Test' trong tiếng Anh có nghĩa là 'bài kiểm tra' trong tiếng Việt. Bài kiểm tra là một đánh giá nhằm đo lường kiến thức, kỹ năng hoặc sự hiểu biết của học sinh về một môn học. Bài kiểm tra giúp giáo viên đánh giá việc học của học sinh."
     }
   ],
   
-  legalEnglish: [
+  legalEnglish: [ // Từ vựng tiếng Anh pháp lý cơ bản
     {
       id: 1,
-      question: "What does 'pro bono' mean in legal practice?",
+      question: "What is 'law' in English?",
       options: [
-        "For the public good, without charge",
-        "Professional bonding between lawyer and client",
-        "Provisional bond until trial",
-        "Probationary period for new lawyers"
+        "Tòa án",
+        "Luật pháp",
+        "Cảnh sát",
+        "Thẩm phán"
       ],
-      correctAnswer: 0,
-      hint: "This Latin term describes work done without compensation for the public good.",
-      explanation: "'Pro bono' comes from the Latin phrase 'pro bono publico' meaning 'for the public good'. In legal practice, it refers to services provided by lawyers without charge, especially for the public good or for clients with limited means."
+      correctAnswer: 1,
+      hint: "Đây là quy tắc mà mọi người trong một quốc gia phải tuân theo.",
+      explanation: "'Law' trong tiếng Anh có nghĩa là 'luật pháp' trong tiếng Việt. Luật pháp là quy tắc được chính phủ đặt ra và mọi người trong một quốc gia, tiểu bang hoặc cộng đồng phải tuân theo. Vi phạm luật pháp có thể dẫn đến các hình phạt như phạt tiền hoặc tù."
     },
     {
       id: 2,
-      question: "What is a 'tort' in legal terminology?",
+      question: "What is 'court' in English?",
       options: [
-        "A legal document filed with the court",
-        "A civil wrong that causes someone to suffer loss or harm",
-        "A type of criminal offense involving theft",
-        "A contract between two parties"
+        "Luật pháp",
+        "Tòa án",
+        "Cảnh sát",
+        "Nhà tù"
       ],
       correctAnswer: 1,
-      hint: "This term relates to civil (not criminal) wrongs that can lead to lawsuits.",
-      explanation: "A tort is a civil wrong that causes someone to suffer loss or harm, resulting in legal liability for the person who commits the act. Unlike criminal cases (brought by the government), tort cases are brought by individuals or entities seeking compensation for harm caused by the wrongdoer."
+      hint: "Đây là nơi mọi người đến khi họ có vấn đề pháp lý cần giải quyết.",
+      explanation: "'Court' trong tiếng Anh có nghĩa là 'tòa án' trong tiếng Việt. Tòa án là nơi chính thức xét xử và quyết định các vấn đề pháp lý bởi thẩm phán hoặc bồi thẩm đoàn. Tòa án giải quyết tranh chấp giữa các bên và xác định tội hay vô tội của người bị buộc tội."
     },
     {
       id: 3,
-      question: "What does 'habeas corpus' literally mean?",
+      question: "What is 'judge' in English?",
       options: [
-        "You have the body",
-        "Hear the evidence",
-        "Hold the case",
-        "Honor the court"
+        "Luật sư",
+        "Thẩm phán",
+        "Cảnh sát",
+        "Tội phạm"
       ],
-      correctAnswer: 0,
-      hint: "This Latin term relates to bringing a detained person before a court.",
-      explanation: "'Habeas corpus' literally means 'you have the body' in Latin. It refers to a legal writ that requires a person under arrest to be brought before a judge or court to determine if there is sufficient cause for their detention. It's a fundamental protection against unlawful imprisonment."
+      correctAnswer: 1,
+      hint: "Đây là người ngồi ở phía trước phòng xử án và đưa ra quyết định cuối cùng.",
+      explanation: "'Judge' trong tiếng Anh có nghĩa là 'thẩm phán' trong tiếng Việt. Thẩm phán là viên chức công quyền chủ trì tòa án. Thẩm phán nghe bằng chứng, xác định sự thật của vụ án, áp dụng luật liên quan và đưa ra quyết định hoặc phán quyết."
     },
     {
       id: 4,
-      question: "What is 'jurisprudence'?",
+      question: "What is 'lawyer' in English?",
       options: [
-        "The process of selecting jurors for a trial",
-        "The oath taken by witnesses in court",
-        "The philosophy or theory of law",
-        "The jurisdiction of a specific court"
+        "Thẩm phán",
+        "Luật sư",
+        "Cảnh sát",
+        "Tội phạm"
       ],
-      correctAnswer: 2,
-      hint: "This term refers to the theoretical study of law and legal principles.",
-      explanation: "Jurisprudence is the philosophy or theory of law - the theoretical study of law, its nature, principles, and the legal systems in which it operates. It examines questions like 'What is law?', 'What should law be?', and 'How do legal systems work?'"
+      correctAnswer: 1,
+      hint: "Đây là người giúp đỡ mọi người với các vấn đề pháp lý và đại diện cho họ tại tòa án.",
+      explanation: "'Lawyer' trong tiếng Anh có nghĩa là 'luật sư' trong tiếng Việt. Luật sư là người được đào tạo và cấp phép để hành nghề luật, tư vấn pháp lý và đại diện cho khách hàng trong các vấn đề pháp lý. Luật sư giúp khách hàng hiểu quyền và nghĩa vụ pháp lý của họ."
     },
     {
       id: 5,
-      question: "What is a 'deposition' in legal proceedings?",
+      question: "What is 'crime' in English?",
       options: [
-        "The final judgment in a case",
-        "Out-of-court testimony given under oath",
-        "The dismissal of charges against a defendant",
-        "A financial penalty imposed by the court"
+        "Luật pháp",
+        "Tội phạm",
+        "Cảnh sát",
+        "Nhà tù"
       ],
       correctAnswer: 1,
-      hint: "This process happens during the discovery phase before a trial.",
-      explanation: "A deposition is out-of-court testimony given under oath by a witness in response to questions from attorneys. It's part of the pre-trial discovery process and allows both sides to learn what the witness knows and preserve their testimony. Depositions can be used to impeach witnesses if they change their testimony at trial."
+      hint: "Đây là hành động có thể khiến ai đó bị bắt giữ hoặc bị trừng phạt theo pháp luật.",
+      explanation: "'Crime' trong tiếng Anh có nghĩa là 'tội phạm' trong tiếng Việt. Tội phạm là hành động vi phạm pháp luật và bị trừng phạt theo luật. Ví dụ phổ biến bao gồm trộm cắp, hành hung, giết người và lừa đảo. Khi ai đó phạm tội, họ có thể phải đối mặt với các hậu quả như phạt tiền hoặc tù."
     }
   ]
 };

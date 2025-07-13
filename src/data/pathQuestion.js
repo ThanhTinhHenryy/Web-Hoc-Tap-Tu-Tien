@@ -1,277 +1,274 @@
 const pathQuestions = {
-  // Medical English Questions
-  medicalEnglish: [
+  // Các câu hỏi từ vựng cơ bản cho người mới bắt đầu học tiếng Anh chuyên ngành
+  medicalEnglish: [ // Từ vựng tiếng Anh y khoa cơ bản
     {
       id: 1,
-      question: "What does 'NPO' stand for in a medical context?",
+      question: "What is 'heart' in English?",
       options: [
-        "No Physician Orders",
-        "Nothing Per Oral",
-        "Negative Patient Outcome",
-        "Normal Physical Operation"
+        "Đầu",
+        "Tim",
+        "Phổi",
+        "Dạ dày"
       ],
       correctAnswer: 1,
-      hint: "This is a common abbreviation used when patients shouldn't eat or drink before procedures.",
-      explanation: "'NPO' stands for 'Nothing Per Oral' (or 'Nil Per Os' in Latin), meaning the patient should not eat or drink anything by mouth, typically before a medical procedure or surgery."
+      hint: "Đây là cơ quan bơm máu trong cơ thể.",
+      explanation: "'Heart' trong tiếng Anh có nghĩa là 'tim' trong tiếng Việt. Tim là cơ quan cơ bắp có chức năng bơm máu đi khắp cơ thể thông qua hệ thống tuần hoàn."
     },
     {
       id: 2,
-      question: "Which of the following is NOT a common vital sign?",
+      question: "What is 'blood' in English?",
       options: [
-        "Blood pressure",
-        "Respiratory rate",
-        "Body temperature",
-        "Liver function"
+        "Nước",
+        "Máu",
+        "Mồ hôi",
+        "Nước mắt"
       ],
-      correctAnswer: 3,
-      hint: "Vital signs are measurements of the body's most basic functions.",
-      explanation: "Liver function is not a vital sign. The five main vital signs are blood pressure, pulse (heart rate), respiratory rate, temperature, and oxygen saturation. Liver function is assessed through specific blood tests."
+      correctAnswer: 1,
+      hint: "Đây là chất lỏng màu đỏ chảy trong mạch máu.",
+      explanation: "'Blood' trong tiếng Anh có nghĩa là 'máu' trong tiếng Việt. Máu là chất lỏng màu đỏ chảy trong mạch máu, có chức năng vận chuyển oxy và chất dinh dưỡng đến các tế bào trong cơ thể."
     },
     {
       id: 3,
-      question: "What does 'acute' mean in medical terminology?",
+      question: "What is 'doctor' in English?",
       options: [
-        "Mild or minor",
-        "Sudden and severe",
-        "Long-lasting",
-        "Recurring periodically"
+        "Y tá",
+        "Bác sĩ",
+        "Dược sĩ",
+        "Bệnh nhân"
       ],
       correctAnswer: 1,
-      hint: "Think about the timeframe and intensity of symptoms.",
-      explanation: "In medical terminology, 'acute' refers to conditions that have a rapid onset and are often severe but typically short in duration, as opposed to 'chronic' conditions which develop slowly and persist over time."
+      hint: "Đây là người khám và điều trị bệnh.",
+      explanation: "'Doctor' trong tiếng Anh có nghĩa là 'bác sĩ' trong tiếng Việt. Bác sĩ là người được đào tạo và có chuyên môn trong việc chẩn đoán, điều trị bệnh và chăm sóc sức khỏe cho bệnh nhân."
     },
     {
       id: 4,
-      question: "Which term describes the process of listening to internal body sounds using a stethoscope?",
+      question: "What is 'hospital' in English?",
       options: [
-        "Palpation",
-        "Percussion",
-        "Auscultation",
-        "Inspection"
+        "Trường học",
+        "Bệnh viện",
+        "Nhà hàng",
+        "Khách sạn"
       ],
-      correctAnswer: 2,
-      hint: "This is one of the four main physical examination techniques.",
-      explanation: "Auscultation is the process of listening to internal body sounds using a stethoscope. It's commonly used to listen to heart, lung, and bowel sounds as part of a physical examination."
+      correctAnswer: 1,
+      hint: "Đây là nơi điều trị cho người bệnh.",
+      explanation: "'Hospital' trong tiếng Anh có nghĩa là 'bệnh viện' trong tiếng Việt. Bệnh viện là cơ sở y tế nơi bệnh nhân được chăm sóc, điều trị bởi các bác sĩ, y tá và nhân viên y tế khác."
     },
     {
       id: 5,
-      question: "What does 'prognosis' refer to in healthcare?",
+      question: "What is 'medicine' in English?",
       options: [
-        "The identification of a disease",
-        "The prediction of disease outcome",
-        "The treatment plan",
-        "The patient's medical history"
+        "Bệnh",
+        "Thuốc",
+        "Bác sĩ",
+        "Bệnh viện"
       ],
       correctAnswer: 1,
-      hint: "This term relates to predicting the future course of a condition.",
-      explanation: "Prognosis refers to the predicted or likely outcome of a disease or the prospect of recovery. It's a healthcare provider's assessment of how a patient's disease or condition will likely progress and their chances of recovery."
+      hint: "Đây là chất dùng để điều trị bệnh.",
+      explanation: "'Medicine' trong tiếng Anh có nghĩa là 'thuốc' trong tiếng Việt. Thuốc là chất được sử dụng để điều trị, chẩn đoán, ngăn ngừa bệnh tật hoặc cải thiện sức khỏe."
     }
   ],
 
-  // Business English Questions
-  businessEnglish: [
+  businessEnglish: [ // Từ vựng tiếng Anh kinh doanh cơ bản
     {
       id: 1,
-      question: "What does ROI stand for in business?",
+      question: "What is 'money' in English?",
       options: [
-        "Range Of Investment",
-        "Return On Investment",
-        "Rate Of Increase",
-        "Review Of Income"
+        "Thời gian",
+        "Tiền",
+        "Sức khỏe",
+        "Hạnh phúc"
       ],
       correctAnswer: 1,
-      hint: "This is a measure of profitability relative to investment costs.",
-      explanation: "ROI stands for 'Return On Investment.' It's a performance measure used to evaluate the efficiency or profitability of an investment, calculated by dividing the benefit (return) by the cost of the investment."
+      hint: "Đây là thứ bạn dùng để mua hàng hóa và dịch vụ.",
+      explanation: "'Money' trong tiếng Anh có nghĩa là 'tiền' trong tiếng Việt. Tiền là phương tiện thanh toán được sử dụng để mua hàng hóa và dịch vụ, trả nợ, hoặc thực hiện các giao dịch kinh tế khác."
     },
     {
       id: 2,
-      question: "Which of these is NOT typically included in a SWOT analysis?",
+      question: "What is 'company' in English?",
       options: [
-        "Strengths",
-        "Weaknesses",
-        "Targets",
-        "Opportunities"
+        "Trường học",
+        "Công ty",
+        "Bệnh viện",
+        "Nhà hàng"
       ],
-      correctAnswer: 2,
-      hint: "SWOT is an acronym for four specific elements of business analysis.",
-      explanation: "'Targets' is not part of a SWOT analysis. SWOT stands for Strengths, Weaknesses, Opportunities, and Threats. It's a strategic planning technique used to identify these four elements related to business competition or project planning."
+      correctAnswer: 1,
+      hint: "Đây là tổ chức kinh doanh có nhiều nhân viên.",
+      explanation: "'Company' trong tiếng Anh có nghĩa là 'công ty' trong tiếng Việt. Công ty là một tổ chức kinh doanh được thành lập để cung cấp hàng hóa hoặc dịch vụ nhằm mục đích tạo ra lợi nhuận."
     },
     {
       id: 3,
-      question: "What is the main purpose of a business pitch?",
+      question: "What is 'office' in English?",
       options: [
-        "To analyze competitors",
-        "To present a business idea to potential investors",
-        "To train new employees",
-        "To document business processes"
+        "Nhà",
+        "Văn phòng",
+        "Trường học",
+        "Bệnh viện"
       ],
       correctAnswer: 1,
-      hint: "Think about who the audience would be and what outcome you're seeking.",
-      explanation: "The main purpose of a business pitch is to present a business idea or opportunity to potential investors, partners, or customers in a compelling way to secure funding, partnership, or sales."
+      hint: "Đây là nơi nhiều người làm việc với máy tính và giấy tờ.",
+      explanation: "'Office' trong tiếng Anh có nghĩa là 'văn phòng' trong tiếng Việt. Văn phòng là không gian làm việc nơi người ta thực hiện các công việc hành chính, kinh doanh hoặc chuyên môn."
     },
     {
       id: 4,
-      question: "In business communication, what does 'B2B' stand for?",
+      question: "What is 'manager' in English?",
       options: [
-        "Back to Business",
-        "Business to Business",
-        "Business to Buyer",
-        "Budget to Budget"
+        "Nhân viên",
+        "Quản lý",
+        "Khách hàng",
+        "Đối tác"
       ],
       correctAnswer: 1,
-      hint: "This describes transactions between two companies rather than between a company and consumers.",
-      explanation: "B2B stands for 'Business to Business.' It refers to business transactions, relationships, or communications that occur between businesses rather than between a business and individual consumers (which would be B2C, or Business to Consumer)."
+      hint: "Đây là người điều hành một nhóm nhân viên hoặc một bộ phận.",
+      explanation: "'Manager' trong tiếng Anh có nghĩa là 'quản lý' trong tiếng Việt. Quản lý là người chịu trách nhiệm điều hành một nhóm nhân viên, một bộ phận hoặc một tổ chức, đưa ra quyết định và đảm bảo công việc được hoàn thành."
     },
     {
       id: 5,
-      question: "What is a 'stakeholder' in business terminology?",
+      question: "What is 'job' in English?",
       options: [
-        "Only the company's shareholders",
-        "Anyone with a financial investment in the company",
-        "Any person or group affected by or who can affect a business",
-        "The founding members of a company"
+        "Gia đình",
+        "Công việc",
+        "Trường học",
+        "Sở thích"
       ],
-      correctAnswer: 2,
-      hint: "This term encompasses a broader group than just investors.",
-      explanation: "A stakeholder is any person, group, or organization that has an interest in or is affected by the actions, objectives, and policies of a business. This includes employees, customers, suppliers, communities, investors, and even competitors."
+      correctAnswer: 1,
+      hint: "Đây là hoạt động bạn làm để kiếm tiền.",
+      explanation: "'Job' trong tiếng Anh có nghĩa là 'công việc' trong tiếng Việt. Công việc là hoạt động thường xuyên được thực hiện để kiếm tiền, thường là trong một tổ chức hoặc cho một người sử dụng lao động."
     }
   ],
 
-  // Tourism & Hospitality Questions
-  tourismHospitality: [
+  tourismHospitality: [ // Từ vựng tiếng Anh du lịch và khách sạn cơ bản
     {
       id: 1,
-      question: "What does 'all-inclusive' mean in the context of a resort?",
+      question: "What is 'hotel' in English?",
       options: [
-        "The resort welcomes guests of all backgrounds",
-        "The resort fee includes accommodation, meals, and most activities",
-        "The resort is accessible to people with disabilities",
-        "The resort is open all year round"
+        "Nhà hàng",
+        "Khách sạn",
+        "Sân bay",
+        "Bãi biển"
       ],
       correctAnswer: 1,
-      hint: "This term relates to what's covered in the price of your stay.",
-      explanation: "An 'all-inclusive' resort is one where the price includes accommodation, meals, beverages (often including alcohol), and various activities and entertainment. This pricing model allows guests to pay one upfront fee for most of their vacation expenses."
+      hint: "Đây là nơi du khách ở khi đi du lịch.",
+      explanation: "'Hotel' trong tiếng Anh có nghĩa là 'khách sạn' trong tiếng Việt. Khách sạn là nơi cung cấp phòng nghỉ và các dịch vụ khác cho khách du lịch hoặc người đi công tác."
     },
     {
       id: 2,
-      question: "What is the primary purpose of a concierge in a hotel?",
+      question: "What is 'restaurant' in English?",
       options: [
-        "To clean guest rooms",
-        "To prepare food in the restaurant",
-        "To assist guests with information and services",
-        "To manage hotel finances"
+        "Khách sạn",
+        "Nhà hàng",
+        "Cửa hàng",
+        "Bệnh viện"
       ],
-      correctAnswer: 2,
-      hint: "This hotel staff member helps enhance the guest experience.",
-      explanation: "A concierge's primary purpose is to assist hotel guests with various services such as making restaurant reservations, arranging transportation, providing information about local attractions, and fulfilling special requests to enhance the guest's stay."
+      correctAnswer: 1,
+      hint: "Đây là nơi bạn đi ăn khi không muốn nấu ăn ở nhà.",
+      explanation: "'Restaurant' trong tiếng Anh có nghĩa là 'nhà hàng' trong tiếng Việt. Nhà hàng là nơi chuẩn bị và phục vụ thức ăn, đồ uống cho khách hàng."
     },
     {
       id: 3,
-      question: "What does 'ecotourism' focus on?",
+      question: "What is 'beach' in English?",
       options: [
-        "Luxury travel experiences",
-        "Budget-friendly travel options",
-        "Responsible travel to natural areas that conserves the environment",
-        "Virtual tourism experiences"
+        "Núi",
+        "Bãi biển",
+        "Sông",
+        "Hồ"
       ],
-      correctAnswer: 2,
-      hint: "This type of tourism is concerned with environmental impact.",
-      explanation: "Ecotourism focuses on responsible travel to natural areas that conserves the environment, sustains the well-being of local people, and involves education. It aims to minimize the negative impacts of tourism on the environment and enhance the cultural integrity of local people."
+      correctAnswer: 1,
+      hint: "Đây là nơi có cát và biển, nơi mọi người đi tắm nắng và bơi lội.",
+      explanation: "'Beach' trong tiếng Anh có nghĩa là 'bãi biển' trong tiếng Việt. Bãi biển là khu vực cát hoặc sỏi dọc theo bờ biển, nơi mọi người thường đến để tắm nắng, bơi lội và thư giãn."
     },
     {
       id: 4,
-      question: "What is a 'red-eye flight'?",
+      question: "What is 'airport' in English?",
       options: [
-        "A flight that's been canceled",
-        "A flight that departs late at night and arrives early in the morning",
-        "An emergency flight for medical purposes",
-        "A flight that makes multiple stops"
+        "Bến xe",
+        "Sân bay",
+        "Ga tàu",
+        "Bến cảng"
       ],
       correctAnswer: 1,
-      hint: "The name refers to the physical effect on passengers.",
-      explanation: "A 'red-eye flight' is one that departs late at night and arrives early the next morning. The term comes from the red eyes passengers may have from lack of sleep during an overnight flight."
+      hint: "Đây là nơi máy bay cất cánh và hạ cánh.",
+      explanation: "'Airport' trong tiếng Anh có nghĩa là 'sân bay' trong tiếng Việt. Sân bay là nơi máy bay cất cánh, hạ cánh và nơi hành khách lên xuống máy bay."
     },
     {
       id: 5,
-      question: "What does 'B&B' stand for in the hospitality industry?",
+      question: "What is 'passport' in English?",
       options: [
-        "Bed and Breakfast",
-        "Board and Beverages",
-        "Business and Budget",
-        "Booking and Billing"
+        "Vé máy bay",
+        "Hộ chiếu",
+        "Tiền",
+        "Hành lý"
       ],
-      correctAnswer: 0,
-      hint: "This accommodation type typically offers a more personal experience than hotels.",
-      explanation: "B&B stands for 'Bed and Breakfast.' It's a small lodging establishment that offers overnight accommodation and breakfast, but usually doesn't provide other meals. B&Bs are often private homes with fewer rooms than hotels and a more personal atmosphere."
+      correctAnswer: 1,
+      hint: "Đây là giấy tờ bạn cần có khi đi du lịch nước ngoài.",
+      explanation: "'Passport' trong tiếng Anh có nghĩa là 'hộ chiếu' trong tiếng Việt. Hộ chiếu là giấy tờ chính thức do chính phủ cấp để xác nhận danh tính và quốc tịch của một người khi đi du lịch nước ngoài."
     }
   ],
 
-  // Science & Tech Questions
-  scienceTech: [
+  scienceTech: [ // Từ vựng tiếng Anh khoa học và công nghệ cơ bản
     {
       id: 1,
-      question: "What does 'AI' stand for in technology?",
+      question: "What is 'computer' in English?",
       options: [
-        "Automated Interface",
-        "Artificial Intelligence",
-        "Advanced Integration",
-        "Alternate Input"
+        "Điện thoại",
+        "Máy tính",
+        "Tivi",
+        "Máy ảnh"
       ],
       correctAnswer: 1,
-      hint: "This technology aims to simulate human intelligence in machines.",
-      explanation: "AI stands for 'Artificial Intelligence.' It refers to the simulation of human intelligence in machines that are programmed to think and learn like humans, performing tasks that typically require human intelligence such as visual perception, speech recognition, and decision-making."
+      hint: "Đây là thiết bị điện tử bạn dùng để lướt web, viết văn bản, chơi game.",
+      explanation: "'Computer' trong tiếng Anh có nghĩa là 'máy tính' trong tiếng Việt. Máy tính là thiết bị điện tử có khả năng lưu trữ, xử lý dữ liệu và thực hiện các tác vụ khác nhau."
     },
     {
       id: 2,
-      question: "What is the main function of an API in software development?",
+      question: "What is 'internet' in English?",
       options: [
-        "To create user interfaces",
-        "To allow different software applications to communicate with each other",
-        "To protect software from viruses",
-        "To compress data files"
+        "Điện thoại",
+        "Internet",
+        "Tivi",
+        "Sách"
       ],
       correctAnswer: 1,
-      hint: "Think about how different software systems interact.",
-      explanation: "API stands for 'Application Programming Interface.' Its main function is to allow different software applications to communicate and interact with each other. APIs define the methods and data formats that applications can use to request and exchange information."
+      hint: "Đây là mạng toàn cầu kết nối hàng triệu máy tính.",
+      explanation: "'Internet' trong tiếng Anh cũng được gọi là 'internet' trong tiếng Việt. Internet là mạng lưới toàn cầu kết nối hàng tỷ thiết bị điện tử, cho phép mọi người chia sẻ thông tin và giao tiếp với nhau."
     },
     {
       id: 3,
-      question: "In scientific research, what is a 'control group'?",
+      question: "What is 'smartphone' in English?",
       options: [
-        "The group of scientists conducting the experiment",
-        "The group of subjects not receiving the experimental treatment",
-        "The equipment used to control the experiment",
-        "The group that controls funding for the research"
+        "Máy tính",
+        "Điện thoại thông minh",
+        "Máy ảnh",
+        "Tivi"
       ],
       correctAnswer: 1,
-      hint: "This is a fundamental concept in experimental design.",
-      explanation: "A control group in scientific research is the group of subjects that does not receive the experimental treatment or intervention. It serves as a baseline for comparison to assess the effect of the treatment on the experimental group."
+      hint: "Đây là loại điện thoại có nhiều tính năng như máy tính.",
+      explanation: "'Smartphone' trong tiếng Anh có nghĩa là 'điện thoại thông minh' trong tiếng Việt. Điện thoại thông minh là loại điện thoại di động có nhiều tính năng như máy tính, thường có màn hình cảm ứng, kết nối internet và có thể cài đặt các ứng dụng."
     },
     {
       id: 4,
-      question: "What does 'IoT' stand for in technology?",
+      question: "What is 'software' in English?",
       options: [
-        "Internet of Things",
-        "Integration of Technology",
-        "Input/Output Terminal",
-        "International Online Transactions"
+        "Phần cứng",
+        "Phần mềm",
+        "Mạng internet",
+        "Dữ liệu"
       ],
-      correctAnswer: 0,
-      hint: "This refers to everyday devices connected to the internet.",
-      explanation: "IoT stands for 'Internet of Things.' It refers to the network of physical objects—'things'—embedded with sensors, software, and other technologies for the purpose of connecting and exchanging data with other devices and systems over the internet."
+      correctAnswer: 1,
+      hint: "Đây là các chương trình và ứng dụng chạy trên máy tính.",
+      explanation: "'Software' trong tiếng Anh có nghĩa là 'phần mềm' trong tiếng Việt. Phần mềm là tập hợp các chương trình, ứng dụng và dữ liệu được thiết kế để thực hiện các tác vụ cụ thể trên máy tính hoặc thiết bị điện tử."
     },
     {
       id: 5,
-      question: "What is 'machine learning' in the context of computer science?",
+      question: "What is 'email' in English?",
       options: [
-        "Teaching computers how to manufacture other machines",
-        "A method of data analysis that automates analytical model building",
-        "The process of physically assembling computer hardware",
-        "A technique for making computers run faster"
+        "Tin nhắn",
+        "Thư điện tử",
+        "Cuộc gọi",
+        "Trang web"
       ],
       correctAnswer: 1,
-      hint: "This is a subset of artificial intelligence focused on data patterns.",
-      explanation: "Machine learning is a method of data analysis and a subset of artificial intelligence that automates analytical model building. It's based on the idea that systems can learn from data, identify patterns, and make decisions with minimal human intervention."
+      hint: "Đây là phương thức liên lạc điện tử phổ biến qua internet.",
+      explanation: "'Email' trong tiếng Anh có nghĩa là 'thư điện tử' trong tiếng Việt. Email là phương thức trao đổi thông điệp kỹ thuật số được gửi qua mạng internet, cho phép người dùng gửi và nhận thư, tài liệu và các tệp đính kèm."
     }
   ],
 
@@ -279,68 +276,68 @@ const pathQuestions = {
   education: [
     {
       id: 1,
-      question: "What is a 'curriculum' in education?",
+      question: "What is 'school' in English?",
       options: [
-        "A type of degree or qualification",
-        "The planned sequence of instruction for a course or program",
-        "A method of student assessment",
-        "The physical campus of an educational institution"
+        "Bệnh viện",
+        "Trường học",
+        "Công ty",
+        "Nhà hàng"
       ],
       correctAnswer: 1,
-      hint: "This term relates to what is taught in schools or courses.",
-      explanation: "A curriculum is the planned sequence of instruction, or the content that teachers teach and students are expected to learn, in a given course or program. It outlines the lessons, assignments, and materials used to organize and teach a particular subject."
+      hint: "Đây là nơi học sinh đến để học tập.",
+      explanation: "'School' trong tiếng Anh có nghĩa là 'trường học' trong tiếng Việt. Trường học là cơ sở giáo dục nơi học sinh đến để học tập và phát triển kiến thức, kỹ năng dưới sự hướng dẫn của giáo viên."
     },
     {
       id: 2,
-      question: "What does 'ESL' stand for in education?",
+      question: "What is 'teacher' in English?",
       options: [
-        "Early Student Learning",
-        "Educational Standards Laboratory",
-        "English as a Second Language",
-        "Enhanced School Literacy"
+        "Học sinh",
+        "Giáo viên",
+        "Hiệu trưởng",
+        "Phụ huynh"
       ],
-      correctAnswer: 2,
-      hint: "This term relates to language acquisition for non-native speakers.",
-      explanation: "ESL stands for 'English as a Second Language.' It refers to the study of English by non-native speakers in an English-speaking environment. ESL programs are designed to help students learn English language skills for academic, professional, or personal purposes."
+      correctAnswer: 1,
+      hint: "Đây là người dạy học trong trường học.",
+      explanation: "'Teacher' trong tiếng Anh có nghĩa là 'giáo viên' trong tiếng Việt. Giáo viên là người có chuyên môn trong việc giảng dạy, truyền đạt kiến thức và hướng dẫn học sinh trong quá trình học tập."
     },
     {
       id: 3,
-      question: "What is 'formative assessment' in education?",
+      question: "What is 'student' in English?",
       options: [
-        "Final exams that determine a student's grade",
-        "Ongoing evaluation to monitor learning and provide feedback",
-        "The process of forming class groups",
-        "Assessment of teachers by school administrators"
+        "Giáo viên",
+        "Học sinh",
+        "Hiệu trưởng",
+        "Phụ huynh"
       ],
       correctAnswer: 1,
-      hint: "This type of assessment happens during the learning process, not just at the end.",
-      explanation: "Formative assessment is a range of formal and informal assessment procedures conducted during the learning process to modify teaching and learning activities to improve student achievement. It provides feedback to both teachers and students about ongoing progress and understanding."
+      hint: "Đây là người đi học tại trường học.",
+      explanation: "'Student' trong tiếng Anh có nghĩa là 'học sinh' trong tiếng Việt. Học sinh là người đang theo học tại một cơ sở giáo dục để tiếp thu kiến thức và phát triển kỹ năng."
     },
     {
       id: 4,
-      question: "What is a 'flipped classroom' model?",
+      question: "What is 'book' in English?",
       options: [
-        "A classroom where desks are arranged in a circle",
-        "A teaching approach where students switch classrooms throughout the day",
-        "An instructional strategy where students learn content at home and practice in class",
-        "A classroom designed for left-handed students"
+        "Bút",
+        "Sách",
+        "Bảng",
+        "Bàn"
       ],
-      correctAnswer: 2,
-      hint: "This model reverses the traditional learning environment.",
-      explanation: "A flipped classroom is an instructional strategy and a type of blended learning that reverses the traditional learning environment. Students are introduced to learning material before class (often through online lectures or readings), while classroom time is used for deeper discussion, problem-solving, and practical application of the material."
+      correctAnswer: 1,
+      hint: "Đây là vật chứa nhiều trang giấy có nội dung để đọc.",
+      explanation: "'Book' trong tiếng Anh có nghĩa là 'sách' trong tiếng Việt. Sách là một ấn phẩm in hoặc điện tử chứa văn bản, hình ảnh và thông tin được sắp xếp thành các trang để đọc."
     },
     {
       id: 5,
-      question: "What does 'STEM' education focus on?",
+      question: "What is 'classroom' in English?",
       options: [
-        "Sports, Theater, Engineering, and Mathematics",
-        "Science, Technology, Engineering, and Mathematics",
-        "Social Studies, Technology, English, and Music",
-        "Student Teacher Education Management"
+        "Trường học",
+        "Lớp học",
+        "Thư viện",
+        "Sân chơi"
       ],
       correctAnswer: 1,
-      hint: "This educational approach integrates four specific disciplines.",
-      explanation: "STEM education focuses on Science, Technology, Engineering, and Mathematics. It's an interdisciplinary approach to learning where academic concepts are coupled with real-world applications, helping students connect their learning to the wider world and future careers in these fields."
+      hint: "Đây là phòng trong trường học nơi diễn ra việc dạy và học.",
+      explanation: "'Classroom' trong tiếng Anh có nghĩa là 'lớp học' trong tiếng Việt. Lớp học là phòng trong trường học nơi giáo viên giảng dạy và học sinh học tập."
     }
   ],
 
@@ -348,68 +345,68 @@ const pathQuestions = {
   legalEnglish: [
     {
       id: 1,
-      question: "What does 'plaintiff' mean in legal terminology?",
+      question: "What is 'law' in English?",
       options: [
-        "A person who brings a case against another in a court of law",
-        "A lawyer representing a client in court",
-        "A witness in a legal case",
-        "A judge who presides over a court case"
+        "Tòa án",
+        "Luật",
+        "Thẩm phán",
+        "Luật sư"
       ],
-      correctAnswer: 0,
-      hint: "This is one of the parties in a lawsuit.",
-      explanation: "A plaintiff is the person or entity that initiates a lawsuit by filing a complaint with the court against a defendant, claiming that the defendant has caused harm or failed to fulfill a legal obligation."
+      correctAnswer: 1,
+      hint: "Đây là hệ thống quy tắc và quy định trong xã hội.",
+      explanation: "'Law' trong tiếng Anh có nghĩa là 'luật' trong tiếng Việt. Luật là hệ thống các quy tắc và quy định được thiết lập bởi chính phủ hoặc xã hội để điều chỉnh hành vi, duy trì trật tự và giải quyết tranh chấp."
     },
     {
       id: 2,
-      question: "What is a 'deposition' in legal proceedings?",
+      question: "What is 'court' in English?",
       options: [
-        "The final decision in a court case",
-        "A formal written statement",
-        "Out-of-court testimony given under oath",
-        "The process of selecting a jury"
+        "Luật",
+        "Tòa án",
+        "Luật sư",
+        "Tội phạm"
       ],
-      correctAnswer: 2,
-      hint: "This happens during the discovery phase of litigation.",
-      explanation: "A deposition is an out-of-court testimony given under oath by a witness or party involved in a legal case. It's part of the pre-trial discovery process where witnesses are questioned by attorneys, and their responses are recorded for potential use in court proceedings."
+      correctAnswer: 1,
+      hint: "Đây là nơi xét xử các vụ án.",
+      explanation: "'Court' trong tiếng Anh có nghĩa là 'tòa án' trong tiếng Việt. Tòa án là nơi xét xử các vụ án, giải quyết tranh chấp pháp lý và đưa ra phán quyết dựa trên luật pháp."
     },
     {
       id: 3,
-      question: "What does 'pro bono' mean in legal practice?",
+      question: "What is 'judge' in English?",
       options: [
-        "For the public good, without charge",
-        "In favor of the defendant",
-        "With professional expertise",
-        "According to legal precedent"
+        "Luật sư",
+        "Thẩm phán",
+        "Tòa án",
+        "Tội phạm"
       ],
-      correctAnswer: 0,
-      hint: "This Latin term relates to services provided without fee.",
-      explanation: "'Pro bono' comes from the Latin phrase 'pro bono publico,' meaning 'for the public good.' In legal practice, it refers to services provided by lawyers without charge, typically for clients with limited means or for causes that serve the public interest."
+      correctAnswer: 1,
+      hint: "Đây là người đưa ra phán quyết trong tòa án.",
+      explanation: "'Judge' trong tiếng Anh có nghĩa là 'thẩm phán' trong tiếng Việt. Thẩm phán là người có thẩm quyền xét xử các vụ án, đưa ra phán quyết và áp dụng luật pháp trong tòa án."
     },
     {
       id: 4,
-      question: "What is a 'tort' in law?",
+      question: "What is 'lawyer' in English?",
       options: [
-        "A legal document",
-        "A type of court",
-        "A civil wrong that causes harm",
-        "A criminal offense"
+        "Thẩm phán",
+        "Luật sư",
+        "Tòa án",
+        "Luật"
       ],
-      correctAnswer: 2,
-      hint: "This relates to civil liability rather than criminal charges.",
-      explanation: "A tort is a civil wrong that causes someone to suffer loss or harm, resulting in legal liability for the person who commits the act. Unlike criminal cases, tort cases are filed by the injured party (plaintiff) seeking compensation rather than by the government seeking punishment."
+      correctAnswer: 1,
+      hint: "Đây là người đại diện và tư vấn pháp lý cho thân chủ.",
+      explanation: "'Lawyer' trong tiếng Anh có nghĩa là 'luật sư' trong tiếng Việt. Luật sư là người được đào tạo và có chuyên môn về luật pháp, đại diện và tư vấn pháp lý cho thân chủ trong các vấn đề pháp lý."
     },
     {
       id: 5,
-      question: "What does 'habeas corpus' refer to?",
+      question: "What is 'crime' in English?",
       options: [
-        "The right to a fair trial",
-        "A legal writ requiring a person to be brought before a judge",
-        "The burden of proof in criminal cases",
-        "The process of appealing a court decision"
+        "Luật",
+        "Tội phạm",
+        "Tòa án",
+        "Luật sư"
       ],
       correctAnswer: 1,
-      hint: "This ancient legal principle protects against unlawful detention.",
-      explanation: "'Habeas corpus' (Latin for 'you shall have the body') is a legal writ or order that requires a person under arrest to be brought before a judge or court to determine if their detention is lawful. It's a fundamental protection against arbitrary state action and unlawful imprisonment."
+      hint: "Đây là hành vi vi phạm pháp luật và có thể bị trừng phạt.",
+      explanation: "'Crime' trong tiếng Anh có nghĩa là 'tội phạm' trong tiếng Việt. Tội phạm là hành vi vi phạm pháp luật, gây hại cho cá nhân hoặc xã hội và có thể bị trừng phạt theo luật pháp."
     }
   ]
 };

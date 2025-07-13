@@ -1,0 +1,82 @@
+/* Animations for confetti and celebration effects */
+
+@keyframes fall-slow {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fall-medium {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(540deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fall-fast {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce-once {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Animation classes */
+.animate-fall-slow {
+  animation: fall-slow 7s linear infinite;
+}
+
+.animate-fall-medium {
+  animation: fall-medium 5s linear infinite;
+}
+
+.animate-fall-fast {
+  animation: fall-fast 3s linear infinite;
+}
+
+.animate-bounce-once {
+  animation: bounce-once 1s ease-in-out;
+}
+
+.animate-spin-slow {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

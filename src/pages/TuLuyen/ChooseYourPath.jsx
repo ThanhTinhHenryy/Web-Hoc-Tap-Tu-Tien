@@ -34,7 +34,7 @@ const ChooseYourPath = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-6">
           {/* Medical English */}
           <div className="bg-white/90 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 cursor-pointer h-80">
-            <Link to="/tu-luyen/medical" className="h-full">
+            <Link to="/tu-luyen/instructions/medical" className="h-full">
               <div className="p-6 flex flex-col items-center justify-between h-full">
                 <div className="flex flex-col items-center">
                   <img 
@@ -58,7 +58,7 @@ const ChooseYourPath = () => {
 
           {/* Business English */}
           <div className="bg-white/90 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 cursor-pointer h-80">
-            <Link to="/tu-luyen/business" className="h-full">
+            <Link to="/tu-luyen/instructions/business" className="h-full">
               <div className="p-6 flex flex-col items-center justify-between h-full">
                 <div className="flex flex-col items-center">
                   <img 
@@ -82,7 +82,7 @@ const ChooseYourPath = () => {
 
           {/* Tourism & Hospitality */}
           <div className="bg-white/90 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 cursor-pointer h-80">
-            <Link to="/tu-luyen/tourism" className="h-full">
+            <Link to="/tu-luyen/instructions/tourism" className="h-full">
               <div className="p-6 flex flex-col items-center justify-between h-full">
                 <div className="flex flex-col items-center">
                   <img 
@@ -109,7 +109,7 @@ const ChooseYourPath = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {/* Science & Tech */}
           <div className="bg-white/90 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 cursor-pointer h-80">
-            <Link to="/tu-luyen/science" className="h-full">
+            <Link to="/tu-luyen/instructions/science" className="h-full">
               <div className="p-6 flex flex-col items-center justify-between h-full">
                 <div className="flex flex-col items-center">
                   <img 
@@ -133,7 +133,7 @@ const ChooseYourPath = () => {
 
           {/* Education */}
           <div className="bg-white/90 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 cursor-pointer h-80">
-            <Link to="/tu-luyen/education" className="h-full">
+            <Link to="/tu-luyen/instructions/education" className="h-full">
               <div className="p-6 flex flex-col items-center justify-between h-full">
                 <div className="flex flex-col items-center">
                   <img 
@@ -157,7 +157,7 @@ const ChooseYourPath = () => {
 
           {/* Legal English */}
           <div className="bg-white/90 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 cursor-pointer h-80">
-            <Link to="/tu-luyen/legal" className="h-full">
+            <Link to="/tu-luyen/instructions/legal" className="h-full">
               <div className="p-6 flex flex-col items-center justify-between h-full">
                 <div className="flex flex-col items-center">
                   <img 

@@ -26,6 +26,7 @@ import PracticeQuestions from "./pages/TuLuyen/PracticeQuestions";
 import PracticeGoal from "./pages/TuLuyen/PracticeGoal";
 import ChooseYourPath from "./pages/TuLuyen/ChooseYourPath";
 import PathQuestions from "./pages/TuLuyen/PathQuestions";
+import PathInstructions from "./pages/TuLuyen/PathInstructions";
 
 function App() {
   return (
@@ -62,6 +63,7 @@ function App() {
             path="/tu-luyen/huan-luyen/physical"
             element={<PhysicalTraining />}
           />
+          <Route path="/tu-luyen/instructions/:pathId" element={<PathInstructions />} />
           <Route path="/tu-luyen/:pathId" element={<PathQuestions />} />
           <Route path="/tu-luyen/luyen-tap-lai" element={<ReviewExercises />} />
           <Route path="/tu-luyen/tao-cau-hoi" element={<CreateQuestion />} />
