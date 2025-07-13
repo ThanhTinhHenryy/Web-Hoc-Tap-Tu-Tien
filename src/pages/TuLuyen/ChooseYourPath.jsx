@@ -37,10 +37,10 @@ const ChooseYourPath = () => {
             <Link to="/tu-luyen/instructions/medical" className="h-full">
               <div className="p-6 flex flex-col items-center justify-between h-full">
                 <div className="flex flex-col items-center">
-                  <img 
-                    src={medicalImage} 
-                    alt="Medical English" 
-                    className="w-24 h-24 object-contain mb-4" 
+                  <img
+                    src={medicalImage}
+                    alt="Medical English"
+                    className="w-24 h-24 object-contain mb-4"
                   />
                   <h2 className="text-xl font-bold text-[#2B003F] mb-2 text-center">
                     Medical English
@@ -61,10 +61,10 @@ const ChooseYourPath = () => {
             <Link to="/tu-luyen/instructions/business" className="h-full">
               <div className="p-6 flex flex-col items-center justify-between h-full">
                 <div className="flex flex-col items-center">
-                  <img 
-                    src={businessImage} 
-                    alt="Business English" 
-                    className="w-24 h-24 object-contain mb-4" 
+                  <img
+                    src={businessImage}
+                    alt="Business English"
+                    className="w-24 h-24 object-contain mb-4"
                   />
                   <h2 className="text-xl font-bold text-[#2B003F] mb-2 text-center">
                     Business English
@@ -85,10 +85,10 @@ const ChooseYourPath = () => {
             <Link to="/tu-luyen/instructions/tourism" className="h-full">
               <div className="p-6 flex flex-col items-center justify-between h-full">
                 <div className="flex flex-col items-center">
-                  <img 
-                    src={tourismImage} 
-                    alt="Tourism & Hospitality" 
-                    className="w-24 h-24 object-contain mb-4" 
+                  <img
+                    src={tourismImage}
+                    alt="Tourism & Hospitality"
+                    className="w-24 h-24 object-contain mb-4"
                   />
                   <h2 className="text-xl font-bold text-[#2B003F] mb-2 text-center">
                     Tourism & Hospitality
@@ -112,10 +112,10 @@ const ChooseYourPath = () => {
             <Link to="/tu-luyen/instructions/science" className="h-full">
               <div className="p-6 flex flex-col items-center justify-between h-full">
                 <div className="flex flex-col items-center">
-                  <img 
-                    src={scienceImage} 
-                    alt="Science & Tech" 
-                    className="w-24 h-24 object-contain mb-4" 
+                  <img
+                    src={scienceImage}
+                    alt="Science & Tech"
+                    className="w-24 h-24 object-contain mb-4"
                   />
                   <h2 className="text-xl font-bold text-[#2B003F] mb-2 text-center">
                     Science & Tech
@@ -136,10 +136,10 @@ const ChooseYourPath = () => {
             <Link to="/tu-luyen/instructions/education" className="h-full">
               <div className="p-6 flex flex-col items-center justify-between h-full">
                 <div className="flex flex-col items-center">
-                  <img 
-                    src={educationImage} 
-                    alt="Education" 
-                    className="w-24 h-24 object-contain mb-4" 
+                  <img
+                    src={educationImage}
+                    alt="Education"
+                    className="w-24 h-24 object-contain mb-4"
                   />
                   <h2 className="text-xl font-bold text-[#2B003F] mb-2 text-center">
                     Education
@@ -160,10 +160,10 @@ const ChooseYourPath = () => {
             <Link to="/tu-luyen/instructions/legal" className="h-full">
               <div className="p-6 flex flex-col items-center justify-between h-full">
                 <div className="flex flex-col items-center">
-                  <img 
-                    src={legalImage} 
-                    alt="Legal English" 
-                    className="w-24 h-24 object-contain mb-4" 
+                  <img
+                    src={legalImage}
+                    alt="Legal English"
+                    className="w-24 h-24 object-contain mb-4"
                   />
                   <h2 className="text-xl font-bold text-[#2B003F] mb-2 text-center">
                     Legal English

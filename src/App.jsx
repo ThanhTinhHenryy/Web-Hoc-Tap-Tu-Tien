@@ -50,7 +50,10 @@ function App() {
           />
           <Route path="/tu-luyen/huan-luyen" element={<Training />} />
           <Route path="/tu-luyen/practice-goal" element={<PracticeGoal />} />
-          <Route path="/tu-luyen/choose-your-path" element={<ChooseYourPath />} />
+          <Route
+            path="/tu-luyen/choose-your-path"
+            element={<ChooseYourPath />}
+          />
           <Route
             path="/tu-luyen/huan-luyen/mental"
             element={<MentalTraining />}
@@ -63,7 +66,10 @@ function App() {
             path="/tu-luyen/huan-luyen/physical"
             element={<PhysicalTraining />}
           />
-          <Route path="/tu-luyen/instructions/:pathId" element={<PathInstructions />} />
+          <Route
+            path="/tu-luyen/instructions/:pathId"
+            element={<PathInstructions />}
+          />
           <Route path="/tu-luyen/:pathId" element={<PathQuestions />} />
           <Route path="/tu-luyen/luyen-tap-lai" element={<ReviewExercises />} />
           <Route path="/tu-luyen/tao-cau-hoi" element={<CreateQuestion />} />

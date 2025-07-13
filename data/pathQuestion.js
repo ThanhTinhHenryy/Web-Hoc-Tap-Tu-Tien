@@ -1,412 +1,308 @@
 const pathQuestions = {
   // Các câu hỏi từ vựng cơ bản cho người mới bắt đầu học tiếng Anh chuyên ngành
-  medicalEnglish: [ // Từ vựng tiếng Anh y khoa cơ bản
+  medicalEnglish: [
+    // Từ vựng tiếng Anh y khoa cơ bản
     {
       id: 1,
-      question: "What is 'heart' in English?",
-      options: [
-        "Đầu",
-        "Tim",
-        "Phổi",
-        "Dạ dày"
-      ],
+      question: "Which organ pumps blood throughout the body?",
+      options: ["Brain", "Heart", "Lungs", "Liver"],
       correctAnswer: 1,
-      hint: "Đây là cơ quan bơm máu trong cơ thể.",
-      explanation: "'Heart' trong tiếng Anh có nghĩa là 'tim' trong tiếng Việt. Tim là cơ quan cơ bắp có chức năng bơm máu đi khắp cơ thể thông qua hệ thống tuần hoàn."
+      hint: "Đây là cơ quan cơ bắp đập liên tục trong lồng ngực của bạn.",
+      explanation:
+        "The heart is a muscular organ that pumps blood throughout the body via the circulatory system. It delivers oxygen and nutrients to the cells and removes carbon dioxide and other wastes.",
     },
     {
       id: 2,
-      question: "What is 'blood' in English?",
-      options: [
-        "Nước",
-        "Máu",
-        "Mồ hôi",
-        "Nước mắt"
-      ],
+      question: "What is the red fluid that flows through our veins?",
+      options: ["Water", "Blood", "Sweat", "Tears"],
       correctAnswer: 1,
-      hint: "Đây là chất lỏng màu đỏ chảy trong mạch máu.",
-      explanation: "'Blood' trong tiếng Anh có nghĩa là 'máu' trong tiếng Việt. Máu là chất lỏng màu đỏ chảy trong mạch máu, có chức năng vận chuyển oxy và chất dinh dưỡng đến các tế bào trong cơ thể."
+      hint: "Chất lỏng màu đỏ này chứa các tế bào và chất dinh dưỡng.",
+      explanation:
+        "Blood is a body fluid that delivers necessary substances such as nutrients and oxygen to the cells and transports metabolic waste products away from those same cells. It consists of plasma, red blood cells, white blood cells, and platelets.",
     },
     {
       id: 3,
-      question: "What is 'doctor' in English?",
-      options: [
-        "Y tá",
-        "Bác sĩ",
-        "Dược sĩ",
-        "Bệnh nhân"
-      ],
+      question: "Who do you visit when you are sick and need medical treatment?",
+      options: ["Nurse", "Doctor", "Pharmacist", "Patient"],
       correctAnswer: 1,
-      hint: "Đây là người khám và điều trị bệnh.",
-      explanation: "'Doctor' trong tiếng Anh có nghĩa là 'bác sĩ' trong tiếng Việt. Bác sĩ là người được đào tạo và có chuyên môn trong việc chẩn đoán, điều trị bệnh và chăm sóc sức khỏe cho bệnh nhân."
+      hint: "Người này đã học y khoa nhiều năm và có thể chẩn đoán bệnh.",
+      explanation:
+        "A doctor is a medical professional who practices medicine, which is concerned with promoting, maintaining, or restoring health through the study, diagnosis, prognosis, and treatment of disease, injury, and other physical and mental impairments.",
     },
     {
       id: 4,
-      question: "What is 'hospital' in English?",
-      options: [
-        "Trường học",
-        "Bệnh viện",
-        "Nhà hàng",
-        "Khách sạn"
-      ],
+      question: "Where do people go for medical treatment when they are seriously ill?",
+      options: ["School", "Hospital", "Restaurant", "Hotel"],
       correctAnswer: 1,
-      hint: "Đây là nơi điều trị cho người bệnh.",
-      explanation: "'Hospital' trong tiếng Anh có nghĩa là 'bệnh viện' trong tiếng Việt. Bệnh viện là cơ sở y tế nơi bệnh nhân được chăm sóc, điều trị bởi các bác sĩ, y tá và nhân viên y tế khác."
+      hint: "Nơi này có nhiều phòng cho bệnh nhân, phòng mổ và các thiết bị y tế.",
+      explanation:
+        "A hospital is a health care institution providing patient treatment with specialized medical and nursing staff and medical equipment. Hospitals are typically staffed by professional physicians, surgeons, nurses, and allied health practitioners.",
     },
     {
       id: 5,
-      question: "What is 'medicine' in English?",
-      options: [
-        "Bệnh",
-        "Thuốc",
-        "Bác sĩ",
-        "Bệnh viện"
-      ],
+      question: "What do you take when a doctor prescribes something to help you get better?",
+      options: ["Disease", "Medicine", "Doctor", "Hospital"],
       correctAnswer: 1,
-      hint: "Đây là chất dùng để điều trị bệnh.",
-      explanation: "'Medicine' trong tiếng Anh có nghĩa là 'thuốc' trong tiếng Việt. Thuốc là chất được sử dụng để điều trị, chẩn đoán, ngăn ngừa bệnh tật hoặc cải thiện sức khỏe."
-    }
+      hint: "Bạn thường uống hoặc tiêm cái này để điều trị bệnh.",
+      explanation:
+        "Medicine is a substance or preparation used to treat disease. It can come in many forms, including pills, liquids, creams, and injections. Medicines work by various mechanisms to treat, cure, or prevent diseases and relieve symptoms.",
+    },
   ],
-  
-  businessEnglish: [ // Từ vựng tiếng Anh kinh doanh cơ bản
+
+  businessEnglish: [
+    // Từ vựng tiếng Anh kinh doanh cơ bản
     {
       id: 1,
-      question: "What is 'money' in English?",
-      options: [
-        "Thời gian",
-        "Tiền",
-        "Sức khỏe",
-        "Hạnh phúc"
-      ],
+      question: "What do people use to buy goods and services?",
+      options: ["Time", "Money", "Health", "Happiness"],
       correctAnswer: 1,
-      hint: "Đây là thứ bạn dùng để mua hàng hóa và dịch vụ.",
-      explanation: "'Money' trong tiếng Anh có nghĩa là 'tiền' trong tiếng Việt. Tiền là phương tiện thanh toán được sử dụng để mua hàng hóa và dịch vụ, trả nợ, hoặc thực hiện các giao dịch kinh tế khác."
+      hint: "Bạn cần cái này để mua đồ trong cửa hàng hoặc thanh toán hóa đơn.",
+      explanation:
+        "Money is a medium of exchange that is used to purchase goods and services. It serves as a store of value and a unit of account in economic transactions. Money can take various forms, including cash, coins, and digital currency.",
     },
     {
       id: 2,
-      question: "What is 'company' in English?",
-      options: [
-        "Trường học",
-        "Công ty",
-        "Bệnh viện",
-        "Nhà hàng"
-      ],
+      question: "What is a business organization that sells products or services to make profit?",
+      options: ["School", "Company", "Hospital", "Restaurant"],
       correctAnswer: 1,
-      hint: "Đây là tổ chức kinh doanh có nhiều nhân viên.",
-      explanation: "'Company' trong tiếng Anh có nghĩa là 'công ty' trong tiếng Việt. Công ty là một tổ chức kinh doanh được thành lập để cung cấp hàng hóa hoặc dịch vụ nhằm mục đích tạo ra lợi nhuận."
+      hint: "Tổ chức này có nhiều nhân viên, văn phòng và thường có mục tiêu kiếm lợi nhuận.",
+      explanation:
+        "A company is a legal entity formed by a group of individuals to engage in business. It is an organization that aims to earn profit by selling goods or services. Companies can range from small businesses to large corporations with many employees and offices worldwide.",
     },
     {
       id: 3,
-      question: "What is 'office' in English?",
-      options: [
-        "Nhà",
-        "Văn phòng",
-        "Trường học",
-        "Bệnh viện"
-      ],
+      question: "Where do most business professionals work during the day?",
+      options: ["Home", "Office", "School", "Hospital"],
       correctAnswer: 1,
-      hint: "Đây là nơi nhiều người làm việc với máy tính và giấy tờ.",
-      explanation: "'Office' trong tiếng Anh có nghĩa là 'văn phòng' trong tiếng Việt. Văn phòng là không gian làm việc nơi người ta thực hiện các công việc hành chính, kinh doanh hoặc chuyên môn."
+      hint: "Nơi này thường có bàn làm việc, máy tính và phòng họp.",
+      explanation:
+        "An office is a space where professionals conduct administrative work, typically equipped with desks, computers, and meeting rooms. It serves as a central location for business operations, communication, and collaboration among employees.",
     },
     {
       id: 4,
-      question: "What is 'manager' in English?",
-      options: [
-        "Nhân viên",
-        "Quản lý",
-        "Khách hàng",
-        "Đối tác"
-      ],
+      question: "Who is responsible for supervising employees and making decisions in a department?",
+      options: ["Employee", "Manager", "Customer", "Partner"],
       correctAnswer: 1,
-      hint: "Đây là người điều hành một nhóm nhân viên hoặc một bộ phận.",
-      explanation: "'Manager' trong tiếng Anh có nghĩa là 'quản lý' trong tiếng Việt. Quản lý là người chịu trách nhiệm điều hành một nhóm nhân viên, một bộ phận hoặc một tổ chức, đưa ra quyết định và đảm bảo công việc được hoàn thành."
+      hint: "Người này lãnh đạo một nhóm nhân viên và báo cáo cho cấp cao hơn.",
+      explanation:
+        "A manager is a person responsible for controlling or administering all or part of a company or organization. Managers supervise employees, make decisions, allocate resources, and ensure that goals are met efficiently and effectively.",
     },
     {
       id: 5,
-      question: "What is 'job' in English?",
-      options: [
-        "Gia đình",
-        "Công việc",
-        "Trường học",
-        "Sở thích"
-      ],
+      question: "What do people have that provides them with regular income?",
+      options: ["Family", "Job", "School", "Hobby"],
       correctAnswer: 1,
-      hint: "Đây là hoạt động bạn làm để kiếm tiền.",
-      explanation: "'Job' trong tiếng Anh có nghĩa là 'công việc' trong tiếng Việt. Công việc là hoạt động thường xuyên được thực hiện để kiếm tiền, thường là trong một tổ chức hoặc cho một người sử dụng lao động."
-    }
+      hint: "Bạn đi làm điều này hàng ngày để kiếm tiền và phát triển sự nghiệp.",
+      explanation:
+        "A job is a regular activity performed in exchange for payment. It typically involves a specific position or role within an organization where a person is employed to perform certain tasks or responsibilities. Jobs provide people with income, experience, and opportunities for career advancement.",
+    },
   ],
-  
-  tourismHospitality: [ // Từ vựng tiếng Anh du lịch và khách sạn cơ bản
+
+  tourismHospitality: [
+    // Từ vựng tiếng Anh du lịch và khách sạn cơ bản
     {
       id: 1,
-      question: "What is 'hotel' in English?",
-      options: [
-        "Nhà hàng",
-        "Khách sạn",
-        "Sân bay",
-        "Bãi biển"
-      ],
-      correctAnswer: 1,
-      hint: "Đây là nơi du khách ở khi đi du lịch.",
-      explanation: "'Hotel' trong tiếng Anh có nghĩa là 'khách sạn' trong tiếng Việt. Khách sạn là nơi cung cấp phòng nghỉ và các dịch vụ khác cho khách du lịch hoặc người đi công tác."
+      question: "Where do tourists usually stay during their trip?",
+      options: ["Library", "Kitchen", "Hotel", "Office"],
+      correctAnswer: 2,
+      hint: "Bạn làm thủ tục ở đây, nhận chìa khóa và ngủ trong một phòng có giường. Nơi này thường có quầy lễ tân và dịch vụ phòng.",
+      explanation:
+        "A hotel is a place where people pay to stay for a short time when they are traveling. It usually offers rooms, beds, bathrooms, and other services like meals or cleaning.",
     },
     {
       id: 2,
-      question: "What is 'restaurant' in English?",
-      options: [
-        "Khách sạn",
-        "Nhà hàng",
-        "Cửa hàng",
-        "Bệnh viện"
-      ],
+      question: "Where do people go to eat meals prepared by professional chefs?",
+      options: ["Hotel", "Restaurant", "Store", "Hospital"],
       correctAnswer: 1,
-      hint: "Đây là nơi bạn đi ăn khi không muốn nấu ăn ở nhà.",
-      explanation: "'Restaurant' trong tiếng Anh có nghĩa là 'nhà hàng' trong tiếng Việt. Nhà hàng là nơi chuẩn bị và phục vụ thức ăn, đồ uống cho khách hàng."
+      hint: "Nơi này có thực đơn, bàn ăn và phục vụ các món ăn được nấu bởi đầu bếp.",
+      explanation:
+        "A restaurant is an establishment where meals are prepared and served to customers. Restaurants vary greatly in appearance and offerings, from fast food to fine dining, and typically have menus, tables, and waitstaff to serve customers.",
     },
     {
       id: 3,
-      question: "What is 'beach' in English?",
-      options: [
-        "Núi",
-        "Bãi biển",
-        "Sông",
-        "Hồ"
-      ],
+      question: "What is a sandy shore next to the ocean where people swim and sunbathe?",
+      options: ["Mountain", "Beach", "River", "Lake"],
       correctAnswer: 1,
-      hint: "Đây là nơi có cát và biển, nơi mọi người đi tắm nắng và bơi lội.",
-      explanation: "'Beach' trong tiếng Anh có nghĩa là 'bãi biển' trong tiếng Việt. Bãi biển là khu vực cát hoặc sỏi dọc theo bờ biển, nơi mọi người thường đến để tắm nắng, bơi lội và thư giãn."
+      hint: "Nơi này có cát, sóng biển và thường là điểm đến phổ biến trong kỳ nghỉ hè.",
+      explanation:
+        "A beach is a landform alongside a body of water, consisting of loose particles like sand, gravel, or pebbles. Beaches are popular places for recreation, relaxation, and water activities such as swimming, surfing, and sunbathing.",
     },
     {
       id: 4,
-      question: "What is 'airport' in English?",
-      options: [
-        "Bến xe",
-        "Sân bay",
-        "Ga tàu",
-        "Bến cảng"
-      ],
+      question: "Where do travelers go to board planes for their journey?",
+      options: ["Bus station", "Airport", "Train station", "Harbor"],
       correctAnswer: 1,
-      hint: "Đây là nơi máy bay cất cánh và hạ cánh.",
-      explanation: "'Airport' trong tiếng Anh có nghĩa là 'sân bay' trong tiếng Việt. Sân bay là nơi máy bay cất cánh, hạ cánh và nơi hành khách lên xuống máy bay."
+      hint: "Nơi này có đường băng cho máy bay cất và hạ cánh, cùng với các cổng khởi hành.",
+      explanation:
+        "An airport is a complex of buildings, runways, and equipment for the takeoff, landing, and maintenance of aircraft, with facilities for passengers. It serves as a hub for air transportation, allowing people to travel to different destinations by plane.",
     },
     {
       id: 5,
-      question: "What is 'passport' in English?",
-      options: [
-        "Vé máy bay",
-        "Hộ chiếu",
-        "Tiền",
-        "Hành lý"
-      ],
+      question: "What document do you need to travel to another country?",
+      options: ["Plane ticket", "Passport", "Money", "Luggage"],
       correctAnswer: 1,
-      hint: "Đây là giấy tờ bạn cần có khi đi du lịch nước ngoài.",
-      explanation: "'Passport' trong tiếng Anh có nghĩa là 'hộ chiếu' trong tiếng Việt. Hộ chiếu là giấy tờ chính thức do chính phủ cấp để xác nhận danh tính và quốc tịch của một người khi đi du lịch nước ngoài."
-    }
+      hint: "Đây là giấy tờ chính thức có ảnh của bạn và được kiểm tra tại biên giới quốc tế.",
+      explanation:
+        "A passport is an official government document that certifies the identity and nationality of its holder for the purpose of international travel. It contains the holder's name, date of birth, photograph, signature, and other identifying information, and is required for crossing international borders.",
+    },
   ],
-  
-  scienceTech: [ // Từ vựng tiếng Anh khoa học và công nghệ cơ bản
+
+  scienceTech: [
+    // Từ vựng tiếng Anh khoa học và công nghệ cơ bản
     {
       id: 1,
-      question: "What is 'computer' in English?",
-      options: [
-        "Điện thoại",
-        "Máy tính",
-        "Tivi",
-        "Máy ảnh"
-      ],
+      question: "Which electronic device do people use to browse the internet, write documents, and play games?",
+      options: ["Smartphone", "Computer", "Television", "Camera"],
       correctAnswer: 1,
-      hint: "Đây là thiết bị điện tử bạn dùng để lướt web, viết văn bản, chơi game.",
-      explanation: "'Computer' trong tiếng Anh có nghĩa là 'máy tính' trong tiếng Việt. Máy tính là thiết bị điện tử có khả năng lưu trữ, xử lý dữ liệu và thực hiện các tác vụ khác nhau."
+      hint: "Thiết bị này thường có bàn phím, chuột và màn hình lớn.",
+      explanation:
+        "A computer is an electronic device that manipulates information, or data. It has the ability to store, retrieve, and process data. Modern computers can perform complex tasks like browsing the internet, creating documents, playing games, and running various software applications.",
     },
     {
       id: 2,
-      question: "What is 'internet' in English?",
-      options: [
-        "Điện thoại",
-        "Internet",
-        "Tivi",
-        "Sách"
-      ],
+      question: "What is the global network that connects millions of computers worldwide?",
+      options: ["Smartphone", "Internet", "Television", "Book"],
       correctAnswer: 1,
-      hint: "Đây là mạng toàn cầu kết nối hàng triệu máy tính.",
-      explanation: "'Internet' trong tiếng Anh cũng được gọi là 'internet' trong tiếng Việt. Internet là mạng lưới toàn cầu kết nối hàng tỷ thiết bị điện tử, cho phép mọi người chia sẻ thông tin và giao tiếp với nhau."
+      hint: "Bạn sử dụng cái này để truy cập websites, gửi email và xem video trực tuyến.",
+      explanation:
+        "The Internet is a global network of billions of computers and other electronic devices. With the Internet, it's possible to access almost any information, communicate with anyone else in the world, and do much more. It connects people through websites, email, social media, online gaming, and other services.",
     },
     {
       id: 3,
-      question: "What is 'smartphone' in English?",
-      options: [
-        "Máy tính",
-        "Điện thoại thông minh",
-        "Máy ảnh",
-        "Tivi"
-      ],
+      question: "What do we call a mobile phone with advanced features like internet access and apps?",
+      options: ["Computer", "Smartphone", "Camera", "Television"],
       correctAnswer: 1,
-      hint: "Đây là loại điện thoại có nhiều tính năng như máy tính.",
-      explanation: "'Smartphone' trong tiếng Anh có nghĩa là 'điện thoại thông minh' trong tiếng Việt. Điện thoại thông minh là loại điện thoại di động có nhiều tính năng như máy tính, thường có màn hình cảm ứng, kết nối internet và có thể cài đặt các ứng dụng."
+      hint: "Thiết bị này có thể gọi điện, nhắn tin, chụp ảnh và cài đặt nhiều ứng dụng khác nhau.",
+      explanation:
+        "A smartphone is a mobile phone that performs many of the functions of a computer, typically having a touchscreen interface, internet access, and an operating system capable of running downloaded applications. Smartphones allow users to make calls, send messages, take photos, browse the internet, use social media, and much more.",
     },
     {
       id: 4,
-      question: "What is 'app' in English?",
-      options: [
-        "Máy tính",
-        "Ứng dụng",
-        "Internet",
-        "Màn hình"
-      ],
+      question: "What is a software program designed to run on smartphones and tablets called?",
+      options: ["Computer", "App", "Internet", "Screen"],
       correctAnswer: 1,
-      hint: "Đây là phần mềm bạn tải về và sử dụng trên điện thoại thông minh hoặc máy tính bảng.",
-      explanation: "'App' (viết tắt của application) trong tiếng Anh có nghĩa là 'ứng dụng' trong tiếng Việt. Ứng dụng là phần mềm được thiết kế để thực hiện các tác vụ cụ thể và có thể được cài đặt trên điện thoại thông minh, máy tính bảng và máy tính."
+      hint: "Bạn tải cái này từ App Store hoặc Google Play để sử dụng trên điện thoại.",
+      explanation:
+        "An app (short for application) is a software program designed to run on smartphones, tablets, and other mobile devices. Apps can be downloaded from app stores like Apple's App Store or Google Play. They perform specific tasks such as providing news, games, banking services, social networking, or navigation.",
     },
     {
       id: 5,
-      question: "What is 'social media' in English?",
-      options: [
-        "Báo chí",
-        "Mạng xã hội",
-        "Tivi",
-        "Sách"
-      ],
+      question: "What are platforms like Facebook, Instagram, and Twitter collectively known as?",
+      options: ["Newspapers", "Social media", "Television", "Books"],
       correctAnswer: 1,
-      hint: "Đây là nơi mọi người chia sẻ ảnh, suy nghĩ và kết nối với bạn bè trực tuyến.",
-      explanation: "'Social media' trong tiếng Anh có nghĩa là 'mạng xã hội' trong tiếng Việt. Mạng xã hội là các trang web và ứng dụng cho phép người dùng tạo và chia sẻ nội dung hoặc tham gia vào mạng lưới xã hội, ví dụ như Facebook, Instagram, Twitter."
-    }
+      hint: "Đây là nơi mọi người chia sẻ ảnh, video và kết nối với bạn bè trực tuyến.",
+      explanation:
+        "Social media refers to websites and applications that enable users to create and share content or to participate in social networking. Platforms like Facebook, Instagram, Twitter, and LinkedIn allow people to connect with friends and family, share photos and videos, express opinions, and stay updated on news and events around the world.",
+    },
   ],
-  
-  education: [ // Từ vựng tiếng Anh giáo dục cơ bản
+
+  education: [
+    // Từ vựng tiếng Anh giáo dục cơ bản
     {
       id: 1,
-      question: "What is 'teacher' in English?",
-      options: [
-        "Học sinh",
-        "Giáo viên",
-        "Hiệu trưởng",
-        "Phụ huynh"
-      ],
+      question: "Who stands in front of the class and explains lessons to students?",
+      options: ["Student", "Teacher", "Principal", "Parent"],
       correctAnswer: 1,
-      hint: "Đây là người đứng trước lớp học và giảng bài.",
-      explanation: "'Teacher' trong tiếng Anh có nghĩa là 'giáo viên' trong tiếng Việt. Giáo viên là người giúp học sinh tiếp thu kiến thức, kỹ năng và phẩm chất. Họ hướng dẫn học sinh trong quá trình học tập, giải thích khái niệm và đánh giá sự tiến bộ của học sinh."
+      hint: "Người này có bằng cấp chuyên môn và dạy các môn học cho học sinh.",
+      explanation:
+        "A teacher is a person who helps students to acquire knowledge, competence, or virtue. Teachers guide students through the learning process, explain concepts, answer questions, and evaluate student progress. They play a crucial role in education by sharing their knowledge and helping students develop skills for their future.",
     },
     {
       id: 2,
-      question: "What is 'student' in English?",
-      options: [
-        "Giáo viên",
-        "Học sinh",
-        "Hiệu trưởng",
-        "Phụ huynh"
-      ],
+      question: "Who attends school to learn from teachers?",
+      options: ["Teacher", "Student", "Principal", "Parent"],
       correctAnswer: 1,
-      hint: "Đây là người ngồi trong lớp học để học từ giáo viên.",
-      explanation: "'Student' trong tiếng Anh có nghĩa là 'học sinh' hoặc 'sinh viên' trong tiếng Việt. Học sinh/sinh viên là người theo học tại trường học, cao đẳng, đại học hoặc cơ sở giáo dục khác để học tập. Họ tham gia các lớp học, hoàn thành bài tập và làm bài kiểm tra."
+      hint: "Người này ngồi trong lớp, làm bài tập và tham gia các hoạt động học tập.",
+      explanation:
+        "A student is a person who is studying at a school, college, university, or other educational institution. Students attend classes, complete assignments, take tests, and engage in various learning activities to gain knowledge and skills. They are the primary recipients of educational services.",
     },
     {
       id: 3,
-      question: "What is 'classroom' in English?",
-      options: [
-        "Nhà ăn",
-        "Lớp học",
-        "Thư viện",
-        "Sân chơi"
-      ],
+      question: "Where do students and teachers gather for lessons in a school?",
+      options: ["Cafeteria", "Classroom", "Library", "Playground"],
       correctAnswer: 1,
-      hint: "Đây là nơi học sinh và giáo viên tụ họp để học bài.",
-      explanation: "'Classroom' trong tiếng Anh có nghĩa là 'lớp học' trong tiếng Việt. Lớp học là phòng trong trường học hoặc cơ sở giáo dục nơi diễn ra việc dạy và học. Lớp học thường có bàn ghế cho học sinh, bảng để giáo viên viết và các tài liệu giáo dục khác nhau."
+      hint: "Nơi này có bàn ghế cho học sinh và bảng để giáo viên viết bài.",
+      explanation:
+        "A classroom is a room in a school or educational institution where classes are held. It typically contains desks or tables for students, a board for the teacher to write on, and various educational materials. Classrooms provide a dedicated space for teaching and learning activities.",
     },
     {
       id: 4,
-      question: "What is 'homework' in English?",
+      question: "What assignments do students complete after school hours?",
       options: [
-        "Sách giáo khoa",
-        "Bài tập về nhà",
-        "Bài kiểm tra",
-        "Thời khóa biểu"
+        "Textbook",
+        "Homework",
+        "Exam",
+        "Schedule",
       ],
       correctAnswer: 1,
-      hint: "Đây là công việc mà giáo viên giao cho học sinh làm sau giờ học.",
-      explanation: "'Homework' trong tiếng Anh có nghĩa là 'bài tập về nhà' trong tiếng Việt. Bài tập về nhà là các nhiệm vụ được giáo viên giao cho học sinh để hoàn thành ngoài giờ học, thường là ở nhà. Bài tập về nhà giúp củng cố kiến thức đã học và phát triển kỹ năng tự học."
+      hint: "Học sinh làm việc này ở nhà sau giờ học để ôn tập và thực hành.",
+      explanation:
+        "Homework refers to tasks assigned to students by their teachers to be completed outside of class time, typically at home. These assignments help reinforce what was learned in class, develop independent learning skills, and prepare students for upcoming lessons. Homework can include reading, writing, problem-solving, or project work.",
     },
     {
       id: 5,
-      question: "What is 'test' in English?",
+      question: "What do students take to demonstrate their knowledge of a subject?",
       options: [
-        "Sách giáo khoa",
-        "Bài kiểm tra",
-        "Thời khóa biểu",
-        "Bài tập về nhà"
+        "Textbook",
+        "Test",
+        "Schedule",
+        "Homework",
       ],
       correctAnswer: 1,
-      hint: "Đây là khi học sinh phải trả lời câu hỏi để thể hiện những gì họ đã học.",
-      explanation: "'Test' trong tiếng Anh có nghĩa là 'bài kiểm tra' trong tiếng Việt. Bài kiểm tra là một đánh giá nhằm đo lường kiến thức, kỹ năng hoặc sự hiểu biết của học sinh về một môn học. Bài kiểm tra giúp giáo viên đánh giá việc học của học sinh."
-    }
+      hint: "Học sinh làm cái này để giáo viên đánh giá kiến thức và kỹ năng của họ.",
+      explanation:
+        "A test is an assessment intended to measure a student's knowledge, skill, aptitude, or understanding of a subject. Tests can take various forms, including multiple-choice questions, essays, or practical demonstrations. They help teachers evaluate student learning, identify areas for improvement, and determine grades.",
+    },
   ],
-  
-  legalEnglish: [ // Từ vựng tiếng Anh pháp lý cơ bản
+
+  legalEnglish: [
+    // Từ vựng tiếng Anh pháp lý cơ bản
     {
       id: 1,
-      question: "What is 'law' in English?",
-      options: [
-        "Tòa án",
-        "Luật pháp",
-        "Cảnh sát",
-        "Thẩm phán"
-      ],
-      correctAnswer: 1,
-      hint: "Đây là quy tắc mà mọi người trong một quốc gia phải tuân theo.",
-      explanation: "'Law' trong tiếng Anh có nghĩa là 'luật pháp' trong tiếng Việt. Luật pháp là quy tắc được chính phủ đặt ra và mọi người trong một quốc gia, tiểu bang hoặc cộng đồng phải tuân theo. Vi phạm luật pháp có thể dẫn đến các hình phạt như phạt tiền hoặc tù."
+      question: "Who represents clients in legal matters and provides legal advice?",
+      options: ["Lawyer", "Judge", "Prosecutor", "Jury"],
+      correctAnswer: 0,
+      hint: "Người này có bằng luật, đại diện cho khách hàng trong các vụ kiện và đàm phán pháp lý.",
+      explanation:
+        "A lawyer is a professional who is trained and licensed to practice law. Lawyers provide legal advice to clients, represent them in legal negotiations and court proceedings, prepare legal documents, and interpret laws and regulations. They may specialize in different areas of law such as criminal law, corporate law, family law, or intellectual property law.",
     },
     {
       id: 2,
-      question: "What is 'court' in English?",
-      options: [
-        "Luật pháp",
-        "Tòa án",
-        "Cảnh sát",
-        "Nhà tù"
-      ],
+      question: "Who presides over court proceedings and makes rulings on legal matters?",
+      options: ["Lawyer", "Judge", "Prosecutor", "Jury"],
       correctAnswer: 1,
-      hint: "Đây là nơi mọi người đến khi họ có vấn đề pháp lý cần giải quyết.",
-      explanation: "'Court' trong tiếng Anh có nghĩa là 'tòa án' trong tiếng Việt. Tòa án là nơi chính thức xét xử và quyết định các vấn đề pháp lý bởi thẩm phán hoặc bồi thẩm đoàn. Tòa án giải quyết tranh chấp giữa các bên và xác định tội hay vô tội của người bị buộc tội."
+      hint: "Người này mặc áo choàng đen, ngồi trên bục cao trong phòng xử án và đưa ra phán quyết.",
+      explanation:
+        "A judge is a public official appointed or elected to preside over court proceedings. Judges maintain order in the courtroom, determine whether evidence is admissible, instruct juries on the law, and in some cases, decide the outcome of cases. They ensure that trials are conducted fairly and according to established legal procedures.",
     },
     {
       id: 3,
-      question: "What is 'judge' in English?",
-      options: [
-        "Luật sư",
-        "Thẩm phán",
-        "Cảnh sát",
-        "Tội phạm"
-      ],
+      question: "Where are legal disputes resolved through formal proceedings?",
+      options: ["Prison", "Court", "Law office", "Police station"],
       correctAnswer: 1,
-      hint: "Đây là người ngồi ở phía trước phòng xử án và đưa ra quyết định cuối cùng.",
-      explanation: "'Judge' trong tiếng Anh có nghĩa là 'thẩm phán' trong tiếng Việt. Thẩm phán là viên chức công quyền chủ trì tòa án. Thẩm phán nghe bằng chứng, xác định sự thật của vụ án, áp dụng luật liên quan và đưa ra quyết định hoặc phán quyết."
+      hint: "Nơi này có phòng xử án, nơi diễn ra các phiên tòa với thẩm phán, luật sư và các bên liên quan.",
+      explanation:
+        "A court is a governmental institution where legal disputes are resolved through formal proceedings. Courts interpret and apply the law, adjudicate legal disputes, and evaluate evidence presented by opposing parties. Different types of courts handle different kinds of cases, such as criminal courts, civil courts, family courts, and appellate courts.",
     },
     {
       id: 4,
-      question: "What is 'lawyer' in English?",
-      options: [
-        "Thẩm phán",
-        "Luật sư",
-        "Cảnh sát",
-        "Tội phạm"
-      ],
-      correctAnswer: 1,
-      hint: "Đây là người giúp đỡ mọi người với các vấn đề pháp lý và đại diện cho họ tại tòa án.",
-      explanation: "'Lawyer' trong tiếng Anh có nghĩa là 'luật sư' trong tiếng Việt. Luật sư là người được đào tạo và cấp phép để hành nghề luật, tư vấn pháp lý và đại diện cho khách hàng trong các vấn đề pháp lý. Luật sư giúp khách hàng hiểu quyền và nghĩa vụ pháp lý của họ."
+      question: "What material is presented in court to prove or disprove facts in a case?",
+      options: ["Evidence", "Testimony", "Verdict", "Sentence"],
+      correctAnswer: 0,
+      hint: "Đây có thể là tài liệu, lời khai, video, vật dụng hoặc thông tin khác được sử dụng để chứng minh sự thật.",
+      explanation:
+        "Evidence refers to information, documents, testimony, or physical objects that are presented in court to prove or disprove facts in a legal case. Evidence can include witness testimony, documents, photographs, video recordings, fingerprints, DNA samples, and other materials that help establish the truth of a matter. The admissibility of evidence is governed by rules that vary by jurisdiction.",
     },
     {
       id: 5,
-      question: "What is 'crime' in English?",
-      options: [
-        "Luật pháp",
-        "Tội phạm",
-        "Cảnh sát",
-        "Nhà tù"
-      ],
-      correctAnswer: 1,
-      hint: "Đây là hành động có thể khiến ai đó bị bắt giữ hoặc bị trừng phạt theo pháp luật.",
-      explanation: "'Crime' trong tiếng Anh có nghĩa là 'tội phạm' trong tiếng Việt. Tội phạm là hành động vi phạm pháp luật và bị trừng phạt theo luật. Ví dụ phổ biến bao gồm trộm cắp, hành hung, giết người và lừa đảo. Khi ai đó phạm tội, họ có thể phải đối mặt với các hậu quả như phạt tiền hoặc tù."
-    }
-  ]
+      question: "What is the formal decision made by a jury or judge at the end of a trial?",
+      options: ["Evidence", "Testimony", "Verdict", "Sentence"],
+      correctAnswer: 2,
+      hint: "Đây là quyết định cuối cùng về việc bị cáo có tội hay vô tội sau khi xem xét tất cả bằng chứng.",
+      explanation:
+        "A verdict is the formal decision or finding made by a jury or judge at the conclusion of a trial. In criminal cases, the verdict determines whether the defendant is guilty or not guilty of the charges. In civil cases, the verdict decides whether the defendant is liable or not liable. The verdict is reached after all evidence has been presented and deliberated upon.",
+    },
+  ],
 };
 
 export default pathQuestions;
