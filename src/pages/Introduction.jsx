@@ -1,7 +1,14 @@
 import React from "react";
 import stone from "../assets/stone.png";
+//import { useNavigate } from "react-router-dom";
 
 const Introduction = () => {
+  //const navigate = useNavigate();
+
+  const handleHeartClick = () => {
+    // Chuyển hướng đến trang traitim.html trong thư mục public
+    window.open("/traitim.html", "_blank");
+  };
   return (
     <div
       className="min-h-screen pt-16 sm:pt-18 md:pt-20 pb-6 sm:pb-8 md:pb-10 text-gray-800 relative overflow-x-hidden"
@@ -53,8 +60,9 @@ const Introduction = () => {
               <div className="mb-8 sm:mb-12 md:mb-20">
                 {/* <div className="w-32 sm:w-40 md:w-48 h-1 bg-amber-500 mb-2 sm:mb-3 md:mb-4"></div> */}
                 <h1
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#F7C93F] tracking-wide sm:tracking-wider drop-shadow-md sm:drop-shadow-lg py-2 sm:py-3 mb-2 sm:mb-3 md:mb-4"
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#F7C93F] tracking-wide sm:tracking-wider drop-shadow-md sm:drop-shadow-lg py-2 sm:py-3 mb-2 sm:mb-3 md:mb-4 cursor-pointer hover:text-amber-400 transition-colors duration-300"
                   style={{ textShadow: "1px 1px 2px rgba(205, 133, 63, 0.3)" }}
+                  onClick={handleHeartClick}
                 >
                   Cốt truyện
                 </h1>
