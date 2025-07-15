@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { updateUserAvatar } from "../../../data/api";
 
 // Import các avatar
-import swordCultivator from "../../assets/avatar/sword-cultivator.svg";
-import alchemyCultivator from "../../assets/avatar/alchemy-cultivator.svg";
-import demonicCultivator from "../../assets/avatar/demonic-cultivator.svg";
-import buddhistCultivator from "../../assets/avatar/buddhist-cultivator.svg";
-import beastTamer from "../../assets/avatar/beast-tamer.svg";
-import arrayMaster from "../../assets/avatar/array-master.svg";
+import swordCultivator from "../../assets/avatar/chooseAVT/Sword Cultivator.jpg";
+import alchemyCultivator from "../../assets/avatar/chooseAVT/Alchemy Cultivator.jpg";
+import demonicCultivator from "../../assets/avatar/chooseAVT/Demonic Cultivator.jpg";
+import buddhistCultivator from "../../assets/avatar/chooseAVT/Buddhist Cultivator.jpg";
+import beastTamer from "../../assets/avatar/chooseAVT/Beast Tamer.jpg";
+import arrayMaster from "../../assets/avatar/chooseAVT/Array Master.jpg";
 import lightningCultivator from "../../assets/avatar/lightning-cultivator.svg";
 import iceCultivator from "../../assets/avatar/ice-cultivator.svg";
 
@@ -91,10 +91,12 @@ const AvatarSelector = ({ onClose, onAvatarChange }) => {
       localStorage.setItem("user", JSON.stringify(response.user));
 
       // Phát sự kiện storage để thông báo cho các component khác
-      window.dispatchEvent(new Event('storage'));
+      window.dispatchEvent(new Event("storage"));
 
       // Phát sự kiện tùy chỉnh avatarChange
-      const avatarChangeEvent = new CustomEvent('avatarChange', { detail: response.user });
+      const avatarChangeEvent = new CustomEvent("avatarChange", {
+        detail: response.user,
+      });
       window.dispatchEvent(avatarChangeEvent);
 
       // Gọi callback onAvatarChange nếu được cung cấp
@@ -110,9 +112,9 @@ const AvatarSelector = ({ onClose, onAvatarChange }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-black flex items-center justify-center z-50 pt-10">
       <div className="bg-[#2A0A4A] rounded-xl shadow-lg p-6 max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-        <h2 className="text-2xl font-bold mb-6 text-center text-yellow-300">
+        <h2 className=" font-bold mb-6 text-center text-yellow-300">
           Choose Your Avatar
         </h2>
 
@@ -130,7 +132,7 @@ const AvatarSelector = ({ onClose, onAvatarChange }) => {
               <img
                 src={avatar.image}
                 alt={avatar.title}
-                className="w-full h-32 object-contain mb-2"
+                className="w-40 h-40 object-cover mb-2 mx-auto rounded-lg"
               />
               <h3 className="text-center font-bold text-yellow-300">
                 {avatar.title}

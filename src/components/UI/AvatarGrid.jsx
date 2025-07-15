@@ -64,7 +64,7 @@ const AvatarGrid = ({ onSelectAvatar }) => {
             <img
               src={avatar.image}
               alt={avatar.title}
-              className="w-full h-32 object-contain mb-2"
+              className="w-40 h-40 object-cover mb-2 mx-auto rounded-lg"
             />
             <h3 className="text-center font-bold text-yellow-300">
               {avatar.title}

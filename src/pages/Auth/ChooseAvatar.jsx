@@ -6,12 +6,12 @@ import { updateUserAvatar } from "../../../data/api";
 import backgroundImg from "../../assets/background/auth.png";
 
 // Import avatar images
-import swordCultivatorImg from "../../assets/avatar/sword-cultivator.svg";
-import alchemyCultivatorImg from "../../assets/avatar/alchemy-cultivator.svg";
-import demonicCultivatorImg from "../../assets/avatar/demonic-cultivator.svg";
-import buddhistCultivatorImg from "../../assets/avatar/buddhist-cultivator.svg";
-import beastTamerImg from "../../assets/avatar/beast-tamer.svg";
-import arrayMasterImg from "../../assets/avatar/array-master.svg";
+import swordCultivatorImg from "../../assets/avatar/chooseAVT/Sword Cultivator.jpg";
+import alchemyCultivatorImg from "../../assets/avatar/chooseAVT/Alchemy Cultivator.jpg";
+import demonicCultivatorImg from "../../assets/avatar/chooseAVT/Demonic Cultivator.jpg";
+import buddhistCultivatorImg from "../../assets/avatar/chooseAVT/Buddhist Cultivator.jpg";
+import beastTamerImg from "../../assets/avatar/chooseAVT/Beast Tamer.jpg";
+import arrayMasterImg from "../../assets/avatar/chooseAVT/Array Master.jpg";
 
 const ChooseAvatar = () => {
   const [selectedAvatar, setSelectedAvatar] = useState("");
@@ -104,7 +104,7 @@ const ChooseAvatar = () => {
 
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-center py-8 px-4"
+      className="min-h-screen flex flex-col items-center justify-center py-8 px-4 pt-24"
       style={{
         backgroundImage: `url(${backgroundImg})`,
         backgroundSize: "cover",
@@ -135,11 +135,11 @@ const ChooseAvatar = () => {
                   <h3 className="text-xl font-bold text-white mb-4">
                     {avatar.name}
                   </h3>
-                  <div className="w-32 h-32 mb-4">
+                  <div className="w-48 h-48 mb-4">
                     <img
                       src={avatar.image}
                       alt={avatar.name}
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-cover rounded-lg"
                     />
                   </div>
                   <p className="text-white/80 text-center mb-10">

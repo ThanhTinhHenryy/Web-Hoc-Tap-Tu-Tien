@@ -206,7 +206,7 @@ const ReviewExercises = () => {
                   />
                 </svg>
               </span>
-              <span className="relative">
+              <span className="relative text-amber-400">
                 Luyện Tập Lại
                 <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-yellow-300 to-amber-400 rounded-full"></span>
               </span>

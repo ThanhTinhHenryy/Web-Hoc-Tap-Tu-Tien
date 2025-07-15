@@ -52,7 +52,7 @@ const AvatarGallery = ({ onClose, onAvatarChange }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 pt-10">
       <div className="bg-gradient-to-b from-[#2A0A4A] to-[#3c1a60] rounded-xl shadow-lg p-6 max-w-4xl w-full max-h-[90vh] overflow-y-auto">
         <AvatarGrid onSelectAvatar={handleSelectAvatar} />
 
